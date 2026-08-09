@@ -35,7 +35,11 @@ def extract_main(text: str, doi: str) -> tuple[str, str, str]:
     body = "\n".join(lines[intro_at:]).strip() + "\n"
 
     repository = "https://github.com/blakepi/phasemap-reproducibility"
-    archive = f"https://doi.org/{doi}" if doi else "DOI TO BE INSERTED AFTER ZENODO RESERVATION"
+    archive = (
+        f"[doi:{doi}](https://doi.org/{doi})"
+        if doi
+        else "DOI TO BE INSERTED AFTER ZENODO RESERVATION"
+    )
     data_section = (
         "## Data and code availability\n\n"
         "The code, prespecified plans, deterministic validation records, both "

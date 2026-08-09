@@ -56,8 +56,8 @@ py -3.12 -m venv .venv
 
 ## Citation
 
-Use `CITATION.cff`. The archival DOI will be added to this release record when
-the Zenodo deposit is published.
+Use `CITATION.cff`. The archived release is available at
+[doi:10.5281/zenodo.21856419](https://doi.org/10.5281/zenodo.21856419).
 
 ## Authors
 

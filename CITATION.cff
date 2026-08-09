@@ -4,6 +4,7 @@ title: "PHASEMAP: exact second-order classification for deterministic reset maps
 type: software
 version: 3.1.1
 date-released: 2026-08-08
+doi: "10.5281/zenodo.21856419"
 authors:
   - family-names: Pierpoint
     given-names: G. Blake
@@ -21,7 +22,7 @@ authors:
     affiliation: "Department of Computer Science and Engineering, Shanghai Jiao Tong University; Weyl Center for Mathematical Physics"
     email: "yichen.liu@weylcenter.org"
 repository-code: "https://github.com/blakepi/phasemap-reproducibility"
-url: "https://github.com/blakepi/phasemap-reproducibility"
+url: "https://doi.org/10.5281/zenodo.21856419"
 license: MIT
 keywords:
   - active Brownian particle

@@ -2,6 +2,9 @@
 
 - Public package version: 3.1.1
 - Release date: 2026-08-08
+- Archival DOI: `10.5281/zenodo.21856419`
+- Public repository: `https://github.com/blakepi/phasemap-reproducibility`
+- Public release tag: `v3.1.1`
 - Private immutable candidate tag: `g7-major-revision-candidate-2026-08-01`
 - Candidate commit: `2c4dd609f230715c0eb148e874591f7ff38aa897`
 - Frozen scientific/content source: `254d51bccaae68b227972f7b6dd3b54bec25cbfe`
