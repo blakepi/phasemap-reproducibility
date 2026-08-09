@@ -1,0 +1,14 @@
+{
+  "contract_version": "0.3",
+  "evidence_tier": "primary",
+  "method": "paired Euler-Maruyama free-process ensemble",
+  "parameters": {"inertia": 0.8, "activity": 1.2, "reset_rate": 0.0},
+  "final_time": 6.0,
+  "fine_step": 0.002,
+  "ensemble_size": 8192,
+  "seed": 20260722011,
+  "pilot": "none; fixed non-adaptive primary calculation",
+  "discretization": "paired coarse step = 0.004 from summed fine Wiener increments",
+  "time_convergence": [3.0, 6.0],
+  "ensemble_convergence": [2048, 8192]
+}

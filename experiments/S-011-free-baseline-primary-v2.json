@@ -1,0 +1,81 @@
+{
+  "contract_version": "0.3",
+  "plan_id": "S-011-free-baseline-primary-v2",
+  "status": "preregistered-not-executed",
+  "scope": "selected primary finite-time rho=0 spot checks only; not full free-baseline or G2 closure",
+  "rho_limit_claimed": false,
+  "outputs": {
+    "pilot": "artifacts/raw/S-011-free-baseline-primary-v2-pilot.json",
+    "confirm": "artifacts/raw/S-011-free-baseline-primary-v2-confirm.json"
+  },
+  "parameters": {"inertia": 0.8, "activity": 1.2, "reset_rate": 0.0},
+  "validation_times": [1.5, 3.0],
+  "fine_step": 0.002,
+  "coarse_step": 0.004,
+  "pairing_policy": "coarse Wiener increments are sums of paired fine increments",
+  "sampling": {
+    "pilot_size": 2048,
+    "pilot_seeds": [20260722101, 20260722102],
+    "confirmatory_seeds": [20260722201, 20260722202],
+    "compute_cap": 131072,
+    "projection_formula": "ceil(N0 * (q * SE0 / (epsilon - abs(delta0) - B_window0 - B_disc0))^2)",
+    "nonpositive_denominator_outcome": "unresolved",
+    "cap_exceeded_outcome": "unresolved",
+    "confirmatory_batch_size": "N_target; not N_target minus N0",
+    "pilot_reused_in_confirmatory_estimate": false,
+    "maximum_interim_evaluations": 1,
+    "maximum_final_evaluations": 1,
+    "continuous_polling_allowed": false,
+    "repeated_top_up_allowed": false,
+    "stop_at_first_pass_allowed": false
+  },
+  "uncertainty": {
+    "interval": {
+      "distribution": "normal",
+      "quantity": "discrepancy",
+      "quantile": 2.5758293035
+    },
+    "methods": {
+      "r_dot_v": {
+        "direct_reference": {
+          "estimator": "trajectory_mean",
+          "standard_error": "trajectory_mean_standard_error"
+        },
+        "fine_coarse": {
+          "estimator": "matched_pair_difference_mean",
+          "standard_error": "matched_pair_difference_mean_standard_error"
+        }
+      },
+      "cov_r_trace": {
+        "direct_reference": {
+          "estimator": "unbiased_sample_covariance_trace",
+          "standard_error": "delete_one_trajectory_jackknife_standard_error"
+        },
+        "fine_coarse": {
+          "estimator": "unbiased_matched_pair_covariance_trace_difference",
+          "standard_error": "delete_one_matched_pair_jackknife_standard_error"
+        }
+      }
+    },
+    "systematic_envelopes": {
+      "B_window": 0.0,
+      "B_disc_floor": 0.01,
+      "B_disc_estimator": "max(B_disc_floor, abs(matching_fine_coarse_delta) + q * matching_fine_coarse_standard_error)",
+      "phase_policy": {
+        "pilot_use": "estimate from pilot matched pairs for projection only",
+        "confirmatory_use": "estimate freshly from confirmatory matched pairs for final interval and classification",
+        "pilot_values_enter_confirmatory_interval_or_classification": false
+      }
+    }
+  },
+  "run_configurations": [
+    {"id":"t1.5-rdotv-direct","time":1.5,"reference_inputs":{"r_squared_reference":2.810301985452997,"v_squared_reference":3.136788459029914},"run_configuration":{"evidence_tier":"primary","observable_class":"r_dot_v","compute_cap":131072,"characteristic_scale":2.9690609347667176,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.01},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"direct_reference","valid_coupling_exists":false,"paired_paths":false,"claimed_zero_crossing":false}},
+    {"id":"t1.5-rdotv-fine-coarse","time":1.5,"reference_inputs":{"r_squared_reference":2.810301985452997,"v_squared_reference":3.136788459029914},"run_configuration":{"evidence_tier":"primary","observable_class":"r_dot_v","compute_cap":131072,"characteristic_scale":2.9690609347667176,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.0},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"fine_coarse","valid_coupling_exists":true,"paired_paths":true,"claimed_zero_crossing":false}},
+    {"id":"t1.5-covtrace-direct","time":1.5,"reference_inputs":{"reference":2.4535073625232227},"run_configuration":{"evidence_tier":"primary","observable_class":"cov_r_trace","compute_cap":131072,"characteristic_scale":2.4535073625232227,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.01},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"direct_reference","valid_coupling_exists":false,"paired_paths":false,"claimed_zero_crossing":false}},
+    {"id":"t1.5-covtrace-fine-coarse","time":1.5,"reference_inputs":{"reference":2.4535073625232227},"run_configuration":{"evidence_tier":"primary","observable_class":"cov_r_trace","compute_cap":131072,"characteristic_scale":2.4535073625232227,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.0},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"fine_coarse","valid_coupling_exists":true,"paired_paths":true,"claimed_zero_crossing":false}},
+    {"id":"t3-rdotv-direct","time":3.0,"reference_inputs":{"r_squared_reference":10.843062746831304,"v_squared_reference":3.2932324595733653},"run_configuration":{"evidence_tier":"primary","observable_class":"r_dot_v","compute_cap":131072,"characteristic_scale":5.975677886152799,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.01},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"direct_reference","valid_coupling_exists":false,"paired_paths":false,"claimed_zero_crossing":false}},
+    {"id":"t3-rdotv-fine-coarse","time":3.0,"reference_inputs":{"r_squared_reference":10.843062746831304,"v_squared_reference":3.2932324595733653},"run_configuration":{"evidence_tier":"primary","observable_class":"r_dot_v","compute_cap":131072,"characteristic_scale":5.975677886152799,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.0},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"fine_coarse","valid_coupling_exists":true,"paired_paths":true,"claimed_zero_crossing":false}},
+    {"id":"t3-covtrace-direct","time":3.0,"reference_inputs":{"reference":9.814536622976696},"run_configuration":{"evidence_tier":"primary","observable_class":"cov_r_trace","compute_cap":131072,"characteristic_scale":9.814536622976696,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.01},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"direct_reference","valid_coupling_exists":false,"paired_paths":false,"claimed_zero_crossing":false}},
+    {"id":"t3-covtrace-fine-coarse","time":3.0,"reference_inputs":{"reference":9.814536622976696},"run_configuration":{"evidence_tier":"primary","observable_class":"cov_r_trace","compute_cap":131072,"characteristic_scale":9.814536622976696,"normalized_floor_fraction":0.005,"relative_margin":0.01,"systematic_envelopes":{"B_window":0.0,"B_disc":0.0},"maximum_interim_evaluations":1,"maximum_final_evaluations":1,"continuous_polling_allowed":false,"repeated_top_up_allowed":false,"stop_at_first_pass_allowed":false,"pilot_reused_in_confirmatory_estimate":false,"comparison_kind":"fine_coarse","valid_coupling_exists":true,"paired_paths":true,"claimed_zero_crossing":false}}
+  ]
+}

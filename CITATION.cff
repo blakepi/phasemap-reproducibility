@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use PHASEMAP, please cite the archived software and associated article."
+title: "PHASEMAP: exact second-order classification for deterministic reset maps of an inertial active particle"
+type: software
+version: 3.1.1
+date-released: 2026-08-08
+authors:
+  - family-names: Pierpoint
+    given-names: G. Blake
+    orcid: "https://orcid.org/0000-0001-8288-8549"
+    affiliation: "Department of Biomedical Engineering, Whiting School of Engineering, Johns Hopkins University"
+    email: "gpierpo1@jh.edu"
+  - family-names: Bernard
+    given-names: Olivier
+    orcid: "https://orcid.org/0009-0007-0177-1607"
+    affiliation: "UFR PhITEM, Universite Grenoble Alpes; Weyl Center for Mathematical Physics"
+    email: "oli.bernard@weylcenter.org"
+  - family-names: Liu
+    given-names: Yichen
+    orcid: "https://orcid.org/0009-0005-2367-1493"
+    affiliation: "Department of Computer Science and Engineering, Shanghai Jiao Tong University; Weyl Center for Mathematical Physics"
+    email: "yichen.liu@weylcenter.org"
+repository-code: "https://github.com/blakepi/phasemap-reproducibility"
+url: "https://github.com/blakepi/phasemap-reproducibility"
+license: MIT
+keywords:
+  - active Brownian particle
+  - stochastic resetting
+  - inertial active matter
+  - moment closure
+  - statistical physics
+  - reproducible research

@@ -1,0 +1,41 @@
+{
+  "title": "PHASEMAP: exact second-order classification for deterministic reset maps of an inertial active particle",
+  "upload_type": "software",
+  "description": "Exact analytic classification, deterministic validation, unresolved trajectory-attempt records, figures, manuscript, and reproducibility software for all seven nonempty deterministic reset maps of a two-dimensional inertial active Brownian particle.",
+  "creators": [
+    {
+      "name": "Pierpoint, G. Blake",
+      "affiliation": "Department of Biomedical Engineering, Whiting School of Engineering, Johns Hopkins University",
+      "orcid": "0000-0001-8288-8549"
+    },
+    {
+      "name": "Bernard, Olivier",
+      "affiliation": "UFR PhITEM, Universite Grenoble Alpes; Weyl Center for Mathematical Physics",
+      "orcid": "0009-0007-0177-1607"
+    },
+    {
+      "name": "Liu, Yichen",
+      "affiliation": "Department of Computer Science and Engineering, Shanghai Jiao Tong University; Weyl Center for Mathematical Physics",
+      "orcid": "0009-0005-2367-1493"
+    }
+  ],
+  "access_right": "open",
+  "license": "mit-license",
+  "version": "3.1.1",
+  "keywords": [
+    "active Brownian particle",
+    "stochastic resetting",
+    "inertial active matter",
+    "moment closure",
+    "statistical physics",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/blakepi/phasemap-reproducibility",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "The analytic classification is exact. S-021 provides finite-grid deterministic validation. S-071 and S-073 remain quantitatively unresolved and are not pooled, retried, topped up, or represented as quantitative validation."
+}

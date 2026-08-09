@@ -1,0 +1,271 @@
+{
+  "plan_id": "S-021-all-seven-moment-validation-primary-v1",
+  "plan_version": "1.0.0",
+  "task_id": "S-021",
+  "status": "preregistered",
+  "contract_version": "0.3",
+  "validation_registry_schema_version": "1.0.0",
+  "formula_registry_schema_version": "1.0",
+  "scope": {
+    "route": "deterministic_primary_g3_independent_implementation_path",
+    "route_owner": "S-021 lean_worker under root Program Director acceptance",
+    "evidence_tier": "deterministic_exact_matrix_comprehensive_plus_independent_implementation_path_numerical_support_under_CONTRACT_7.1",
+    "stochastic_registry_evidence_tier": "not_applicable",
+    "primary_claim_boundary": "The independently hand-coded deterministic route supports the locked all-seven finite-grid validation. Exact-matrix results remain the comprehensive evidence for the second-order classification.",
+    "excluded_claims": [
+      "The finite grid does not establish continuum-wide formulas.",
+      "The finite grid does not establish exact equivalence.",
+      "The finite grid does not establish event sequencing."
+    ]
+  },
+  "locked_model_and_protocols": {
+    "shared_disclosures": [
+      "CONTRACT_v0.3_SDE",
+      "CONTRACT_v0.3_seven_deterministic_reset_maps",
+      "CONTRACT_v0.3_second_order_observable_hierarchy",
+      "CONTRACT_v0.3_asymptotic_classification_contract"
+    ],
+    "between_reset_sde": {
+      "position": "d r = v dt",
+      "velocity": "M d v = -(v-Pe*u(theta))dt + sqrt(2)dW",
+      "orientation": "d theta = sqrt(2)dW_r",
+      "orientation_vector": "u(theta)=(cos(theta),sin(theta))"
+    },
+    "reset_maps": {
+      "P": "r->0; v and theta retained",
+      "V": "v->0; r and theta retained",
+      "Theta": "theta->0; r and v retained",
+      "PV": "r->0, v->0; theta retained",
+      "PTheta": "r->0, theta->0; v retained",
+      "VTheta": "v->0, theta->0; r retained",
+      "PVTheta": "r->0, v->0, theta->0"
+    },
+    "event_semantics": "Jump generator is rho*(f(R_q(X))-f(X)); no event-sequencing claim is tested by this moment route."
+  },
+  "isolation": {
+    "implementation": "experiment-owned independently hand-coded 28-state Ito+jump linear operator derived directly from locked SDE and reset maps",
+    "operator_source_location": "experiments-owned implementation created after this plan is locked",
+    "production_imports_forbidden": [
+      "phasemap.theory.generator",
+      "phasemap.theory.formula_registry",
+      "phasemap.theory",
+      "phasemap.simulation",
+      "existing moment propagator",
+      "any theory generator, formula module, or registry"
+    ],
+    "prior_result_artifact_reads_forbidden": [
+      "artifacts/raw/S-011-free-moment-matrix-primary-v1.json",
+      "artifacts/raw/S-012-complete-reset-moment-quadrature-primary-v1.json",
+      "artifacts/raw/S-021-all-seven-moment-validation-primary-v1.json",
+      "any prior S-011, S-012, or S-021 result artifact"
+    ],
+    "allowed_comparison_layer": "A separately implemented comparison layer may read T-022 only after the independent operator outputs, residuals, and asymptotic extractions are complete. T-022 must not be imported, parsed, or consulted by the operator builder or propagator.",
+    "numerical_module_file_reads": "forbidden",
+    "required_source_audit": "Static import and file-access audit must demonstrate the forbidden dependencies and result artifacts are absent before canonical execution."
+  },
+  "operator_specification": {
+    "shape": [28, 28],
+    "basis_names": [
+      "one", "r_x", "r_y", "v_x", "v_y", "u_x", "u_y",
+      "rr_xx", "rr_xy", "rr_yy", "vv_xx", "vv_xy", "vv_yy",
+      "rv_xx", "rv_xy", "rv_yx", "rv_yy", "ru_xx", "ru_xy", "ru_yx", "ru_yy",
+      "vu_xx", "vu_xy", "vu_yx", "vu_yy", "uu_xx", "uu_xy", "uu_yy"
+    ],
+    "initial_state": {
+      "one": "1",
+      "u_x": "1",
+      "uu_xx": "1",
+      "all_other_basis_entries": "0"
+    },
+    "construction_rule": "Hand-code the Ito drift/diffusion contribution for every basis entry and the map-specific jump image for every basis entry; form A_q=A_Ito+rho*(J_q-I) without calling any pre-existing generator or formula implementation.",
+    "between_reset_tensor_rows": {
+      "r": "r'=v",
+      "v": "v'=(-v+Pe*u)/M",
+      "u": "u'=-u",
+      "R": "R'=C+C^T",
+      "S": "S'=-2S/M+Pe*(W+W^T)/M+2I/M^2",
+      "C": "C'=S-C/M+Pe*Q/M",
+      "Q": "Q'=W-Q",
+      "W": "W'=-(1+1/M)*W+Pe*U/M",
+      "U": "U'=2I-4U",
+      "one": "one'=0"
+    },
+    "reset_pullback_rule": "For reset flags (p,v,h), J maps r to (1-p)r, velocity to (1-v)velocity, u to (1-h)u+h*e_x*one, R to (1-p)R, S to (1-v)S, C to (1-p)(1-v)C, Q to (1-p)[(1-h)Q+h*r*e_x^T], W to (1-v)[(1-h)W+h*velocity*e_x^T], and U to (1-h)U+h*e_x*e_x^T*one. The seven flags are P=(1,0,0), V=(0,1,0), Theta=(0,0,1), PV=(1,1,0), PTheta=(1,0,1), VTheta=(0,1,1), PVTheta=(1,1,1).",
+    "required_precomparison_checks": [
+      "all 28 basis names occur exactly once",
+      "each map has an explicit hand-coded reset image for every basis entry",
+      "all parameters and times parse from exact rational strings",
+      "all entries, propagated states, extracted coefficients, and residuals are finite"
+    ]
+  },
+  "parameter_grid": {
+    "all_protocols": ["P", "V", "Theta", "PV", "PTheta", "VTheta", "PVTheta"],
+    "cases": [
+      {"id": "active-rho-1-4", "M": "4/5", "Pe": "6/5", "rho": "1/4"},
+      {"id": "active-rho-1-2", "M": "4/5", "Pe": "6/5", "rho": "1/2"},
+      {"id": "active-rho-1", "M": "4/5", "Pe": "6/5", "rho": "1"},
+      {"id": "active-rho-2", "M": "4/5", "Pe": "6/5", "rho": "2"},
+      {"id": "active-rho-4", "M": "4/5", "Pe": "6/5", "rho": "4"},
+      {"id": "passive-approach-pe-3-5", "M": "4/5", "Pe": "3/5", "rho": "1"},
+      {"id": "passive-approach-pe-3-10", "M": "4/5", "Pe": "3/10", "rho": "1"},
+      {"id": "passive", "M": "4/5", "Pe": "0", "rho": "1"},
+      {"id": "resonance", "M": "1", "Pe": "6/5", "rho": "1"},
+      {"id": "above-resonance", "M": "2", "Pe": "6/5", "rho": "1"},
+      {"id": "overdamped-1-4", "M": "1/4", "Pe": "6/5", "rho": "1"},
+      {"id": "overdamped-1-16", "M": "1/16", "Pe": "6/5", "rho": "1"},
+      {"id": "overdamped-1-64", "M": "1/64", "Pe": "6/5", "rho": "1"}
+    ],
+    "rational_parsing": "Parse each decimal-free rational string as numerator/denominator integers directly inside the active mpmath precision context; binary floating-point conversion is prohibited."
+  },
+  "numerical_schedule": {
+    "arithmetic_precisions_decimal_digits": [50, 80],
+    "reference_precision_decimal_digits": 100,
+    "scaled_horizons_H": [64, 80],
+    "transport_probe_times": ["0", "1/2", "2", "8"],
+    "propagation": "mpmath matrix exponential action on the experiment-owned operator; no time-step discretization, adaptivity, retries, precision changes, horizon changes, or tolerance tuning.",
+    "slow_rate_definition": "For reset flags (p,v,h), lambda is the minimum positive rate among 1+rho*h, 4+rho*h, 1/M+rho*v, 2/M+rho*v, 1+1/M+rho*int(v or h), 1+rho*int(p or h), 1/M+rho*int(p or v), and additionally rho when p=1. Each OR contributes rho only once because there is one Poisson event.",
+    "horizon_definition": "For every protocol, T=H/lambda and each H in {64,80} is evaluated at each declared precision.",
+    "position_propagation": "For position-containing maps, propagate the default initial state to T and compare the resulting stationary-field estimate across all four precision/horizon cells.",
+    "transport_algebraic_solve": "From A_q alone, solve the nonconstant internal block for stationary one,v,u,S,W,U with one=1. On Y=(v_x,v_y,u_x,u_y), let K=A[Y,Y], y_infinity be the stationary first moments, and y0=(0,0,1,0); compute b as the velocity projection of -K^(-1)(y0-y_infinity). Set the r coefficient to v_bar, the Q coefficient to v_bar*u_bar^T, and the C coefficient to v_bar*v_bar^T. Solve the stable X=(C,Q) block of A*c0=c1 for the constant raw C and Q terms, then center them with b. Set D=sym(C_centered), the R quadratic coefficient to v_bar*v_bar^T, the R linear coefficient to v_bar*b^T+b*v_bar^T+2D, and the T-022 constant gauge to b*b^T.",
+    "transport_propagation_refinement": "For each T=H/lambda cell propagate m_H=expm(A_q*T)m0. Compare its internal block with the algebraic stationary block; extract b_H=r_H-T*v_bar, Q_centered,H=Q_H-r_H*u_H^T, C_centered,H=C_H-r_H*v_H^T, and D_H=sym(C_centered,H). With d=A_q*m_H and d2=A_q*d, extract raw_ru_linear,H=d_Q, raw_rv_linear,H=d_C, raw_rr_quadratic,H=0.5*d2_R, and raw_rr_linear,H=d_R-2*T*raw_rr_quadratic,H. Compare every extracted quantity across precision/horizon cells and with the algebraic solution.",
+    "transport_reconstruction": "Reconstruct the declared long-time polynomial at probe times from the extracted coefficients. Probe t=0 is polynomial extrapolation, not the physical initial state. Never compare the finite-time R_H itself with T-022 because the physical transient retains an unreported bounded O(1) covariance constant."
+  },
+  "comparison_layers": {
+    "reference": {
+      "implementation": "separate T-022 comparison adapter",
+      "reference_precision_decimal_digits": 100,
+      "rule": "T-022 is accessed only here, after isolated operator completion, and is evaluated from exact rational inputs at 100 dps.",
+      "required_formula_fields": ["r_bar", "v_bar", "u_bar", "R", "S", "C", "Q", "W", "U", "Cov_r", "D", "b", "C_centered", "Q_centered", "Sigma_v", "Sigma_u", "K", "raw_rr_quadratic", "raw_rr_linear", "raw_ru_linear", "raw_rv_linear", "D_eff", "raw_MSD", "speed", "r_dot_v", "centered_variance"],
+      "null_rule": "A T-022 field that is explicitly null for a protocol is recorded as inapplicable; every non-null scalar and every Cartesian matrix component is gating."
+    },
+    "position_maps": {
+      "protocols": ["P", "PV", "PTheta", "PVTheta"],
+      "comparison_target": "stationary full second-order fields: means, raw tensors, derived scalars, and centered spatial variance",
+      "stationary_solution": "Solve A_q*m=0 with one=1 using an independent augmented linear solve at each precision; compare finite H propagation to this route for tail/convergence and compare the stationary field to T-022 in the separate layer."
+    },
+    "transport_maps": {
+      "protocols": ["V", "Theta", "VTheta"],
+      "comparison_target": "extracted asymptotic coefficients and reconstructed transport polynomials for means, raw fields where applicable, centered covariance trace, and D_eff",
+      "prohibited_target": "finite-time raw-moment agreement is not a formula comparison target",
+      "reconstruction_rule": "Use the algebraic solve and fixed propagation refinements in numerical_schedule. At every probe t, set r_bar=v_bar*t+b, R=r_bar*r_bar^T+2D*t, C=r_bar*v_bar^T+C_centered, Q=r_bar*u_bar^T+Q_centered, and Cov_r=2D*t; carry the stationary S, W, U and their centered covariances unchanged. Compare the coefficient vector and every applicable reconstructed T-022 field."
+    }
+  },
+  "invariants_and_residuals": {
+    "constant": "one=1",
+    "orientation_norm": "uu_xx+uu_yy=1",
+    "symmetry_forced_zero_basis_names": ["r_y", "v_y", "u_y", "rr_xy", "vv_xy", "rv_xy", "rv_yx", "ru_xy", "ru_yx", "vu_xy", "vu_yx", "uu_xy"],
+    "stationary_solve_residual": "At dps80 independently solve the constrained stationary system for every position protocol with one=1 and report max_abs(A_q*m); the solve is an internal conditioning check, not a separate scientific route.",
+    "transport_polynomial_residual": "At dps80 evaluate max_abs(A_q*c2), max_abs(A_q*c1-2*c2), max_abs(A_q*c0-c1), and max_abs(m'(t)-A_q*m(t)) for the algebraically solved transport polynomial at every probe time.",
+    "stationary_solve_residual_ceiling": "1e-40",
+    "transport_polynomial_residual_ceiling": "1e-30",
+    "finite_horizon_tail_rule": "Finite-horizon propagation and extraction are gated by the 1e-12 H=64 versus H=80 comparison, not by relabeling their decaying transient as a linear-solve residual."
+  },
+  "classification": {
+    "absolute_tolerance": "1e-12",
+    "cell_error": "absolute difference of an isolated-route output and the 100-dps T-022 comparison-layer reference",
+    "precision_difference": "absolute difference between dps80 and dps50 at fixed H",
+    "horizon_difference": "absolute difference between H=80 and H=64 at fixed precision for stationary fields or fixed declared extraction horizon for transport coefficients",
+    "algebraic_cross_check": "absolute difference between each finest propagation extraction and its constrained stationary or transport-polynomial solve",
+    "validated": "Every applicable cell error, precision difference, horizon difference, algebraic cross-check, invariant discrepancy, and residual is at or below its preregistered ceiling.",
+    "contradicted": "All applicable precision and horizon differences and residuals meet their ceilings, but every corresponding isolated-route/reference cell error exceeds 1e-12.",
+    "unresolved": "Otherwise.",
+    "overall": "Fail closed: contradicted if any required item is contradicted; otherwise unresolved if any item, mandatory limit check, provenance check, or isolation audit is unresolved or fails; validated only if every required item validates.",
+    "scientific_numeric_serialization": "Serialize every finite scientific value, reference, discrepancy, refinement difference, residual, condition quantity, and limit discrepancy as a decimal string with 50 significant digits. Binary JSON floating-point numbers, NaN, and infinity are prohibited for scientific quantities."
+  },
+  "mandatory_limit_checks": {
+    "complete_reset": {
+      "protocol": "PVTheta",
+      "cases": ["active-rho-1-4", "active-rho-1-2", "active-rho-1", "active-rho-2", "active-rho-4", "passive-approach-pe-3-5", "passive-approach-pe-3-10", "passive", "resonance", "above-resonance", "overdamped-1-4", "overdamped-1-16", "overdamped-1-64"],
+      "expected_reference": "Accepted T-012 complete-reset stationary solution, independently evaluated for the full 28-state field and every accepted derived second-order scalar at the exact rational case parameters.",
+      "estimator_and_uncertainty": "all four fixed deterministic precision/horizon cells plus the dps80 constrained stationary solve; stochastic uncertainty is not applicable",
+      "discrepancy": "absolute componentwise difference from T-012 with threshold 1e-12; fitting-window and time-step discretization envelopes are not applicable",
+      "classification": "Validated only when every T-012 component and derived-scalar row, refinement, cross-check, invariant, and residual validates. Contradicted when the numerical route is converged but every cell for any T-012 row lies outside 1e-12. Unresolved otherwise."
+    },
+    "passive": {
+      "cases": ["active-rho-1", "passive-approach-pe-3-5", "passive-approach-pe-3-10", "passive"],
+      "activity_sequence": ["6/5", "3/5", "3/10", "0"],
+      "observables_and_expected_laws": {
+        "P_and_PTheta": "raw_MSD=4/[rho*(1+M*rho)]",
+        "PV_and_PVTheta": "raw_MSD=8/[rho*(1+M*rho)*(2+M*rho)]",
+        "Theta": "D_eff=1",
+        "V_and_VTheta": "D_eff=2/[(1+M*rho)*(2+M*rho)]"
+      },
+      "requirement": "At every activity in the locked sequence, all seven maps validate every applicable T-022 field. For each position map, absolute raw_MSD discrepancy from its listed Pe=0 law must decrease strictly to zero. For each transport map, absolute D_eff discrepancy from its listed Pe=0 law must decrease strictly to zero. At Pe=0, orientation-reset pairs must agree in translational outputs and no active-only cancellation may be used.",
+      "estimator_and_uncertainty": "dps80/H80 deterministic extraction; stochastic uncertainty is not applicable",
+      "discrepancy": "absolute scalar difference; fitting-window and time-step discretization envelopes are not applicable",
+      "classification": "Validated only when all underlying formula rows validate, every declared discrepancy decreases strictly along Pe=6/5,3/5,3/10,0, the terminal discrepancies are at most 1e-12, and endpoint pair equalities validate. Contradicted when any converged formula row is contradicted. Unresolved otherwise."
+    },
+    "rare_reset": {
+      "cases": ["active-rho-1-4", "active-rho-1-2", "active-rho-1"],
+      "parameter_sequence": ["1", "1/2", "1/4"],
+      "position_protocol_observable": "rho*raw_MSD",
+      "position_protocol_expected_law": "4+2*Pe^2 for P, PV, PTheta, and PVTheta",
+      "transport_protocol_observables": ["D_eff", "b_x"],
+      "transport_protocol_expected_laws": {
+        "D_eff": "1+Pe^2/2 for V, Theta, and VTheta",
+        "b_x": "Pe for V, Theta, and VTheta"
+      },
+      "estimator_and_uncertainty": "dps80/H80 deterministic extraction; stochastic uncertainty is not applicable",
+      "discrepancy": "absolute scalar difference; fitting-window and time-step discretization envelopes are not applicable",
+      "acceptance": "After the underlying formula rows validate, each listed absolute discrepancy decreases strictly along rho=1,1/2,1/4. An identically exact-zero discrepancy at all three points validates as an exact finite-M identity rather than failing strictness."
+    },
+    "frequent_reset": {
+      "cases": ["active-rho-1", "active-rho-2", "active-rho-4"],
+      "parameter_sequence": ["1", "2", "4"],
+      "observables_and_expected_laws": {
+        "P": "rho^2*raw_MSD -> 4/M+2*Pe^2/(1+M)",
+        "PTheta": "rho^2*raw_MSD -> 4/M+2*Pe^2",
+        "PV": "rho^3*raw_MSD -> 8/M^2",
+        "PVTheta": "rho^3*raw_MSD -> 8/M^2",
+        "V": "rho^2*D_eff -> (Pe^2+4)/(2*M^2)",
+        "Theta": "D_eff -> 1 and v_bar_x -> Pe",
+        "VTheta": "rho^2*D_eff -> 2/M^2 and rho*v_bar_x -> Pe/M"
+      },
+      "estimator_and_uncertainty": "dps80/H80 deterministic extraction; stochastic uncertainty is not applicable",
+      "discrepancy": "absolute scalar difference; fitting-window and time-step discretization envelopes are not applicable",
+      "acceptance": "After the underlying formula rows validate, each listed absolute discrepancy decreases strictly along rho=1,2,4."
+    },
+    "resonance": {
+      "cases": ["resonance", "above-resonance"],
+      "requirement": "Both M=1 and M=2 active cases validate every applicable T-022 field without substituting a removable-singularity formula or changing the extraction rule.",
+      "estimator_and_uncertainty": "all four fixed deterministic precision/horizon cells; stochastic uncertainty is not applicable",
+      "discrepancy": "absolute field-component difference; fitting-window and time-step discretization envelopes are not applicable"
+    },
+    "strict_overdamped_trend": {
+      "cases": ["overdamped-1-4", "overdamped-1-16", "overdamped-1-64"],
+      "inertia_sequence": ["1/4", "1/16", "1/64"],
+      "position_protocol_observables": ["raw_MSD", "centered_variance"],
+      "position_protocol_expected_law": "R_overdamped=2I/rho+2*Pe^2*U/[rho*(rho+1)]; r_bar=0 for P/PV and Pe*e_x/(rho+1) for PTheta/PVTheta; centered covariance is R_overdamped-r_bar*r_bar^T, with U=I/2 without orientation reset and U=diag((rho+2)/(rho+4),2/(rho+4)) with orientation reset.",
+      "transport_protocol_observable": "D_eff",
+      "transport_protocol_expected_laws": {
+        "V": "1+Pe^2/2",
+        "Theta": "Tr(I+Pe^2*Sigma_u/(1+rho))/2",
+        "VTheta": "Tr(I+Pe^2*Sigma_u/(1+rho))/2"
+      },
+      "estimator_and_uncertainty": "dps80/H80 deterministic extraction; stochastic uncertainty is not applicable",
+      "discrepancy": "absolute scalar difference; fitting-window and time-step discretization envelopes are not applicable",
+      "acceptance": "After finite-M formula rows validate, every nonzero listed discrepancy decreases strictly along M=1/4,1/16,1/64; an identically exact-zero sequence validates as an exact finite-M identity. Velocity-reset maps are disclosed as singular-limit distinctions, not collapsed by direct substitution.",
+      "claim": "Finite-grid numerical support only; it does not replace the contract's singular-limit interpretation."
+    }
+  },
+  "provenance_required": [
+    "clean_source_commit", "contract_hash", "validation_registry_hash", "validation_registry_schema_hash", "T-012_artifact_hash", "T-020_artifact_hash", "T-021_artifact_hash", "T-022_artifact_hash", "S-020_registry_artifact_hash", "complete_reset_formula_module_hash", "formula_registry_module_hash", "position_formula_module_hash", "nonposition_formula_module_hash", "plan_hash", "plan_semantic_hash", "operator_module_hash", "comparison_adapter_hash", "runner_hash", "test_hash", "python_version", "mpmath_version", "sympy_version", "operating_system", "machine_architecture", "basis_names", "locked_reset_maps", "parameter_grid", "exact_rational_strings", "arithmetic_precisions", "scaled_horizons", "transport_probe_times", "operator_matrix_hashes", "reference_values", "all_discrepancies", "all_residuals", "all_classifications", "limit_records", "isolation_audit", "canonical_artifact_hash"
+  ],
+  "execution_controls": {
+    "strict_json_loader": "Reject duplicate keys, nonfinite constants, non-object roots, and nonfinite values nested at any depth.",
+    "canonical_semantics": "UTF-8 JSON with sorted keys, separators comma/colon, ensure_ascii=false, and allow_nan=false.",
+    "plan_semantic_lock": "The runner hardcodes the SHA-256 of canonical semantics of this exact plan; every field is semantic and mutation fails before execution.",
+    "validate_mode": "May validate plan syntax, imports, source manifest, isolation, paths, and synthetic fixtures. It must not evaluate the canonical grid or create the canonical artifact.",
+    "canonical_output_precondition": "The canonical output path must be absent before execution.",
+    "one_shot_clean_source_execution": "Execute exactly once from a clean committed source tree; record the full commit SHA and atomically create the canonical artifact without overwrite."
+  },
+  "canonical_output": "artifacts/raw/S-021-all-seven-moment-validation-primary-v1.json",
+  "required_derived_report": "artifacts/derived/S-021-validation-matrix.md",
+  "stop_rules": {
+    "bl2": "Stop before scientific classification on provenance, plan-lock, import isolation, forbidden artifact access, basis, reset-map construction, nonfinite value, exact-rational parsing, matrix construction, residual, or T-022 comparison-adapter failure.",
+    "bl3": "A converged isolated-route disagreement is contradicted; do not change maps, grid, extraction, precision, horizons, formulas, or tolerance.",
+    "unresolved": "Failed refinement, tail/horizon agreement, residual, mandatory limit check, or strict overdamped trend is unresolved.",
+    "rerun": "Do not rerun, retry, top up, or write an alternate canonical result.",
+    "revision": "Any change requires a new versioned preregistration before another execution."
+  }
+}

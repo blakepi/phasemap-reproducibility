@@ -1,0 +1,247 @@
+{
+  "plan_id": "S-011-free-moment-matrix-primary-v1",
+  "plan_version": "1.0.0",
+  "task_id": "S-011",
+  "status": "preregistered",
+  "contract_version": "0.3",
+  "registry_schema_version": "1.0.0",
+  "approval_record": {
+    "date": "2026-07-22",
+    "directive": "I Approve the preferred deterministic S-011 replacement route."
+  },
+  "scope": {
+    "route": "deterministic_primary_g2_pivot",
+    "route_owner": "S-011 lean_worker under root Program Director acceptance",
+    "process": "free",
+    "reset_rate": "0",
+    "rho_limit_claimed": false,
+    "evidence_tier": "deterministic_primary_under_CONTRACT_7.1",
+    "stochastic_registry_evidence_tier": "not_applicable",
+    "comparison_rule": "absolute deterministic agreement and fixed coarse/fine convergence under CONTRACT 7.1",
+    "ensemble_size": "not_applicable",
+    "seed_policy": "not_applicable",
+    "prior_pilot_reused": false,
+    "prior_pilot_reclassified": false,
+    "prior_pilot_sha256": "82f2ab603fbd5d24075b685e7f03efe6c81a2c47006239a3b7bef524d5792dbb"
+  },
+  "matrix_route": {
+    "builder": "phasemap.theory.generator.second_order_moment_system",
+    "protocol_argument": null,
+    "shape": [
+      28,
+      28
+    ],
+    "parameter_substitution": "exact_rational_before_single_numpy_float64_conversion",
+    "free_symbols_after_substitution": [],
+    "required_basis_names": [
+      "one",
+      "r_x",
+      "r_y",
+      "v_x",
+      "v_y",
+      "u_x",
+      "u_y",
+      "rr_xx",
+      "rr_xy",
+      "rr_yy",
+      "vv_xx",
+      "vv_xy",
+      "vv_yy",
+      "rv_xx",
+      "rv_xy",
+      "rv_yx",
+      "rv_yy",
+      "ru_xx",
+      "ru_xy",
+      "ru_yx",
+      "ru_yy",
+      "vu_xx",
+      "vu_xy",
+      "vu_yx",
+      "vu_yy",
+      "uu_xx",
+      "uu_xy",
+      "uu_yy"
+    ],
+    "initial_state": {
+      "one": "1",
+      "u_x": "1",
+      "uu_xx": "1",
+      "all_other_basis_entries": "0"
+    }
+  },
+  "parameter_cases": [
+    {
+      "id": "central",
+      "inertia": "4/5",
+      "activity": "6/5"
+    },
+    {
+      "id": "resonant",
+      "inertia": "1",
+      "activity": "6/5"
+    },
+    {
+      "id": "above-resonance",
+      "inertia": "2",
+      "activity": "6/5"
+    },
+    {
+      "id": "passive",
+      "inertia": "4/5",
+      "activity": "0"
+    },
+    {
+      "id": "overdamped-support-1",
+      "inertia": "1/2",
+      "activity": "6/5"
+    },
+    {
+      "id": "overdamped-support-2",
+      "inertia": "1/4",
+      "activity": "6/5"
+    },
+    {
+      "id": "overdamped-support-3",
+      "inertia": "1/8",
+      "activity": "6/5"
+    }
+  ],
+  "times": [
+    "0",
+    "1/8",
+    "1/2",
+    "3/2",
+    "3",
+    "6"
+  ],
+  "propagation": {
+    "method_family": "direct_linear_moment_ode_fixed_step_taylor_action",
+    "dtype": "numpy.float64",
+    "taylor_terms": 18,
+    "coarse_max_step": "1/16",
+    "fine_max_step": "1/32",
+    "step_rule": "n=ceil(t/h_max); h=t/n; apply exactly n equal steps",
+    "zero_time_rule": "when t=0 return an exact copy of m0 with n=0 and do not evaluate h=t/n",
+    "term_rule": "term_j=(h/j)*A@term_(j-1)",
+    "adaptive_stepping": false,
+    "retries": false,
+    "order_changes": false,
+    "matrix_exponential": false,
+    "tolerance_tuning": false
+  },
+  "reference_route": {
+    "implementation": "phasemap.theory.free_baseline.free_scalar_moments",
+    "derivation": "T-011 scalar ODE, Laplace recursion, and closed-form exponential laws",
+    "evaluation": "substitute exact rational t, M, and Pe; evaluate with sympy.N at 50 decimal digits; convert once to binary64 for discrepancy calculation",
+    "observables": [
+      "orientation_mean_x",
+      "mean_velocity_x",
+      "mean_position_x",
+      "velocity_dot_orientation",
+      "position_dot_orientation",
+      "mean_squared_speed",
+      "mean_position_dot_velocity",
+      "mean_squared_displacement",
+      "centered_spatial_variance"
+    ]
+  },
+  "invariants": {
+    "constant": "one=1",
+    "orientation_norm": "uu_xx+uu_yy=1",
+    "symmetry_forced_zero_basis_names": [
+      "r_y",
+      "v_y",
+      "u_y",
+      "rr_xy",
+      "vv_xy",
+      "rv_xy",
+      "rv_yx",
+      "ru_xy",
+      "ru_yx",
+      "vu_xy",
+      "vu_yx",
+      "uu_xy"
+    ]
+  },
+  "classification": {
+    "absolute_tolerance": 1e-12,
+    "coarse_error": "abs(S_coarse-R_T011)",
+    "fine_error": "abs(S_fine-R_T011)",
+    "resolution_difference": "abs(S_fine-S_coarse)",
+    "validated": "max(coarse_error,fine_error,resolution_difference)<=1e-12",
+    "contradicted": "resolution_difference<=1e-12 and coarse_error>1e-12 and fine_error>1e-12",
+    "unresolved": "otherwise",
+    "overall": "contradicted if any comparison or invariant is contradicted; otherwise unresolved if any is unresolved or the overdamped-support trend fails; validated only if every comparison and invariant validates and the overdamped-support trend passes"
+  },
+  "overdamped_support": {
+    "inertia_sequence": [
+      "1/2",
+      "1/4",
+      "1/8"
+    ],
+    "activity": "6/5",
+    "times": [
+      "1/2",
+      "3/2",
+      "3"
+    ],
+    "observable": "mean_squared_displacement",
+    "reference": "phasemap.theory.free_baseline.overdamped_mean_squared_displacement",
+    "resolution": "use fine-resolution MSD only after both coarse and fine finite-inertia T-011 comparisons validate",
+    "acceptance": "fine-resolution absolute discrepancy decreases strictly along the declared inertia sequence at every declared time",
+    "claim": "finite numerical support only; T-011 retains the exact singular-limit proof"
+  },
+  "independence": {
+    "shared": [
+      "contract_v0.3",
+      "T-010_generator_and_basis",
+      "parameters",
+      "initial_state"
+    ],
+    "not_reused": [
+      "T-011_scalar_ode_implementation_in_numerical_route",
+      "T-011_laplace_recursion_in_numerical_route",
+      "T-011_closed_form_exponentials_in_numerical_route",
+      "S-011_stochastic_production_code",
+      "S-011_stochastic_pilot_trajectories"
+    ],
+    "basis_for_material_independence": "direct 28-state numerical moment-ODE integration versus scalar Laplace/closed-form analysis"
+  },
+  "provenance_required": [
+    "clean_source_commit",
+    "contract_hash",
+    "validation_registry_hash",
+    "T-010_artifact_hash",
+    "T-011_artifact_hash",
+    "generator_hash",
+    "reference_hash",
+    "plan_hash",
+    "runner_hash",
+    "test_hash",
+    "python_version",
+    "numpy_version",
+    "sympy_version",
+    "operating_system",
+    "machine_architecture",
+    "float64_metadata",
+    "basis_names",
+    "parameter_cases",
+    "times",
+    "matrix_hashes",
+    "initial_state_hash",
+    "taylor_order",
+    "step_counts",
+    "all_discrepancies",
+    "all_classifications",
+    "canonical_artifact_hash"
+  ],
+  "canonical_output": "artifacts/raw/S-011-free-moment-matrix-primary-v1.json",
+  "source_commit_policy": "execute only from a clean committed implementation and record that commit",
+  "stop_rules": {
+    "bl2": "stop before classification on provenance, basis, nonfinite, or matrix-construction failure",
+    "bl3": "a converged analytic disagreement is contradicted; do not change formulas or tolerance",
+    "unresolved": "failed coarse/fine convergence is unresolved",
+    "revision": "any change requires a new versioned preregistration; do not alter steps, order, points, or tolerance after execution"
+  }
+}

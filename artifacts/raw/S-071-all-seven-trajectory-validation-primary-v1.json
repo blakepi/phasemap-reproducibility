@@ -1,0 +1,2782 @@
+{
+  "attempt_sentinel": "artifacts/raw/S-071-all-seven-trajectory-validation-primary-v1.attempt.json",
+  "comparisons": [
+    {
+      "B_disc": 0.014198213839160536,
+      "B_window": 0.0015458532990133556,
+      "characteristic_scale": 3.3,
+      "classification": "validated",
+      "comparison_id": "MAIN_P_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.0010122578144100992,
+        0.025947693105264277
+      ],
+      "estimand_interval": [
+        3.2989877421855898,
+        3.325947693105264
+      ],
+      "estimate": 3.312467717645427,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "primary",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.0495,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.014073243932305884,
+        "standard_error": 4.8516377496305456e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "P",
+      "quantile": 2.5758293035,
+      "reference": 3.3,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "validated",
+      "sign_classification": "validated",
+      "standard_error": 0.005233256505592507,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.006762764179928299,
+      "B_window": 0.01465842773269399,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.015430173989718948,
+          0.014769428312498962,
+          0.014630801800538997,
+          0.014950250563457109
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.014948769700632115,
+        "maximum_relative_deviation": 0.03220360596407313
+      },
+      "characteristic_scale": 3.3777777777777778,
+      "classification": "unresolved",
+      "comparison_id": "H1_P_centered_variance_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.04484218722628246,
+        0.032168770866039795
+      ],
+      "estimand_interval": [
+        3.3329355905514952,
+        3.4099465486438176
+      ],
+      "estimate": 3.3714410695976564,
+      "estimator": "late-window mean centered covariance trace recomputed from complete trajectories",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.05066666666666667,
+      "observable": "centered_variance",
+      "observable_class": "stationary_variance",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            7.032624177544557e-05,
+            6.832409474907876e-05,
+            6.727751668294441e-05,
+            7.177789426164117e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 6.953037401027977e-05,
+          "maximum_relative_deviation": 0.03240105291253414
+        },
+        "classification": "validated",
+        "estimate": -0.006583665805069305,
+        "interval": [
+          -0.006762764179928299,
+          -0.006404567430210312
+        ],
+        "standard_error": 6.953037401027977e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "centered_variance_reference"
+      ],
+      "protocol": "P",
+      "quantile": 2.5758293035,
+      "reference": 3.3777777777777778,
+      "registered_observable": "stationary_centered_spatial_covariance_trace",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.014948769700632115,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.013233378437544326,
+      "B_window": 0.0007322483785525691,
+      "characteristic_scale": 2.181318681318681,
+      "classification": "unresolved",
+      "comparison_id": "MAIN_V_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        0.0031321995122138846,
+        0.024296939660429895
+      ],
+      "estimand_interval": [
+        2.184450880830895,
+        2.205615620979111
+      ],
+      "estimate": 2.195033250905003,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "primary",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.03271978021978022,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.013132062499678344,
+        "standard_error": 3.933332761154445e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "V",
+      "quantile": 2.5758293035,
+      "reference": 2.181318681318681,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.004108335152383286,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 3.144334662749259e-05,
+      "B_window": 0.0011487752020710594,
+      "characteristic_scale": 1.044346370060882,
+      "classification": "unresolved",
+      "comparison_id": "H2_V_v_x_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.0037841186384220487,
+        0.005164705543667001
+      ],
+      "estimand_interval": [
+        -0.0037841186384220487,
+        0.005164705543667001
+      ],
+      "estimate": 0.0006902934526224762,
+      "estimator": "trajectory mean of late-window time-averaged velocity x component",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval; relative margin disabled",
+      "margin": 0.00522173185030441,
+      "observable": "v_x",
+      "observable_class": "symmetry_forced_zero",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": 2.195847645546788e-06,
+        "standard_error": 1.1354595175311003e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference"
+      ],
+      "protocol": "V",
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "registered_observable": "late_mean_velocity_x",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.0017370763213869639,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0008074243198280876,
+      "B_window": 0.0037442177453583803,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.0056972872837063255,
+          0.0057150793766927955,
+          0.005780498553786742,
+          0.005399842444094066
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.0056537746386799755,
+        "maximum_relative_deviation": 0.044913745385011736
+      },
+      "characteristic_scale": 1.0,
+      "classification": "unresolved",
+      "comparison_id": "H1_V_D_eff_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.014875712870527013,
+        0.014250603908866998
+      ],
+      "estimand_interval": [
+        0.6237079257131115,
+        0.6528342424925055
+      ],
+      "estimate": 0.6382710841028085,
+      "estimator": "one quarter of late-window least-squares centered-covariance slope",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.011385836385836385,
+      "observable": "D_eff",
+      "observable_class": "d_eff",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            4.0387692244054266e-05,
+            4.121695834145428e-05,
+            4.303916133612365e-05,
+            4.091471779794477e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 4.138051225516178e-05,
+          "maximum_relative_deviation": 0.04008285520329622
+        },
+        "classification": "validated",
+        "estimate": 0.000700835183767401,
+        "interval": [
+          0.0005942460477067143,
+          0.0008074243198280876
+        ],
+        "standard_error": 4.138051225516178e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "D_eff_reference",
+        "D_eff_declared_class_scale"
+      ],
+      "protocol": "V",
+      "quantile": 2.5758293035,
+      "reference": 0.6385836385836385,
+      "registered_observable": "centered_effective_diffusion",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.0056537746386799755,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.01543491752362225,
+      "B_window": 0.0027958646306927015,
+      "characteristic_scale": 3.275384615384615,
+      "classification": "unresolved",
+      "comparison_id": "MAIN_Theta_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        0.005877546281314422,
+        0.0329173835511919
+      ],
+      "estimand_interval": [
+        3.28126216166593,
+        3.3083019989358076
+      ],
+      "estimate": 3.2947820803008687,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "primary",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.04913076923076923,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.015306367342013901,
+        "standard_error": 4.990632781204777e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "Theta",
+      "quantile": 2.5758293035,
+      "reference": 3.2753846153846156,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.005248763424101149,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0023608110774560663,
+      "B_window": 0.0017633592352450655,
+      "characteristic_scale": 1.3430733985326915,
+      "classification": "unresolved",
+      "comparison_id": "H2_Theta_v_x_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.0016320264509211962,
+        0.00911412994251448
+      ],
+      "estimand_interval": [
+        0.5983679735490788,
+        0.6091141299425145
+      ],
+      "estimate": 0.6037410517457966,
+      "estimator": "trajectory mean of late-window time-averaged velocity x component",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.012715366992663457,
+      "observable": "v_x",
+      "observable_class": "v_mean",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.0023273131870392245,
+        "standard_error": 1.3004701193252717e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference"
+      ],
+      "protocol": "Theta",
+      "quantile": 2.5758293035,
+      "reference": 0.6,
+      "registered_observable": "late_mean_velocity_x",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.0020859605057745776,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0008230420394770308,
+      "B_window": 0.008134098818767699,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.011386507015416828,
+          0.010964830811042582,
+          0.011454612149765057,
+          0.011652929436484154
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.011375795160149643,
+        "maximum_relative_deviation": 0.03612620861411983
+      },
+      "characteristic_scale": 1.27,
+      "classification": "unresolved",
+      "comparison_id": "H1_Theta_D_eff_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.01801734232697707,
+        0.04058687072127678
+      ],
+      "estimand_interval": [
+        1.2519826576730229,
+        1.3105868707212769
+      ],
+      "estimate": 1.2812847641971499,
+      "estimator": "one quarter of late-window least-squares centered-covariance slope",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.01905,
+      "observable": "D_eff",
+      "observable_class": "d_eff",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            6.04764773700193e-05,
+            5.7788292956514146e-05,
+            5.6671691751855464e-05,
+            5.503808892162325e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 5.749474009975883e-05,
+          "maximum_relative_deviation": 0.0518610444205309
+        },
+        "classification": "validated",
+        "estimate": 0.0006749454031309554,
+        "interval": [
+          0.0005268487667848801,
+          0.0008230420394770308
+        ],
+        "standard_error": 5.749474009975883e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "D_eff_reference",
+        "D_eff_declared_class_scale"
+      ],
+      "protocol": "Theta",
+      "quantile": 2.5758293035,
+      "reference": 1.27,
+      "registered_observable": "centered_effective_diffusion",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.011375795160149643,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.013250062482512977,
+      "B_window": 0.0007322483785525691,
+      "characteristic_scale": 2.181318681318681,
+      "classification": "unresolved",
+      "comparison_id": "MAIN_PV_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        0.0013895641291720318,
+        0.02603957504347175
+      ],
+      "estimand_interval": [
+        2.182708245447853,
+        2.207358256362153
+      ],
+      "estimate": 2.195033250905003,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "central_disputed",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.03271978021978022,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.013132062499678344,
+        "standard_error": 3.933332761154445e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "PV",
+      "quantile": 3.0,
+      "reference": 2.181318681318681,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.004108335152383286,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.0009442955302255611,
+      "B_window": 0.009143848823486511,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.012115090522144632,
+          0.012379457973177596,
+          0.012272522223778427,
+          0.012199353507782156
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.01226547258897688,
+        "maximum_relative_deviation": 0.012260601109442708
+      },
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "unresolved",
+      "comparison_id": "H1_PV_centered_variance_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.038309953107963354,
+        0.024877574323961968
+      ],
+      "estimand_interval": [
+        2.2083322935342835,
+        2.2715198209662084
+      ],
+      "estimate": 2.239926057250246,
+      "estimator": "late-window mean centered covariance trace recomputed from complete trajectories",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.0336996336996337,
+      "observable": "centered_variance",
+      "observable_class": "stationary_variance",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            4.691986068963252e-05,
+            4.297384866673557e-05,
+            4.567400082960967e-05,
+            4.612867059001461e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 4.548632563453307e-05,
+          "maximum_relative_deviation": 0.055235874358909184
+        },
+        "classification": "validated",
+        "estimate": 0.0008271305197475876,
+        "interval": [
+          0.000709965509269614,
+          0.0009442955302255611
+        ],
+        "standard_error": 4.548632563453307e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "centered_variance_reference"
+      ],
+      "protocol": "PV",
+      "quantile": 2.5758293035,
+      "reference": 2.2466422466422467,
+      "registered_observable": "stationary_centered_spatial_covariance_trace",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.01226547258897688,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0009632801493578091,
+      "B_window": 0.009136125342229295,
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_raw_msd_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.043297657354448016,
+        0.029880533322169778
+      ],
+      "estimand_interval": [
+        2.2033445892877985,
+        2.2765227799644165
+      ],
+      "estimate": 2.2399336846261075,
+      "estimator": "trajectory mean of late-window time-averaged squared position",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.0336996336996337,
+      "observable": "raw_msd",
+      "observable_class": "rr",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": 0.0008271195973065692,
+        "standard_error": 4.538685068374662e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "raw_MSD_reference_diagonal_trace_departure"
+      ],
+      "protocol": "PV",
+      "quantile": 3.0,
+      "reference": 2.2466422466422467,
+      "registered_observable": "raw_mean_squared_displacement",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.012196365112769631,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.004705287406389585,
+      "B_window": 0.003030918502329616,
+      "characteristic_scale": 2.2137395291317596,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_r_dot_v_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.017684673835584454,
+        0.00542862272515141
+      ],
+      "estimand_interval": [
+        1.1056364494855389,
+        1.1287497460462748
+      ],
+      "estimate": 1.1171930977659068,
+      "estimator": "trajectory mean of late-window time-averaged position dot velocity",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.02230190887887003,
+      "observable": "r_dot_v",
+      "observable_class": "r_dot_v",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": 0.004637268984139891,
+        "standard_error": 2.2672807416564698e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "raw_MSD_reference",
+        "speed_reference"
+      ],
+      "protocol": "PV",
+      "quantile": 3.0,
+      "reference": 1.1233211233211233,
+      "registered_observable": "mean_position_dot_velocity",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.0038522160934559772,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.01543491752362225,
+      "B_window": 0.0027958646306927015,
+      "characteristic_scale": 3.275384615384615,
+      "classification": "unresolved",
+      "comparison_id": "MAIN_PTheta_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        0.005877546281314422,
+        0.0329173835511919
+      ],
+      "estimand_interval": [
+        3.28126216166593,
+        3.3083019989358076
+      ],
+      "estimate": 3.2947820803008687,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "primary",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.04913076923076923,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.015306367342013901,
+        "standard_error": 4.990632781204777e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "PTheta",
+      "quantile": 2.5758293035,
+      "reference": 3.2753846153846156,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.005248763424101149,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.005660147379169267,
+      "B_window": 0.010346734711448313,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.013412095213782156,
+          0.012979319713810871,
+          0.013026696067932225,
+          0.013337943769579337
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.013186489522412683,
+        "maximum_relative_deviation": 0.017108851524586362
+      },
+      "characteristic_scale": 2.982222222222222,
+      "classification": "unresolved",
+      "comparison_id": "H1_PTheta_centered_variance_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.03389178946916302,
+        0.034040502775089604
+      ],
+      "estimand_interval": [
+        2.948330432753059,
+        3.0162627249973117
+      ],
+      "estimate": 2.9822965788751854,
+      "estimator": "late-window mean centered covariance trace recomputed from complete trajectories",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.04473333333333333,
+      "observable": "centered_variance",
+      "observable_class": "stationary_variance",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            6.258270232438236e-05,
+            6.158838041158383e-05,
+            6.540227680000907e-05,
+            6.439098347524585e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 6.346804944566478e-05,
+          "maximum_relative_deviation": 0.0304756073526443
+        },
+        "classification": "validated",
+        "estimate": -0.005496664517571137,
+        "interval": [
+          -0.005660147379169267,
+          -0.005333181655973007
+        ],
+        "standard_error": 6.346804944566478e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "centered_variance_reference"
+      ],
+      "protocol": "PTheta",
+      "quantile": 2.5758293035,
+      "reference": 2.982222222222222,
+      "registered_observable": "stationary_centered_spatial_covariance_trace",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.013186489522412683,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.013239815650204463,
+      "B_window": 0.0018536156638657708,
+      "characteristic_scale": 2.1813186813186816,
+      "classification": "unresolved",
+      "comparison_id": "MAIN_VTheta_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        0.006558385223228307,
+        0.027738425303179787
+      ],
+      "estimand_interval": [
+        2.1878770665419096,
+        2.2090571066218607
+      ],
+      "estimate": 2.198467086581885,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "primary",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.03271978021978022,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.01313870891019376,
+        "standard_error": 3.925211188230566e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "VTheta",
+      "quantile": 2.5758293035,
+      "reference": 2.181318681318681,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.004111305056428301,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.002061827740669651,
+      "B_window": 0.0005720821360413741,
+      "characteristic_scale": 1.0631179521670115,
+      "classification": "unresolved",
+      "comparison_id": "H2_VTheta_v_x_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.0009478202450638462,
+        0.007497568140244881
+      ],
+      "estimand_interval": [
+        0.33238551308826947,
+        0.3408309014735782
+      ],
+      "estimate": 0.33660820728092383,
+      "estimator": "trajectory mean of late-window time-averaged velocity x component",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.008648923094168391,
+      "observable": "v_x",
+      "observable_class": "v_mean",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.002033841161537552,
+        "standard_error": 1.0865075218327283e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference"
+      ],
+      "protocol": "VTheta",
+      "quantile": 2.5758293035,
+      "reference": 0.3333333333333333,
+      "registered_observable": "late_mean_velocity_x",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.0016393532703881531,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0007506226279992477,
+      "B_window": 0.002578887422490239,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.0047827887790509345,
+          0.004614257388758853,
+          0.0046183251804470995,
+          0.00468082765130148
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.004675832390978198,
+        "maximum_relative_deviation": 0.02287429897596495
+      },
+      "characteristic_scale": 1.0,
+      "classification": "unresolved",
+      "comparison_id": "H1_VTheta_D_eff_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.011894358864609808,
+        0.012193933317262415
+      ],
+      "estimand_interval": [
+        0.4972970669934827,
+        0.5213853591753549
+      ],
+      "estimate": 0.5093412130844188,
+      "estimator": "one quarter of late-window least-squares centered-covariance slope",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.010091914258580924,
+      "observable": "D_eff",
+      "observable_class": "d_eff",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            3.851914529726493e-05,
+            4.0769168634938786e-05,
+            3.910320899480884e-05,
+            3.912421432252245e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 3.939640051692815e-05,
+          "maximum_relative_deviation": 0.03484501375755826
+        },
+        "classification": "validated",
+        "estimate": 0.0006491442250953217,
+        "interval": [
+          0.0005476658221913956,
+          0.0007506226279992477
+        ],
+        "standard_error": 3.939640051692815e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "D_eff_reference",
+        "D_eff_declared_class_scale"
+      ],
+      "protocol": "VTheta",
+      "quantile": 2.5758293035,
+      "reference": 0.5091914258580925,
+      "registered_observable": "centered_effective_diffusion",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.004675832390978198,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.013256465245840676,
+      "B_window": 0.0018536156638657708,
+      "characteristic_scale": 2.1813186813186816,
+      "classification": "unresolved",
+      "comparison_id": "MAIN_PVTheta_speed_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        0.004814490093919144,
+        0.02948232043248895
+      ],
+      "estimand_interval": [
+        2.1861331714126004,
+        2.21080100175117
+      ],
+      "estimate": 2.198467086581885,
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "evidence_tier": "central_disputed",
+      "headline": "H1/H3/H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.03271978021978022,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.01313870891019376,
+        "standard_error": 3.925211188230566e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "protocol": "PVTheta",
+      "quantile": 3.0,
+      "reference": 2.181318681318681,
+      "registered_observable": "mean_squared_speed",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.004111305056428301,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.0014205666352190777,
+      "B_window": 0.009480616821614607,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.01146283588383525,
+          0.011259847862700194,
+          0.011774105442015383,
+          0.010744877218049793
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.011313088128663648,
+        "maximum_relative_deviation": 0.05022597757142853
+      },
+      "characteristic_scale": 2.1355311355311355,
+      "classification": "unresolved",
+      "comparison_id": "H1_PVTheta_centered_variance_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.038044241929557104,
+        0.0202369259002225
+      ],
+      "estimand_interval": [
+        2.0974868936015785,
+        2.155768061431358
+      ],
+      "estimate": 2.126627477516468,
+      "estimator": "late-window mean centered covariance trace recomputed from complete trajectories",
+      "evidence_tier": "primary",
+      "headline": "H1",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.032032967032967034,
+      "observable": "centered_variance",
+      "observable_class": "stationary_variance",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            4.5249276558078874e-05,
+            4.348057804735352e-05,
+            4.3807012133485496e-05,
+            4.460512904149002e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 4.428182805557813e-05,
+          "maximum_relative_deviation": 0.021847528545716262
+        },
+        "classification": "validated",
+        "estimate": 0.0013065042049009712,
+        "interval": [
+          0.0011924417745828647,
+          0.0014205666352190777
+        ],
+        "standard_error": 4.428182805557813e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "parent_scale_inputs": [
+        "centered_variance_reference"
+      ],
+      "protocol": "PVTheta",
+      "quantile": 2.5758293035,
+      "reference": 2.1355311355311355,
+      "registered_observable": "stationary_centered_spatial_covariance_trace",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.011313088128663648,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0009750808726427445,
+      "B_window": 0.009900398436285762,
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "unresolved",
+      "comparison_id": "H4_PVTheta_raw_msd_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.043217391773709785,
+        0.029504954051755156
+      ],
+      "estimand_interval": [
+        2.203424854868537,
+        2.276147200694002
+      ],
+      "estimate": 2.2397860277812693,
+      "estimator": "trajectory mean of late-window time-averaged squared position",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.0336996336996337,
+      "observable": "raw_msd",
+      "observable_class": "rr",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": 0.000837841217654224,
+        "standard_error": 4.574655166284017e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "raw_MSD_reference_diagonal_trace_departure"
+      ],
+      "protocol": "PVTheta",
+      "quantile": 3.0,
+      "reference": 2.2466422466422467,
+      "registered_observable": "raw_mean_squared_displacement",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.012120390970910824,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.004733526596717441,
+      "B_window": 0.0013798071769619558,
+      "characteristic_scale": 2.2137395291317596,
+      "classification": "validated",
+      "comparison_id": "H4_PVTheta_r_dot_v_direct",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.01553993292643111,
+        0.007615401506614472
+      ],
+      "estimand_interval": [
+        1.1077811903946921,
+        1.1309365248277379
+      ],
+      "estimate": 1.119358857611215,
+      "estimator": "trajectory mean of late-window time-averaged position dot velocity",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "margin": 0.02230190887887003,
+      "observable": "r_dot_v",
+      "observable_class": "r_dot_v",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": 0.0046653538604048,
+        "standard_error": 2.2724245437547142e-05
+      },
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "parent_scale_inputs": [
+        "raw_MSD_reference",
+        "speed_reference"
+      ],
+      "protocol": "PVTheta",
+      "quantile": 3.0,
+      "reference": 1.1233211233211233,
+      "registered_observable": "mean_position_dot_velocity",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_direct_reference",
+      "scientific_discrepancy_classification": "validated",
+      "sign_classification": "validated",
+      "standard_error": 0.003859222405507597,
+      "tier": "central_disputed"
+    }
+  ],
+  "configuration": {
+    "case": {
+      "M": 0.8,
+      "Pe": 1.2,
+      "case_code": 7001,
+      "id": "active_core",
+      "protocols": [
+        "P",
+        "V",
+        "Theta",
+        "PV",
+        "PTheta",
+        "VTheta",
+        "PVTheta"
+      ],
+      "purpose": "All-seven finite active case for the minimal spatial classifier, internal-sector identities, drift, contracted-observation degeneracy, and separating spatial witness.",
+      "rho": 1.0
+    },
+    "sampling": {
+      "continuous_polling_allowed": false,
+      "design": "fixed_nonadaptive_no_pilot",
+      "fixed_count_rule": "Run exactly the declared count once. If a required comparison is unresolved, do not add trajectories; stop and record unresolved.",
+      "interim_evaluations_planned": 0,
+      "main_compute_cap_per_protocol": 65536,
+      "main_count_per_protocol": 65536,
+      "maximum_final_evaluations": 1,
+      "maximum_interim_evaluations_allowed_by_contract": 1,
+      "nonpositive_projection_denominator_outcome": "unresolved",
+      "pilot_reused_in_confirmation": false,
+      "pilot_size": 0,
+      "projection_formula_if_a_future_version_becomes_adaptive": "ceil(N0 * (q * SE0 / (epsilon - abs(delta0) - B_window0 - B_disc0))^2)",
+      "repeated_top_up_allowed": false,
+      "sample_cap_exceeded_outcome": "unresolved",
+      "stop_at_first_pass_allowed": false,
+      "unpaired_compute_cap_per_required_protocol": 16384,
+      "unpaired_count_per_required_protocol": 16384,
+      "unpaired_protocols": [
+        "V",
+        "Theta",
+        "PV",
+        "PTheta",
+        "VTheta",
+        "PVTheta"
+      ]
+    },
+    "schedule": {
+      "adaptive_time_step": false,
+      "bernoulli_resetting": false,
+      "chunk_size": 4096,
+      "coarse_step": 0.015625,
+      "coarse_to_fine_ratio": 2,
+      "end_time": 32.0,
+      "event_order": "integrate segment ending at event; record pre-reset state; reset at the same time; record post-reset state",
+      "fine_coarse_rule": "Every coarse Wiener increment is the sum of the corresponding fine increments. Both paths use the same sampled reset times and are flushed at every reset before applying the map.",
+      "fine_step": 0.0078125,
+      "fixed_work": true,
+      "max_reset_events_per_trajectory": 256,
+      "record_step": 2.0
+    },
+    "seed_policy": {
+      "bootstrap_base_seed": 70072001,
+      "chunk_stream_rule": "For chunk index k starting at zero, use stream_code=declared_protocol_stream_code+k. Chunk boundaries and order are fixed.",
+      "clean_room_reserved_base_seed": 70079999,
+      "clean_room_rule": "The reserved seed is not used by production and does not authorize clean-room execution.",
+      "component_codes": {
+        "reset_clock": 1,
+        "rotational_wiener": 3,
+        "translational_wiener": 2
+      },
+      "generator": "numpy.random.Generator(PCG64(SeedSequence([base_seed,case_code,stream_code,component_code])))",
+      "main_base_seed": 70070001,
+      "main_protocol_coupling": "All seven main runs use the same stream code, so reset clocks and Wiener increments are shared across protocols and disclosed as common random numbers.",
+      "main_protocol_stream_code": 0,
+      "unpaired_base_seeds": {
+        "PTheta": 70071501,
+        "PV": 70071401,
+        "PVTheta": 70071701,
+        "Theta": 70071301,
+        "V": 70071201,
+        "VTheta": 70071601
+      },
+      "unpaired_protocol_stream_code": 1,
+      "unpaired_rule": "Each of the six protocols needed by H2-H4 uses a distinct base seed. No reset clock or Wiener stream is shared across the protocols being confirmed."
+    }
+  },
+  "contract_version": "0.4",
+  "overall_classification": "unresolved",
+  "paired_headline_comparisons": [
+    {
+      "B_disc": 0.002358614382026572,
+      "B_window": 0.0006145840331739372,
+      "characteristic_scale": 1.3430733985326915,
+      "classification": "validated",
+      "comparison_id": "H2_Theta_minus_V_v_x",
+      "comparison_kind": "paired_protocol_common_random_numbers",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.0009229078118200701,
+        0.007024424398168347
+      ],
+      "estimand_interval": [
+        0.59907709218818,
+        0.6070244243981683
+      ],
+      "estimate": 0.6030507582931741,
+      "estimator": "mean matched trajectory-level protocol difference",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "margin": 0.012715366992663457,
+      "observable": "v_x",
+      "observable_class": "v_mean",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.002329509034684771,
+        "standard_error": 1.1299408428288672e-05
+      },
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "parent_scale_inputs": [
+        "left_S_xx_reference",
+        "right_S_xx_reference"
+      ],
+      "protocols": [
+        "Theta",
+        "V"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.6,
+      "registered_observable": "late_mean_velocity_x_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_common_random_number_same_estimand_contrast",
+      "scientific_discrepancy_classification": "validated",
+      "sign_classification": "validated",
+      "standard_error": 0.0015426744697697352,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0020583765396903334,
+      "B_window": 0.000753274717130159,
+      "characteristic_scale": 1.0631179521670115,
+      "classification": "validated",
+      "comparison_id": "H2_VTheta_minus_V_v_x",
+      "comparison_kind": "paired_protocol_common_random_numbers",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -1.3805910977179956e-05,
+        0.0051829669009133186
+      ],
+      "estimand_interval": [
+        0.33331952742235615,
+        0.3385163002342466
+      ],
+      "estimate": 0.3359179138283014,
+      "estimator": "mean matched trajectory-level protocol difference",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "margin": 0.008648923094168391,
+      "observable": "v_x",
+      "observable_class": "v_mean",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -0.0020360370091830997,
+        "standard_error": 8.67275268469033e-06
+      },
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "parent_scale_inputs": [
+        "left_S_xx_reference",
+        "right_S_xx_reference"
+      ],
+      "protocols": [
+        "VTheta",
+        "V"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.3333333333333333,
+      "registered_observable": "late_mean_velocity_x_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_common_random_number_same_estimand_contrast",
+      "scientific_discrepancy_classification": "validated",
+      "sign_classification": "validated",
+      "standard_error": 0.0010087572194378716,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.00010872111571709342,
+      "B_window": 0.002074138198919499,
+      "characteristic_scale": 2.181318681318681,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_speed",
+      "comparison_kind": "paired_protocol_common_random_numbers",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.01258990910173051,
+        0.0057222377479655695
+      ],
+      "estimand_interval": [
+        -0.01258990910173051,
+        0.0057222377479655695
+      ],
+      "estimate": -0.0034338356768824694,
+      "estimator": "mean matched trajectory-level protocol difference",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "margin": 0.010906593406593406,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": 6.646410515416957e-06,
+        "standard_error": 3.402490173389216e-05
+      },
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 3.0,
+      "reference_difference": 0.0,
+      "registered_observable": "named_restricted_contraction_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "main_common_random_number_same_estimand_contrast",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.0030520244749493467,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.0001607645523960164,
+      "B_window": 0.0007642730940567897,
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_raw_msd",
+      "comparison_kind": "paired_protocol_common_random_numbers",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.025992197518503735,
+        0.026287511208180965
+      ],
+      "estimand_interval": [
+        -0.025992197518503735,
+        0.026287511208180965
+      ],
+      "estimate": 0.00014765684483861543,
+      "estimator": "mean matched trajectory-level protocol difference",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "margin": 0.011233211233211233,
+      "observable": "raw_msd",
+      "observable_class": "rr",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -1.0721620347655675e-05,
+        "standard_error": 5.001431068278691e-05
+      },
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 3.0,
+      "reference_difference": 0.0,
+      "registered_observable": "named_restricted_contraction_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "main_common_random_number_same_estimand_contrast",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.008713284787780783,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 9.668973271899814e-05,
+      "B_window": 0.0016511113253677816,
+      "characteristic_scale": 2.2137395291317596,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_r_dot_v",
+      "comparison_kind": "paired_protocol_common_random_numbers",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.011803099773507932,
+        0.007471580082891369
+      ],
+      "estimand_interval": [
+        -0.011803099773507932,
+        0.007471580082891369
+      ],
+      "estimate": -0.002165759845308281,
+      "estimator": "mean matched trajectory-level protocol difference",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "margin": 0.011068697645658798,
+      "observable": "r_dot_v",
+      "observable_class": "r_dot_v",
+      "paired_fine_coarse": {
+        "classification": "validated",
+        "estimate": -2.8084876264909148e-05,
+        "standard_error": 2.2868285484696333e-05
+      },
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 3.0,
+      "reference_difference": 0.0,
+      "registered_observable": "named_restricted_contraction_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "main_common_random_number_same_estimand_contrast",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.003212446642733217,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.0006067991492849476,
+      "B_window": 0.001169249978741238,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.008376131864844108,
+          0.008059079929879323,
+          0.008581005969164423,
+          0.008418342525439585
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.008359914372208368,
+        "maximum_relative_deviation": 0.03598534972189863
+      },
+      "characteristic_scale": 0.11111111111111116,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_centered_variance",
+      "comparison_kind": "paired_protocol_common_random_numbers",
+      "compute_cap": 65536,
+      "compute_cap_role": "main",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.01934624379201851,
+        0.02372118103735173
+      ],
+      "estimand_interval": [
+        0.09176486731909266,
+        0.1348322921484629
+      ],
+      "estimate": 0.11329857973377777,
+      "estimator": "difference of late-window centered covariance traces",
+      "evidence_tier": "primary",
+      "headline": "H4",
+      "interval_construction": "matched whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.0016666666666666674,
+      "observable": "centered_variance",
+      "observable_class": "stationary_variance",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            4.791621627841551e-05,
+            5.211669645306424e-05,
+            4.859323597910758e-05,
+            4.917114705080763e-05
+          ],
+          "classification": "validated",
+          "full_standard_error": 4.9469684950947655e-05,
+          "maximum_relative_deviation": 0.05350774933661424
+        },
+        "classification": "validated",
+        "estimate": -0.00047937368515338363,
+        "interval": [
+          -0.0006067991492849476,
+          -0.0003519482210218197
+        ],
+        "standard_error": 4.9469684950947655e-05
+      },
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "parent_scale_inputs": [
+        "PV_minus_PVTheta_centered_variance_reference_difference"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.11111111111111116,
+      "registered_observable": "stationary_centered_spatial_covariance_trace_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "main_common_random_number_same_estimand_contrast",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.008359914372208368,
+      "tier": "primary"
+    }
+  ],
+  "plan_id": "S-070-all-seven-trajectory-validation-primary-v1",
+  "plan_raw_sha256": "06942ac935d31fc6c8244c4cbe947a31a4636b94374c889c796cf6212b167330",
+  "plan_semantic_sha256": "26c014473f959b2f7beb73a6c3f2a550d0e7ece41c6fad7e53fde416c27354ed",
+  "provenance": {
+    "machine_architecture": "AMD64",
+    "numpy_version": "2.5.1",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.12.13 (main, Mar  3 2026, 15:01:35) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "reference_scope_checks": [
+    {
+      "classification": "validated",
+      "comparison_id": "H3_PV_V_speed_reference_common_nonzero",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference equality and nonzero check",
+      "evidence_tier": "deterministic",
+      "headline": "H3",
+      "interval_construction": "exact deterministic identity",
+      "left_reference": 2.181318681318681,
+      "observable": "speed",
+      "observable_class": "vv",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "left_speed_reference",
+        "right_speed_reference"
+      ],
+      "protocols": [
+        "PV",
+        "V"
+      ],
+      "quantile": null,
+      "reference_difference": 0.0,
+      "registered_observable": "accepted_mean_squared_speed_reference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "exact common and nonzero accepted reference",
+      "required_sign_or_equality": "exact_common_and_nonzero",
+      "right_reference": 2.181318681318681
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H3_PTheta_Theta_speed_reference_common_nonzero",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference equality and nonzero check",
+      "evidence_tier": "deterministic",
+      "headline": "H3",
+      "interval_construction": "exact deterministic identity",
+      "left_reference": 3.2753846153846156,
+      "observable": "speed",
+      "observable_class": "vv",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "left_speed_reference",
+        "right_speed_reference"
+      ],
+      "protocols": [
+        "PTheta",
+        "Theta"
+      ],
+      "quantile": null,
+      "reference_difference": 0.0,
+      "registered_observable": "accepted_mean_squared_speed_reference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "exact common and nonzero accepted reference",
+      "required_sign_or_equality": "exact_common_and_nonzero",
+      "right_reference": 3.2753846153846156
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H3_PVTheta_VTheta_speed_reference_common_nonzero",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference equality and nonzero check",
+      "evidence_tier": "deterministic",
+      "headline": "H3",
+      "interval_construction": "exact deterministic identity",
+      "left_reference": 2.181318681318681,
+      "observable": "speed",
+      "observable_class": "vv",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "left_speed_reference",
+        "right_speed_reference"
+      ],
+      "protocols": [
+        "PVTheta",
+        "VTheta"
+      ],
+      "quantile": null,
+      "reference_difference": 0.0,
+      "registered_observable": "accepted_mean_squared_speed_reference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "exact common and nonzero accepted reference",
+      "required_sign_or_equality": "exact_common_and_nonzero",
+      "right_reference": 2.181318681318681
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H4_reference_common_speed",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference equality check",
+      "evidence_tier": "deterministic",
+      "headline": "H4",
+      "interval_construction": "exact deterministic identity",
+      "observable_class": "vv",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "PV_reference",
+        "PVTheta_reference"
+      ],
+      "quantile": null,
+      "reference_difference": 0.0,
+      "registered_observable": "accepted_restricted_contraction_reference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "exact common accepted reference",
+      "required_sign_or_equality": "exact_common"
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H4_reference_common_r_dot_v",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference equality check",
+      "evidence_tier": "deterministic",
+      "headline": "H4",
+      "interval_construction": "exact deterministic identity",
+      "observable_class": "r_dot_v",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "PV_reference",
+        "PVTheta_reference"
+      ],
+      "quantile": null,
+      "reference_difference": 0.0,
+      "registered_observable": "accepted_restricted_contraction_reference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "exact common accepted reference",
+      "required_sign_or_equality": "exact_common"
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H4_reference_common_raw_MSD",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference equality check",
+      "evidence_tier": "deterministic",
+      "headline": "H4",
+      "interval_construction": "exact deterministic identity",
+      "observable_class": "rr",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "PV_reference",
+        "PVTheta_reference"
+      ],
+      "quantile": null,
+      "reference_difference": 0.0,
+      "registered_observable": "accepted_restricted_contraction_reference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "exact common accepted reference",
+      "required_sign_or_equality": "exact_common"
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H4_reference_distinct_centered_variance",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "exact analytic-reference signed-difference check",
+      "evidence_tier": "deterministic",
+      "headline": "H4",
+      "interval_construction": "exact deterministic identity",
+      "observable_class": "stationary_variance",
+      "pairing_role": "analytic-reference scope lock",
+      "parent_scale_inputs": [
+        "PV_centered_variance_reference",
+        "PVTheta_centered_variance_reference"
+      ],
+      "quantile": null,
+      "reference_difference": 0.11111111111111116,
+      "registered_observable": "accepted_centered_variance_reference_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required": "PV minus PVTheta strictly positive",
+      "required_sign_or_equality": "positive"
+    }
+  ],
+  "resource_preflight": {
+    "available_memory_bytes": 14916882432,
+    "exact_bootstrap_trajectory_weight_draws": 1140850688,
+    "free_disk_bytes": 130879098880,
+    "maximum_bootstrap_feature_multiply_add_terms": 130056978432,
+    "maximum_fine_plus_coarse_state_segment_updates": 3707764736,
+    "maximum_total_reset_events": 142606336,
+    "minimum_available_memory_bytes": 1000000000,
+    "minimum_free_disk_bytes": 1500000000,
+    "status": "validated_before_stochastic_execution"
+  },
+  "schema_version": "1.0.0",
+  "sector_identity_checks": [
+    {
+      "classification": "validated",
+      "comparison_id": "H3_PV_V_pathwise_internal",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "canonical array SHA-256 equality after reset-clock hash equality",
+      "evidence_tier": "deterministic",
+      "headline": "H3",
+      "interval_construction": "exact deterministic identity at registered 1e-12 event/reset tolerance",
+      "observable": "complete_recorded_velocity_and_orientation_arrays",
+      "observable_class": "vv",
+      "pair": [
+        "PV",
+        "V"
+      ],
+      "pairing_role": "main common-random-number pathwise identity",
+      "parent_scale_inputs": [
+        "not_applicable_exact_hash_identity"
+      ],
+      "pathwise_internal_hashes_equal": true,
+      "quantile": null,
+      "registered_observable": "complete_recorded_velocity_and_orientation_arrays",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "pathwise_equality",
+      "reset_clock_sha256": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H3_PTheta_Theta_pathwise_internal",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "canonical array SHA-256 equality after reset-clock hash equality",
+      "evidence_tier": "deterministic",
+      "headline": "H3",
+      "interval_construction": "exact deterministic identity at registered 1e-12 event/reset tolerance",
+      "observable": "complete_recorded_velocity_and_orientation_arrays",
+      "observable_class": "vv",
+      "pair": [
+        "PTheta",
+        "Theta"
+      ],
+      "pairing_role": "main common-random-number pathwise identity",
+      "parent_scale_inputs": [
+        "not_applicable_exact_hash_identity"
+      ],
+      "pathwise_internal_hashes_equal": true,
+      "quantile": null,
+      "registered_observable": "complete_recorded_velocity_and_orientation_arrays",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "pathwise_equality",
+      "reset_clock_sha256": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+    },
+    {
+      "classification": "validated",
+      "comparison_id": "H3_PVTheta_VTheta_pathwise_internal",
+      "compute_cap": 0,
+      "compute_cap_role": "deterministic",
+      "coverage": null,
+      "estimator": "canonical array SHA-256 equality after reset-clock hash equality",
+      "evidence_tier": "deterministic",
+      "headline": "H3",
+      "interval_construction": "exact deterministic identity at registered 1e-12 event/reset tolerance",
+      "observable": "complete_recorded_velocity_and_orientation_arrays",
+      "observable_class": "vv",
+      "pair": [
+        "PVTheta",
+        "VTheta"
+      ],
+      "pairing_role": "main common-random-number pathwise identity",
+      "parent_scale_inputs": [
+        "not_applicable_exact_hash_identity"
+      ],
+      "pathwise_internal_hashes_equal": true,
+      "quantile": null,
+      "registered_observable": "complete_recorded_velocity_and_orientation_arrays",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "pathwise_equality",
+      "reset_clock_sha256": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+    }
+  ],
+  "source_commit": "dad4ad08a9a6c379e309d541e9223f5de6f90514",
+  "source_manifest": {
+    ".gitattributes": "285af608072a841ae2de04a7bfa96517fad49c56bae72a6477a771a7154b44b2",
+    "docs/scientific-contract/CONTRACT.md": "f85159ebadf97942ab271a17d34501ce91263945645ebaf946bd765a2105d14c",
+    "docs/scientific-contract/validation_registry.json": "01407340095d041d5b77ad6da366d9afcb7ec095c5ccba4b1f7d54468f51b0d3",
+    "docs/scientific-contract/validation_registry.schema.json": "dfdd5804bcd826b5b59206d5ed2d6fb08d761089cc303fdb0f69f5d6faebbefe",
+    "experiments/S-070-all-seven-trajectory-validation-primary-v1.json": "06942ac935d31fc6c8244c4cbe947a31a4636b94374c889c796cf6212b167330",
+    "experiments/run_s070_all_seven_trajectory_validation.py": "fb4ef6c156ff77d1841584f4ff797ca7e6a534aaaf5308ba8859c00cb6471eba",
+    "experiments/s070_reference_adapter.py": "ddfec729bb78f04c29ce12b19bf28896b678ccbf5045953236e59ee2b28da9e7",
+    "scripts/validate_validation_registry.py": "899b6eb2af253568772a2901428b4fedc2ea0d3313225723883bc1ab67ba2bf9",
+    "src/phasemap/simulation/trajectory_validation.py": "f9ead7ce450d3cb1da0b873985300b429b1e453d8fa3acecd308cbbabc1835dc",
+    "tests/simulation/test_s070_trajectory_validation.py": "bf562300949727481c6856e7003013b525794be3355e5f1a7123f4056d5778f7"
+  },
+  "source_manifest_sha256": "71acca668a5358bc02c905ef0be2f788a534a7a084f831597dbd2633d9bf6ac2",
+  "status": "completed_fixed_plan",
+  "stream_metadata": {
+    "main": {
+      "P": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "a69d49a9a877a40b73978f6b264308056346563265a497ce8f91c6530767688c",
+          "coarse_positions": "be8544d234fa46b17950236e35b5cb7c6e27dc6526cf2d52b3d4be287d773ac4",
+          "coarse_velocities": "ac6b20827b5d2d316b15e00902de27d35aef27c0d5a545036d6320c4b8b4e66a",
+          "fine_orientations": "17f8b2b607e620f3161d6f431e3c92dda573a8690e645583a7949ea8f5fe14a8",
+          "fine_positions": "da78f4e2a0d7cd38fe7fa95b08c3009647c05dc921e51ab00b393687d6d3411f",
+          "fine_velocities": "65cfa3eec77e03eb06c0e8d7960bd9c4295f9546b4f90183e61c808341d9314d",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "P",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      },
+      "PTheta": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "f63e8e9f91b220cf97315b95fb5e254158f85523f100b5e54e8cef9d8d45d163",
+          "coarse_positions": "9820ff7979794bf5fde8a43112a68bcf1fe6cc0ab6405e24ed911428ca95a476",
+          "coarse_velocities": "f201105f9123243a2122c0b483c47189c6e57cc46ac4eb9e22644dea7e02de13",
+          "fine_orientations": "f1239cbb794e8aa4312033986a58db8d30ecaea06b4e76a3419e59609490e23b",
+          "fine_positions": "bf9238dec7c008a799640a0bbe71618c30e8972806ca9a59a681b598ca91145a",
+          "fine_velocities": "a8d8af28e98459650483894dcf0cb18ebe169d254529ac4ef43a971c78b4fde5",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "PTheta",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      },
+      "PV": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "a69d49a9a877a40b73978f6b264308056346563265a497ce8f91c6530767688c",
+          "coarse_positions": "ab14b42c982f45a98b728dcbcf5cb8d44fb716d0c1697bd8e9595305f6da9ed8",
+          "coarse_velocities": "c74943b2fae72ec6c22b9470d2499bfa62471076a121baaafe9f9655545d8f74",
+          "fine_orientations": "17f8b2b607e620f3161d6f431e3c92dda573a8690e645583a7949ea8f5fe14a8",
+          "fine_positions": "4d9a08492f61bbf0aa8ef6af68f5a2fab649eb622a9947a70d67688f709ea7ae",
+          "fine_velocities": "71aa69f249e669ab4f76f54fe5b85d3ac9b81d8933623da0db83c13c22c4cdd1",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "PV",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      },
+      "PVTheta": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "f63e8e9f91b220cf97315b95fb5e254158f85523f100b5e54e8cef9d8d45d163",
+          "coarse_positions": "48e188c357dfcc69a5fd2e3259c038c8542b7fd88849fce77706b5b8acb0ae0d",
+          "coarse_velocities": "6c03b076c4dc6ff71a438b21ec3032c631530cae0418d3824b07f5aa65c0be11",
+          "fine_orientations": "f1239cbb794e8aa4312033986a58db8d30ecaea06b4e76a3419e59609490e23b",
+          "fine_positions": "8541eb436f326c89968f916c2ebd33cb5dac381903a6c8b7433c5cdf78d8b0c2",
+          "fine_velocities": "af281d8da728e56cb551612494917d30741e38f1714dbba60a8c85f10299be1d",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "PVTheta",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      },
+      "Theta": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "f63e8e9f91b220cf97315b95fb5e254158f85523f100b5e54e8cef9d8d45d163",
+          "coarse_positions": "b3bd7aa3fe4b086b818f3e7288ebc84e9d2b753b5fcdd3b5457cd0efde787895",
+          "coarse_velocities": "f201105f9123243a2122c0b483c47189c6e57cc46ac4eb9e22644dea7e02de13",
+          "fine_orientations": "f1239cbb794e8aa4312033986a58db8d30ecaea06b4e76a3419e59609490e23b",
+          "fine_positions": "ba474db6ece48c6e26d9019865d8f5cc327584ddaed8711518db51f6a2f53cb0",
+          "fine_velocities": "a8d8af28e98459650483894dcf0cb18ebe169d254529ac4ef43a971c78b4fde5",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "Theta",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      },
+      "V": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "a69d49a9a877a40b73978f6b264308056346563265a497ce8f91c6530767688c",
+          "coarse_positions": "268bba8d6ed9cc0c4f1352dd22894f64104f5ca4a2f1b2234aacbd7d2696b5ee",
+          "coarse_velocities": "c74943b2fae72ec6c22b9470d2499bfa62471076a121baaafe9f9655545d8f74",
+          "fine_orientations": "17f8b2b607e620f3161d6f431e3c92dda573a8690e645583a7949ea8f5fe14a8",
+          "fine_positions": "303f800b438d63c0016808c2387121810d1442692b95ceaaaf2e1c68e32a77f7",
+          "fine_velocities": "71aa69f249e669ab4f76f54fe5b85d3ac9b81d8933623da0db83c13c22c4cdd1",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "V",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      },
+      "VTheta": {
+        "base_seed": 70070001,
+        "chunks": 16,
+        "count": 65536,
+        "hashes": {
+          "coarse_orientations": "f63e8e9f91b220cf97315b95fb5e254158f85523f100b5e54e8cef9d8d45d163",
+          "coarse_positions": "066d69247c11c54a3220ca717389b954081148f9a677bc2b685e74a507dfc5a2",
+          "coarse_velocities": "6c03b076c4dc6ff71a438b21ec3032c631530cae0418d3824b07f5aa65c0be11",
+          "fine_orientations": "f1239cbb794e8aa4312033986a58db8d30ecaea06b4e76a3419e59609490e23b",
+          "fine_positions": "63c2678b66d6e28539c014709826fdbf21e20cbc99941e5565eb990d4bed55e8",
+          "fine_velocities": "af281d8da728e56cb551612494917d30741e38f1714dbba60a8c85f10299be1d",
+          "reset_clock_chunks": "4af1a77a555fe4dd71be56ed5a4797901b2be659a8ba5a4ad61306c44d2b8d71"
+        },
+        "protocol": "VTheta",
+        "reset_event_count": 2098462,
+        "stream_base": 0
+      }
+    },
+    "unpaired": {
+      "PTheta": {
+        "base_seed": 70071501,
+        "chunks": 4,
+        "count": 16384,
+        "hashes": {
+          "coarse_orientations": "df222335c0f03cfe14392c8059c2d456220b451e4134ddd6f3dd2a50e2e1b03e",
+          "coarse_positions": "bf8e943105e984db4cc4ffd7e2c15d54f8a2cb6df13a61bc702f1bac92bc5a84",
+          "coarse_velocities": "d67e2179890810a6534bc96106aa069f495e388aacdcaa9fe7d806680627ddfe",
+          "fine_orientations": "2b92b7e7ca6444a423c9ad17226bb13eebaef18ce6ce5ea3b8f67b97a47f9699",
+          "fine_positions": "5750a18b2baf2e4177a5d8e424ea5fd9feb40c1dbdaf0e54b3b5879cf7146b78",
+          "fine_velocities": "fd5fa1fcece240823827b1964858f7e5cf28cf818af4aa85649e750468a296d6",
+          "reset_clock_chunks": "5f6a2d8b7a732bc03b0cb4a8c03163b1e04dc612c4e2ee6347512f1fa1c99c62"
+        },
+        "protocol": "PTheta",
+        "reset_event_count": 524842,
+        "stream_base": 1
+      },
+      "PV": {
+        "base_seed": 70071401,
+        "chunks": 4,
+        "count": 16384,
+        "hashes": {
+          "coarse_orientations": "9e1524c56888268f3bd1fc268a6ab04958593b4066368da56a704cfdfff6c358",
+          "coarse_positions": "83ea258d139edb014e50662dd06165daaf8e44af40f0083b010d3d1c9f15a6ba",
+          "coarse_velocities": "4e395732c60f2b351ae4190288261223bfb85f22d48bfb87f5e8b06ffe627886",
+          "fine_orientations": "ee20a6cea2e63fb627cc3c9bc79e1d637886755d466338d316af8a6b8f8a5e9b",
+          "fine_positions": "2e04a86718c77556b97710af0e04ad14d2d3a5a2c0d29811795167f9bf454e36",
+          "fine_velocities": "8ac309cf8a997d3e7a4e26350072e043571dabc07c14691359d58dbc7212f2aa",
+          "reset_clock_chunks": "508ad4ceb1ba327feb685f2b3deff96ee022a7d3bacd975a09be9e22f4a283ea"
+        },
+        "protocol": "PV",
+        "reset_event_count": 524131,
+        "stream_base": 1
+      },
+      "PVTheta": {
+        "base_seed": 70071701,
+        "chunks": 4,
+        "count": 16384,
+        "hashes": {
+          "coarse_orientations": "0a13f049b7e4184d27e2734587d21a845d3d0ad5b7c6d469a8e1237ddcae5900",
+          "coarse_positions": "873120b02c9f59432ee7cad8eb07859dd7fe291f90e0ee572c9a233d44db8922",
+          "coarse_velocities": "12bf737091d99824e5a3ace2322a1a14805c9f344080549d7017a54bc0c81961",
+          "fine_orientations": "d6e4087d6812392cc3af64360db5e3b53f15c25c8a233026610349eec51144e9",
+          "fine_positions": "2935c561441e271373b23114c5a6302e1ff1e93da21ce236e0789153612631ec",
+          "fine_velocities": "ec40606f0c62a229643b8642925eedc883d7220ff951bc9f9ae28b8f51fc6685",
+          "reset_clock_chunks": "7ab2f87db79bd9fff01c440f95dd64692b54b75b50cfb8f9c9fb0bb48cc71ba9"
+        },
+        "protocol": "PVTheta",
+        "reset_event_count": 525279,
+        "stream_base": 1
+      },
+      "Theta": {
+        "base_seed": 70071301,
+        "chunks": 4,
+        "count": 16384,
+        "hashes": {
+          "coarse_orientations": "d3874567695adc2187f0f47057e0e38cb562e8a57ca7d87cb256114ba5a38b64",
+          "coarse_positions": "ff671589680df0d5e915e9d59318eeaee6bc949c1a97b9abccd268c79596c4d9",
+          "coarse_velocities": "ada1c83fd1ac5abcbe2d1b61d0196d5766ba0bb373ad9d97fff32ee7c70b5ef9",
+          "fine_orientations": "9c53b94f547fa92a80e1e89206d98f12a9b8b62b6a87ce7cdaf8c226ef20c109",
+          "fine_positions": "0eae13df5389e2e5159ca7170b0310d1d531cf764f54f72013a322c049f2f70e",
+          "fine_velocities": "2d338f4997b5a9be8e2bcb2b650b3cac523d776da9408e9ce521e6890eefa6f8",
+          "reset_clock_chunks": "c5dd912c11d794ae12442c13046493f4c2d8d3c752ff7fb995d836bf6c3e349c"
+        },
+        "protocol": "Theta",
+        "reset_event_count": 525175,
+        "stream_base": 1
+      },
+      "V": {
+        "base_seed": 70071201,
+        "chunks": 4,
+        "count": 16384,
+        "hashes": {
+          "coarse_orientations": "d6f625b8c1289b4e37a0ea5586e427319800ab1bda5619d390489db2f99df5df",
+          "coarse_positions": "a36eb33da2542cdea4c474f778d36f522671e2853f6cd393d1fc88d9240f81cb",
+          "coarse_velocities": "7938ab048effeea7a7d6573578e38455b3dfcd9e91385dc5f391e6b060784212",
+          "fine_orientations": "0546a5d662abadfe096db7eac2472ff109c1b948ef67f74dc34d2149b5c26a31",
+          "fine_positions": "1d248dafa2849584d6b6262cdd55bfaf885adb5553123e6c1162b24b01f51fe9",
+          "fine_velocities": "aadba51a00d43da35c8ca8fbce1be547912be3197bbf77b27d885f525b8034be",
+          "reset_clock_chunks": "f87d89e5372f4debd277bc7358e4836188d6700b5124465b5a72307d76cbb9db"
+        },
+        "protocol": "V",
+        "reset_event_count": 522829,
+        "stream_base": 1
+      },
+      "VTheta": {
+        "base_seed": 70071601,
+        "chunks": 4,
+        "count": 16384,
+        "hashes": {
+          "coarse_orientations": "57763daa2e9bc9480f8c7437f8adf7e912f17d7d01513e781fe99a68e3327390",
+          "coarse_positions": "490d2a96e8f8b87376f9aaf18f40815622b0dcdc816eb5538d3093214aa900d2",
+          "coarse_velocities": "c092e1ab29839b0cade9b62a9f227f73d6d78c496b144517dc59d2be8bd184bd",
+          "fine_orientations": "90fbd2e01514cc7bb99ee4a11bcc8fa275298dff157a9403af38cfdb0de0fd95",
+          "fine_positions": "7c9d141286c493e33888846fb15854203f84316d5e187fab85dacfa119d32e11",
+          "fine_velocities": "c8ec54b05584544c29470dafde6e741e8b2ba033a5ad0a4ff1c0c4188d9cedc8",
+          "reset_clock_chunks": "7fe85e1c66dada5ed816a5417265127f9ba020d4d75d6fd224fdf0803b45fb78"
+        },
+        "protocol": "VTheta",
+        "reset_event_count": 523656,
+        "stream_base": 1
+      }
+    }
+  },
+  "task_id": "S-071",
+  "unpaired_confirmations": [
+    {
+      "B_disc": 0.0024191316065975154,
+      "B_window": 0.004423173446508777,
+      "characteristic_scale": 1.3430733985326915,
+      "classification": "unresolved",
+      "comparison_id": "H2_Theta_minus_V_v_x_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.0041666592374055384,
+        "right": 0.003491346560536455
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.0012031969386252905,
+        0.02680143437753406
+      ],
+      "estimand_interval": [
+        0.5987968030613747,
+        0.626801434377534
+      ],
+      "estimate": 0.6127991187194544,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.012715366992663457,
+      "observable": "v_x",
+      "observable_class": "v_mean",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 2.58371998363903e-05,
+          "right": 2.2428474790210168e-05
+        },
+        "estimate": -0.0023310021985874525,
+        "standard_error": 3.4213993873861905e-05
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "left_S_xx_reference",
+        "right_S_xx_reference"
+      ],
+      "protocols": [
+        "Theta",
+        "V"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.6,
+      "registered_observable": "late_mean_velocity_x_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.005436041759076787,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.00210038867945229,
+      "B_window": 0.0004179767775294163,
+      "characteristic_scale": 1.0631179521670115,
+      "classification": "unresolved",
+      "comparison_id": "H2_VTheta_minus_V_v_x_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.0033008804848343983,
+        "right": 0.003491346560536455
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.009523745734482785,
+        0.015228519882861452
+      ],
+      "estimand_interval": [
+        0.32380958759885053,
+        0.34856185321619476
+      ],
+      "estimate": 0.33618572040752265,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "primary",
+      "headline": "H2",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.008648923094168391,
+      "observable": "v_x",
+      "observable_class": "v_mean",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 2.132420450754177e-05,
+          "right": 2.2428474790210168e-05
+        },
+        "estimate": -0.0020206727683168054,
+        "standard_error": 3.094766839835527e-05
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "left_S_xx_reference",
+        "right_S_xx_reference"
+      ],
+      "protocols": [
+        "VTheta",
+        "V"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.3333333333333333,
+      "registered_observable": "late_mean_velocity_x_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.004804717762879554,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0005065833523454004,
+      "B_window": 0.012652411726059576,
+      "characteristic_scale": 2.181318681318681,
+      "classification": "unresolved",
+      "comparison_id": "H3_PV_minus_V_speed_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.00826738780665473,
+        "right": 0.008290365315057856
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.04689526817128038,
+        0.013420921536733538
+      ],
+      "estimand_interval": [
+        -0.04689526817128038,
+        0.013420921536733538
+      ],
+      "estimate": -0.016737173317273424,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "primary",
+      "headline": "H3",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.010906593406593406,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 7.866125982228307e-05,
+          "right": 7.880796848571389e-05
+        },
+        "estimate": 0.0002197709220988879,
+        "standard_error": 0.00011134760748967173
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "common_S_diagonal_references"
+      ],
+      "protocols": [
+        "PV",
+        "V"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.0,
+      "registered_observable": "mean_squared_speed_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.011708110787088482,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.0004028504722125345,
+      "B_window": 0.013553673644544517,
+      "characteristic_scale": 3.275384615384615,
+      "classification": "unresolved",
+      "comparison_id": "H3_PTheta_minus_Theta_speed_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.01037810460759148,
+        "right": 0.010337163752318095
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.041178698584202596,
+        0.034282463578474594
+      ],
+      "estimand_interval": [
+        -0.041178698584202596,
+        0.034282463578474594
+      ],
+      "estimate": -0.003448117502864001,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "primary",
+      "headline": "H3",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.016376923076923077,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 9.889495338198861e-05,
+          "right": 9.912054697789093e-05
+        },
+        "estimate": 4.2187505207439205e-05,
+        "standard_error": 0.00014001819395215032
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "common_S_diagonal_references"
+      ],
+      "protocols": [
+        "PTheta",
+        "Theta"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.0,
+      "registered_observable": "mean_squared_speed_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.014647935338755105,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.00048211510717541245,
+      "B_window": 0.00846690341730394,
+      "characteristic_scale": 2.1813186813186816,
+      "classification": "unresolved",
+      "comparison_id": "H3_PVTheta_minus_VTheta_speed_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.008142409589983824,
+        "right": 0.008288636826341943
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.026826670352229375,
+        0.033030267745691365
+      ],
+      "estimand_interval": [
+        -0.026826670352229375,
+        0.033030267745691365
+      ],
+      "estimate": 0.003101798696730995,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "primary",
+      "headline": "H3",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.010906593406593407,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 7.829170487216472e-05,
+          "right": 7.760609043415237e-05
+        },
+        "estimate": -0.00019816224211960734,
+        "standard_error": 0.00011023745427151326
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "common_S_diagonal_references"
+      ],
+      "protocols": [
+        "PVTheta",
+        "VTheta"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.0,
+      "registered_observable": "mean_squared_speed_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.01161896442760939,
+      "tier": "primary"
+    },
+    {
+      "B_disc": 0.00047838032183564026,
+      "B_window": 0.012176575372239373,
+      "characteristic_scale": 2.181318681318681,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_speed_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.00826738780665473,
+        "right": 0.008142409589983824
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.04065484097817755,
+        0.02896805225932457
+      ],
+      "estimand_interval": [
+        -0.04065484097817755,
+        0.02896805225932457
+      ],
+      "estimate": -0.00584339435942649,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.010906593406593406,
+      "observable": "speed",
+      "observable_class": "vv",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 7.866125982228307e-05,
+          "right": 7.829170487216472e-05
+        },
+        "estimate": 0.0001454318819270415,
+        "standard_error": 0.00011098281330286626
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 3.0,
+      "reference_difference": 0.0,
+      "registered_observable": "named_restricted_contraction_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.011603815539583687,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.0004110134234928301,
+      "B_window": 0.014932444789490518,
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_raw_msd_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.023843418076138347,
+        "right": 0.024752679454310554
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.10285012733230754,
+        0.10336173975096503
+      ],
+      "estimand_interval": [
+        -0.10285012733230754,
+        0.10336173975096503
+      ],
+      "estimate": 0.0002558062093287461,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.011233211233211233,
+      "observable": "raw_msd",
+      "observable_class": "rr",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 9.342269757846723e-05,
+          "right": 9.145027503869496e-05
+        },
+        "estimate": 1.881630590090254e-05,
+        "standard_error": 0.00013073237253064253
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 3.0,
+      "reference_difference": 0.0,
+      "registered_observable": "named_restricted_contraction_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.03436864451387876,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.0003085768281914424,
+      "B_window": 0.0078725529127055,
+      "characteristic_scale": 2.2137395291317596,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_r_dot_v_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "component_standard_errors": {
+        "combination": "sqrt(left_se^2+right_se^2)",
+        "left": 0.007772723200304947,
+        "right": 0.007648376085952537
+      },
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.9973,
+      "discrepancy_interval": [
+        -0.027597081784629524,
+        0.03783122842758871
+      ],
+      "estimand_interval": [
+        -0.027597081784629524,
+        0.03783122842758871
+      ],
+      "estimate": 0.005117073321479593,
+      "estimator": "difference of independent protocol trajectory means",
+      "evidence_tier": "central_disputed",
+      "headline": "H4",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "margin": 0.011068697645658798,
+      "observable": "r_dot_v",
+      "observable_class": "r_dot_v",
+      "paired_fine_coarse_within_protocol": {
+        "classification": "validated",
+        "component_standard_errors": {
+          "combination": "sqrt(left_se^2+right_se^2)",
+          "left": 4.5678947130875226e-05,
+          "right": 4.549256562521679e-05
+        },
+        "estimate": -0.00011517243929773206,
+        "standard_error": 6.446812963123678e-05
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 3.0,
+      "reference_difference": 0.0,
+      "registered_observable": "named_restricted_contraction_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "equality_zero",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.010904718368703038,
+      "tier": "central_disputed"
+    },
+    {
+      "B_disc": 0.000765152618701651,
+      "B_window": 0.01565196582131989,
+      "bootstrap_replicates": 2048,
+      "bootstrap_se_stability": {
+        "allowed_maximum_relative_deviation": 0.1,
+        "block_count": 4,
+        "block_size": 512,
+        "block_standard_errors": [
+          0.03273519668540981,
+          0.0345616705087612,
+          0.035061121161947414,
+          0.03415740431121557
+        ],
+        "classification": "validated",
+        "full_standard_error": 0.03412651575416206,
+        "maximum_relative_deviation": 0.040769443876864694
+      },
+      "characteristic_scale": 0.11111111111111116,
+      "classification": "unresolved",
+      "comparison_id": "H4_PV_minus_PVTheta_centered_variance_unpaired",
+      "comparison_kind": "unpaired_protocol_independent_streams",
+      "compute_cap": 16384,
+      "compute_cap_role": "unpaired",
+      "coverage": 0.99,
+      "discrepancy_interval": [
+        -0.08490066823189814,
+        0.09090749037995195
+      ],
+      "estimand_interval": [
+        0.026210442879213022,
+        0.2020186014910631
+      ],
+      "estimate": 0.11411452218513807,
+      "estimator": "difference of independent protocol centered covariance traces",
+      "evidence_tier": "primary",
+      "headline": "H4",
+      "interval_construction": "independent whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "margin": 0.0016666666666666674,
+      "observable": "centered_variance",
+      "observable_class": "stationary_variance",
+      "paired_fine_coarse": {
+        "bootstrap_se_stability": {
+          "allowed_maximum_relative_deviation": 0.1,
+          "block_count": 4,
+          "block_size": 512,
+          "block_standard_errors": [
+            0.0001298605479799851,
+            0.00012320089424311121,
+            0.00013223444889107474,
+            0.00012936637380758876
+          ],
+          "classification": "validated",
+          "full_standard_error": 0.00012869283039588052,
+          "maximum_relative_deviation": 0.04267476390001838
+        },
+        "classification": "validated",
+        "estimate": -0.00043366185501758636,
+        "interval": [
+          -0.000765152618701651,
+          -0.00010217109133352182
+        ],
+        "standard_error": 0.00012869283039588052
+      },
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "parent_scale_inputs": [
+        "PV_minus_PVTheta_centered_variance_reference_difference"
+      ],
+      "protocols": [
+        "PV",
+        "PVTheta"
+      ],
+      "quantile": 2.5758293035,
+      "reference_difference": 0.11111111111111116,
+      "registered_observable": "stationary_centered_spatial_covariance_trace_difference",
+      "registry_schema_version": "1.0.0",
+      "registry_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+      "required_sign_or_equality": "positive",
+      "role": "smaller_unpaired_same_estimand_confirmation",
+      "scientific_discrepancy_classification": "unresolved",
+      "sign_classification": "validated",
+      "standard_error": 0.03412651575416206,
+      "tier": "primary"
+    }
+  ]
+}

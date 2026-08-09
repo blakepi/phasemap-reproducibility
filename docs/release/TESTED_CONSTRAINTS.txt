@@ -1,0 +1,19 @@
+# PHASEMAP G6/G7 dependency constraints shared by both tested environments
+# Canonical scientific-validation environment: CPython 3.12.13
+# R-060 clean-room closure environment: CPython 3.12.10
+# Declared package support: Python >=3.11,<3.13; only the two versions above were tested
+# Build frontend/tools:
+pip==25.0.1
+setuptools==83.0.0
+wheel==0.47.0
+
+# Runtime and test stack:
+colorama==0.4.6
+iniconfig==2.3.0
+mpmath==1.3.0
+numpy==2.5.1
+packaging==26.2
+pluggy==1.6.0
+Pygments==2.20.0
+pytest==9.1.1
+sympy==1.14.0

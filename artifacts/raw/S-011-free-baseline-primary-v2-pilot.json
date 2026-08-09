@@ -1,0 +1,223 @@
+{
+  "mode": "pilot",
+  "output": "artifacts/raw/S-011-free-baseline-primary-v2-pilot.json",
+  "plan_id": "S-011-free-baseline-primary-v2",
+  "plan_hash": "37ffe39109ed2bfb1f6836ce0c7afff2326798fc99bc8750e59bd8a294e0092d",
+  "contract_version": "0.3",
+  "registry_version": "1.0.0",
+  "source_commit": "364859ea4f9432e7391ad860fff855d14ebcdad7",
+  "source_manifest": {
+    "docs/scientific-contract/CONTRACT.md": "0af9136f1188acdd3d26d03dd80b1c13065df9e6e8cd18acc11700028ae2d532",
+    "docs/scientific-contract/validation_registry.json": "b46f860fdefe1ffc91a65d34d7af03fc38b05a3a8cac9a4079df92fddbe1a0b0",
+    "docs/scientific-contract/validation_registry.schema.json": "2b4d5c6dbc5cf96852bbdf1300970377c1c0e96856436bde2ad70bcbb903a6b0",
+    "scripts/validate_validation_registry.py": "899b6eb2af253568772a2901428b4fedc2ea0d3313225723883bc1ab67ba2bf9",
+    "experiments/run_s011_free_baseline.py": "d9841d9f7ee411a6ae85a426a785635e5d22fc0bd8796d3014b18dabe240f011",
+    "src/phasemap/__init__.py": "34ac9c84b7ce7d3b806a6d62fd936fa30dd273a6b55c97cf5995b122c550a8fc",
+    "src/phasemap/simulation/__init__.py": "dbff32f7a4199f7fb67555397aeb24f370f6ca5347acfe6d167f7277fb7d726a",
+    "src/phasemap/simulation/free_baseline.py": "6df3e41a8b7c6867b129320b24b3518b52fa7097067f55e3a105bb6ccee236d5",
+    "src/phasemap/theory/__init__.py": "aaa6f11634cb8c112f06906d1f7e511afa3e99eac5452aa244dfe2c6ad49224e",
+    "src/phasemap/theory/free_baseline.py": "430e2a4eace76b52b31623bc2ab6df0168d1354a96ddb253e1e44f4cca690833",
+    "experiments/S-011-free-baseline-primary-v2.json": "37ffe39109ed2bfb1f6836ce0c7afff2326798fc99bc8750e59bd8a294e0092d"
+  },
+  "parameters": {
+    "inertia": 0.8,
+    "activity": 1.2,
+    "reset_rate": 0.0
+  },
+  "resolution": {
+    "fine_step": 0.002,
+    "coarse_step": 0.004,
+    "times": [
+      1.5,
+      3.0
+    ]
+  },
+  "pairing_policy": "coarse Wiener increments are sums of paired fine increments",
+  "compute_cap": 131072,
+  "interval_construction": {
+    "distribution": "normal",
+    "quantity": "discrepancy",
+    "quantile": 2.5758293035
+  },
+  "evidence_role": "design-only",
+  "overall": "design-only",
+  "count": 2048,
+  "seeds": [
+    20260722101,
+    20260722102
+  ],
+  "analysis": [
+    {
+      "id": "t1.5-rdotv-direct",
+      "time": 1.5,
+      "observable_class": "r_dot_v",
+      "comparison_kind": "direct_reference",
+      "evidence_tier": "primary",
+      "reference": 2.0404801637470835,
+      "delta": 0.08247743131466878,
+      "standard_error": 0.05467402631412202,
+      "interval": [
+        -0.058353527805576816,
+        0.22330839043491438
+      ],
+      "epsilon": 0.03525010631130442,
+      "B_window": 0.0,
+      "B_disc": 0.01,
+      "classification": "unresolved",
+      "estimator": "trajectory_mean",
+      "standard_error_method": "trajectory_mean_standard_error"
+    },
+    {
+      "id": "t1.5-rdotv-fine-coarse",
+      "time": 1.5,
+      "observable_class": "r_dot_v",
+      "comparison_kind": "fine_coarse",
+      "evidence_tier": "primary",
+      "reference": 0.0,
+      "delta": 0.0013814573645314354,
+      "standard_error": 8.422368795208017e-05,
+      "interval": [
+        0.0011645115210556275,
+        0.0015984032080072434
+      ],
+      "epsilon": 0.014845304673833588,
+      "B_window": 0.0,
+      "B_disc": 0.0,
+      "classification": "validated",
+      "estimator": "matched_pair_difference_mean",
+      "standard_error_method": "matched_pair_difference_mean_standard_error"
+    },
+    {
+      "id": "t1.5-covtrace-direct",
+      "time": 1.5,
+      "observable_class": "cov_r_trace",
+      "comparison_kind": "direct_reference",
+      "evidence_tier": "primary",
+      "reference": 2.4535073625232227,
+      "delta": -0.030830565917720154,
+      "standard_error": 0.05341279879316907,
+      "interval": [
+        -0.16841281823111448,
+        0.10675168639567417
+      ],
+      "epsilon": 0.03680261043784834,
+      "B_window": 0.0,
+      "B_disc": 0.01,
+      "classification": "unresolved",
+      "estimator": "unbiased_sample_covariance_trace",
+      "standard_error_method": "delete_one_trajectory_jackknife_standard_error"
+    },
+    {
+      "id": "t1.5-covtrace-fine-coarse",
+      "time": 1.5,
+      "observable_class": "cov_r_trace",
+      "comparison_kind": "fine_coarse",
+      "evidence_tier": "primary",
+      "reference": 0.0,
+      "delta": 0.0012016909278034227,
+      "standard_error": 0.00012006155677575239,
+      "interval": [
+        0.0008924328516366107,
+        0.0015109490039702347
+      ],
+      "epsilon": 0.012267536812616114,
+      "B_window": 0.0,
+      "B_disc": 0.0,
+      "classification": "validated",
+      "estimator": "unbiased_matched_pair_covariance_trace_difference",
+      "standard_error_method": "delete_one_matched_pair_jackknife_standard_error"
+    },
+    {
+      "id": "t3-rdotv-direct",
+      "time": 3.0,
+      "observable_class": "r_dot_v",
+      "comparison_kind": "direct_reference",
+      "evidence_tier": "primary",
+      "reference": 3.0954095224632434,
+      "delta": 0.04315797733934179,
+      "standard_error": 0.10445743266108681,
+      "interval": [
+        -0.22590653867746358,
+        0.31222249335614716
+      ],
+      "epsilon": 0.06083248465539643,
+      "B_window": 0.0,
+      "B_disc": 0.01,
+      "classification": "unresolved",
+      "estimator": "trajectory_mean",
+      "standard_error_method": "trajectory_mean_standard_error"
+    },
+    {
+      "id": "t3-rdotv-fine-coarse",
+      "time": 3.0,
+      "observable_class": "r_dot_v",
+      "comparison_kind": "fine_coarse",
+      "evidence_tier": "primary",
+      "reference": 0.0,
+      "delta": 0.0025174578896605126,
+      "standard_error": 0.00016334671308587375,
+      "interval": [
+        0.002096704639463512,
+        0.002938211139857513
+      ],
+      "epsilon": 0.029878389430763996,
+      "B_window": 0.0,
+      "B_disc": 0.0,
+      "classification": "validated",
+      "estimator": "matched_pair_difference_mean",
+      "standard_error_method": "matched_pair_difference_mean_standard_error"
+    },
+    {
+      "id": "t3-covtrace-direct",
+      "time": 3.0,
+      "observable_class": "cov_r_trace",
+      "comparison_kind": "direct_reference",
+      "evidence_tier": "primary",
+      "reference": 9.814536622976696,
+      "delta": -0.04521784537999274,
+      "standard_error": 0.21302591340870222,
+      "interval": [
+        -0.5939362355429815,
+        0.503500544782996
+      ],
+      "epsilon": 0.14721804934465044,
+      "B_window": 0.0,
+      "B_disc": 0.01,
+      "classification": "unresolved",
+      "estimator": "unbiased_sample_covariance_trace",
+      "standard_error_method": "delete_one_trajectory_jackknife_standard_error"
+    },
+    {
+      "id": "t3-covtrace-fine-coarse",
+      "time": 3.0,
+      "observable_class": "cov_r_trace",
+      "comparison_kind": "fine_coarse",
+      "evidence_tier": "primary",
+      "reference": 0.0,
+      "delta": 0.0008742261563980946,
+      "standard_error": 0.00030674199319364465,
+      "interval": [
+        8.411114171590723e-05,
+        0.001664341171080282
+      ],
+      "epsilon": 0.049072683114883484,
+      "B_window": 0.0,
+      "B_disc": 0.0,
+      "classification": "validated",
+      "estimator": "unbiased_matched_pair_covariance_trace_difference",
+      "standard_error_method": "delete_one_matched_pair_jackknife_standard_error"
+    }
+  ],
+  "per_config_n_target": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    72854,
+    null
+  ],
+  "n_target": null,
+  "eligible_for_confirmation": false
+}

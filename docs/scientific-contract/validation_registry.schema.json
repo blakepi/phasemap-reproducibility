@@ -1,0 +1,892 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://phasemap.invalid/schemas/validation_registry.schema.json",
+  "title": "PHASEMAP numerical-validation registry",
+  "description": "Strict schema for the G1 numerical-validation contract registry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "contract_version",
+    "status",
+    "normative_section",
+    "deterministic",
+    "margin",
+    "evidence_tiers",
+    "observable_classes",
+    "comparison_outcomes",
+    "d_eff",
+    "sequential_sampling",
+    "pairing"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./validation_registry.schema.json"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "contract_version": {
+      "const": "0.4"
+    },
+    "status": {
+      "const": "approved"
+    },
+    "normative_section": {
+      "const": "docs/scientific-contract/CONTRACT.md#7-numerical-validation"
+    },
+    "deterministic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbolic_identity",
+        "default_absolute_tolerance"
+      ],
+      "properties": {
+        "symbolic_identity": {
+          "const": "exact_zero"
+        },
+        "default_absolute_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "const": 1e-12
+        }
+      }
+    },
+    "margin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formula",
+        "default_normalized_floor_fraction"
+      ],
+      "properties": {
+        "formula": {
+          "const": "normalized_floor_fraction * characteristic_scale + relative_margin * abs(reference)"
+        },
+        "default_normalized_floor_fraction": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "const": 0.005
+        }
+      }
+    },
+    "evidence_tiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "routine_screen",
+        "primary",
+        "central_disputed"
+      ],
+      "properties": {
+        "routine_screen": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_tier"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "gating": {
+                  "const": false
+                },
+                "pointwise_coverage": {
+                  "const": 0.9545
+                },
+                "normal_equivalent_quantile": {
+                  "const": 2.0
+                },
+                "relative_margin": {
+                  "const": 0.02
+                },
+                "pilot_policy": {
+                  "const": "single_top_up_pilot_may_be_reused"
+                }
+              }
+            }
+          ]
+        },
+        "primary": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_tier"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "gating": {
+                  "const": true
+                },
+                "pointwise_coverage": {
+                  "const": 0.99
+                },
+                "normal_equivalent_quantile": {
+                  "const": 2.5758293035
+                },
+                "relative_margin": {
+                  "const": 0.01
+                },
+                "pilot_policy": {
+                  "const": "design_only_excluded_from_confirmatory_analysis"
+                }
+              }
+            }
+          ]
+        },
+        "central_disputed": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_tier"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "gating": {
+                  "const": true
+                },
+                "pointwise_coverage": {
+                  "const": 0.9973
+                },
+                "normal_equivalent_quantile": {
+                  "const": 3.0
+                },
+                "relative_margin": {
+                  "const": 0.01
+                },
+                "pilot_policy": {
+                  "const": "design_only_excluded_from_confirmatory_analysis"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "observable_classes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "r_mean",
+        "v_mean",
+        "u_mean",
+        "rr",
+        "vv",
+        "uu",
+        "rv",
+        "ru",
+        "vu",
+        "r_dot_v",
+        "cov_r_trace",
+        "stationary_variance",
+        "d_eff",
+        "symmetry_forced_zero",
+        "zero_crossing"
+      ],
+      "properties": {
+        "r_mean": {
+          "$ref": "#/$defs/r_mean"
+        },
+        "v_mean": {
+          "$ref": "#/$defs/v_mean"
+        },
+        "u_mean": {
+          "$ref": "#/$defs/u_mean"
+        },
+        "rr": {
+          "$ref": "#/$defs/rr"
+        },
+        "vv": {
+          "$ref": "#/$defs/vv"
+        },
+        "uu": {
+          "$ref": "#/$defs/uu"
+        },
+        "rv": {
+          "$ref": "#/$defs/rv"
+        },
+        "ru": {
+          "$ref": "#/$defs/ru"
+        },
+        "vu": {
+          "$ref": "#/$defs/vu"
+        },
+        "r_dot_v": {
+          "$ref": "#/$defs/r_dot_v"
+        },
+        "cov_r_trace": {
+          "$ref": "#/$defs/cov_r_trace"
+        },
+        "stationary_variance": {
+          "$ref": "#/$defs/stationary_variance"
+        },
+        "d_eff": {
+          "$ref": "#/$defs/d_eff_class"
+        },
+        "symmetry_forced_zero": {
+          "$ref": "#/$defs/symmetry_forced_zero"
+        },
+        "zero_crossing": {
+          "$ref": "#/$defs/zero_crossing"
+        }
+      }
+    },
+    "comparison_outcomes": {
+      "const": [
+        "validated",
+        "contradicted",
+        "unresolved"
+      ]
+    },
+    "d_eff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_uncertainty_method",
+        "naive_ols_standard_error_allowed",
+        "default_windows",
+        "window_envelope_rule",
+        "discretization_envelope_reported_separately"
+      ],
+      "properties": {
+        "default_uncertainty_method": {
+          "const": "whole_trajectory_bootstrap"
+        },
+        "naive_ols_standard_error_allowed": {
+          "const": false
+        },
+        "default_windows": {
+          "const": [
+            "[T/2,T]",
+            "[2T/3,T]",
+            "[3T/4,T]"
+          ]
+        },
+        "window_envelope_rule": {
+          "const": "max_abs_difference_from_primary_window"
+        },
+        "discretization_envelope_reported_separately": {
+          "const": true
+        }
+      }
+    },
+    "sequential_sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximum_interim_evaluations",
+        "maximum_final_evaluations",
+        "continuous_polling_allowed",
+        "repeated_top_up_allowed",
+        "stop_at_first_pass_allowed",
+        "projection_formula",
+        "nonpositive_denominator_outcome",
+        "sample_cap_exceeded_outcome",
+        "primary_confirmatory_batch_is_new_data",
+        "primary_confirmatory_batch_size_rule",
+        "primary_confirmatory_seeds_disjoint_from_pilot"
+      ],
+      "properties": {
+        "maximum_interim_evaluations": {
+          "const": 1
+        },
+        "maximum_final_evaluations": {
+          "const": 1
+        },
+        "continuous_polling_allowed": {
+          "const": false
+        },
+        "repeated_top_up_allowed": {
+          "const": false
+        },
+        "stop_at_first_pass_allowed": {
+          "const": false
+        },
+        "projection_formula": {
+          "const": "ceil(N0 * (q * SE0 / (epsilon - abs(delta0) - B_window0 - B_disc0))^2)"
+        },
+        "nonpositive_denominator_outcome": {
+          "const": "unresolved"
+        },
+        "sample_cap_exceeded_outcome": {
+          "const": "unresolved"
+        },
+        "primary_confirmatory_batch_is_new_data": {
+          "const": true
+        },
+        "primary_confirmatory_batch_size_rule": {
+          "const": "N_target_not_N_target_minus_N0"
+        },
+        "primary_confirmatory_seeds_disjoint_from_pilot": {
+          "const": true
+        }
+      }
+    },
+    "pairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fine_coarse",
+        "paired_difference_standard_error",
+        "cross_method_common_random_numbers",
+        "central_paired_comparison_requires_unpaired_confirmation",
+        "clean_room_requires_independent_random_stream"
+      ],
+      "properties": {
+        "fine_coarse": {
+          "const": "paired_when_valid_coupling_exists"
+        },
+        "paired_difference_standard_error": {
+          "const": true
+        },
+        "cross_method_common_random_numbers": {
+          "const": "allowed_with_disclosure"
+        },
+        "central_paired_comparison_requires_unpaired_confirmation": {
+          "const": true
+        },
+        "clean_room_requires_independent_random_stream": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidence_tier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gating",
+        "pointwise_coverage",
+        "normal_equivalent_quantile",
+        "relative_margin",
+        "pilot_policy"
+      ],
+      "properties": {
+        "gating": {
+          "type": "boolean"
+        },
+        "pointwise_coverage": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "normal_equivalent_quantile": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "relative_margin": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "pilot_policy": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "r_mean": {
+      "$ref": "#/$defs/scale_sqrt_rr"
+    },
+    "v_mean": {
+      "$ref": "#/$defs/scale_sqrt_vv"
+    },
+    "u_mean": {
+      "$ref": "#/$defs/scale_sqrt_uu"
+    },
+    "rr": {
+      "$ref": "#/$defs/scale_rr_product"
+    },
+    "vv": {
+      "$ref": "#/$defs/scale_vv_product"
+    },
+    "uu": {
+      "$ref": "#/$defs/scale_uu_product"
+    },
+    "rv": {
+      "$ref": "#/$defs/scale_rv_product"
+    },
+    "ru": {
+      "$ref": "#/$defs/scale_ru_product"
+    },
+    "vu": {
+      "$ref": "#/$defs/scale_vu_product"
+    },
+    "r_dot_v": {
+      "$ref": "#/$defs/scale_r_dot_v"
+    },
+    "cov_r_trace": {
+      "$ref": "#/$defs/scale_abs_reference"
+    },
+    "stationary_variance": {
+      "$ref": "#/$defs/scale_abs_reference"
+    },
+    "scale_sqrt_rr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(rr_ii_reference))"
+        }
+      }
+    },
+    "scale_sqrt_vv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(vv_ii_reference))"
+        }
+      }
+    },
+    "scale_sqrt_uu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(uu_ii_reference))"
+        }
+      }
+    },
+    "scale_rr_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(rr_ii_reference * rr_jj_reference))"
+        }
+      }
+    },
+    "scale_vv_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(vv_ii_reference * vv_jj_reference))"
+        }
+      }
+    },
+    "scale_uu_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(uu_ii_reference * uu_jj_reference))"
+        }
+      }
+    },
+    "scale_rv_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(rr_ii_reference * vv_jj_reference))"
+        }
+      }
+    },
+    "scale_ru_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(rr_ii_reference * uu_jj_reference))"
+        }
+      }
+    },
+    "scale_vu_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(vv_ii_reference * uu_jj_reference))"
+        }
+      }
+    },
+    "scale_r_dot_v": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "sqrt(abs(r_squared_reference * v_squared_reference))"
+        }
+      }
+    },
+    "scale_abs_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "abs(reference)"
+        }
+      }
+    },
+    "d_eff_class": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule",
+        "requires_declared_class_scale"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "max(abs(reference), declared_class_scale)"
+        },
+        "requires_declared_class_scale": {
+          "const": true
+        }
+      }
+    },
+    "symmetry_forced_zero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule",
+        "relative_term_enabled"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "inherit_parent_scale"
+        },
+        "relative_term_enabled": {
+          "const": false
+        }
+      }
+    },
+    "zero_crossing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scale_rule",
+        "root_location_rule_required_when_claimed"
+      ],
+      "properties": {
+        "scale_rule": {
+          "const": "inherit_parent_scale"
+        },
+        "root_location_rule_required_when_claimed": {
+          "const": true
+        }
+      }
+    },
+    "root_location_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter_bracket",
+        "lower_sign",
+        "upper_sign",
+        "estimator",
+        "uncertainty_method",
+        "epsilon_root"
+      ],
+      "properties": {
+        "parameter_bracket": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "lower_sign": {
+          "enum": [
+            -1,
+            1
+          ]
+        },
+        "upper_sign": {
+          "enum": [
+            -1,
+            1
+          ]
+        },
+        "estimator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "epsilon_root": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "run_configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_tier",
+        "observable_class",
+        "compute_cap",
+        "characteristic_scale",
+        "normalized_floor_fraction",
+        "relative_margin",
+        "systematic_envelopes",
+        "maximum_interim_evaluations",
+        "maximum_final_evaluations",
+        "continuous_polling_allowed",
+        "repeated_top_up_allowed",
+        "stop_at_first_pass_allowed",
+        "pilot_reused_in_confirmatory_estimate",
+        "comparison_kind",
+        "valid_coupling_exists",
+        "paired_paths",
+        "claimed_zero_crossing"
+      ],
+      "properties": {
+        "evidence_tier": {
+          "enum": [
+            "routine_screen",
+            "primary",
+            "central_disputed"
+          ]
+        },
+        "observable_class": {
+          "enum": [
+            "r_mean",
+            "v_mean",
+            "u_mean",
+            "rr",
+            "vv",
+            "uu",
+            "rv",
+            "ru",
+            "vu",
+            "r_dot_v",
+            "cov_r_trace",
+            "stationary_variance",
+            "d_eff",
+            "symmetry_forced_zero",
+            "zero_crossing"
+          ]
+        },
+        "compute_cap": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "characteristic_scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "declared_class_scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "parent_scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "normalized_floor_fraction": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "relative_margin": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "systematic_envelopes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "B_window",
+            "B_disc"
+          ],
+          "properties": {
+            "B_window": {
+              "type": "number",
+              "minimum": 0
+            },
+            "B_disc": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "maximum_interim_evaluations": {
+          "const": 1
+        },
+        "maximum_final_evaluations": {
+          "const": 1
+        },
+        "continuous_polling_allowed": {
+          "const": false
+        },
+        "repeated_top_up_allowed": {
+          "const": false
+        },
+        "stop_at_first_pass_allowed": {
+          "const": false
+        },
+        "pilot_reused_in_confirmatory_estimate": {
+          "type": "boolean"
+        },
+        "naive_ols_standard_error_allowed": {
+          "type": "boolean"
+        },
+        "comparison_kind": {
+          "enum": [
+            "direct_reference",
+            "fine_coarse",
+            "cross_method"
+          ]
+        },
+        "valid_coupling_exists": {
+          "type": "boolean"
+        },
+        "paired_paths": {
+          "type": "boolean"
+        },
+        "claimed_zero_crossing": {
+          "type": "boolean"
+        },
+        "root_location_rule": {
+          "$ref": "#/$defs/root_location_rule"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "evidence_tier"
+            ],
+            "properties": {
+              "evidence_tier": {
+                "enum": [
+                  "primary",
+                  "central_disputed"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "pilot_reused_in_confirmatory_estimate": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "observable_class"
+            ],
+            "properties": {
+              "observable_class": {
+                "const": "d_eff"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "declared_class_scale",
+              "naive_ols_standard_error_allowed"
+            ],
+            "properties": {
+              "naive_ols_standard_error_allowed": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "observable_class"
+            ],
+            "properties": {
+              "observable_class": {
+                "enum": [
+                  "symmetry_forced_zero",
+                  "zero_crossing"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "parent_scale"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "comparison_kind",
+              "valid_coupling_exists"
+            ],
+            "properties": {
+              "comparison_kind": {
+                "const": "fine_coarse"
+              },
+              "valid_coupling_exists": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "paired_paths": {
+                "const": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "claimed_zero_crossing"
+            ],
+            "properties": {
+              "claimed_zero_crossing": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "root_location_rule"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

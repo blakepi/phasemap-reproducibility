@@ -1,0 +1,23 @@
+{
+  "artifact_type": "S-012-stage-attempt",
+  "plan_id": "S-012-complete-reset-regenerative-primary-v1",
+  "plan_semantic_sha256": "32822df90a3b4c1c0fb25aa515e1494550dcefa8491b7f3b9136509408bfd566",
+  "plan_sha256": "d37bfc7d930adbad66453e4a14bab087300b4b156e35d725e2dc9ce0654c8fba",
+  "schema_version": "1.0.0",
+  "source_commit": "5ab40d124f712d91ad2bbeb351fb765e99cb1759",
+  "source_manifest": {
+    "artifacts/derived/T-012-complete-reset-baseline.md": "bf40d5aa8549fb15712ba5e296f3cac26fcdcf5c8cb51e37a745ae80d6bfd8a9",
+    "docs/scientific-contract/CONTRACT.md": "0af9136f1188acdd3d26d03dd80b1c13065df9e6e8cd18acc11700028ae2d532",
+    "docs/scientific-contract/validation_registry.json": "b46f860fdefe1ffc91a65d34d7af03fc38b05a3a8cac9a4079df92fddbe1a0b0",
+    "docs/scientific-contract/validation_registry.schema.json": "2b4d5c6dbc5cf96852bbdf1300970377c1c0e96856436bde2ad70bcbb903a6b0",
+    "experiments/S-012-complete-reset-regenerative-primary-v1.json": "d37bfc7d930adbad66453e4a14bab087300b4b156e35d725e2dc9ce0654c8fba",
+    "experiments/run_s012_complete_reset_regenerative.py": "f8610f4825a82a1e3c8872bb009285f05069c446eba2c83dd6be8f091bd12d4b",
+    "src/phasemap/common/model.py": "a2b8717f7d7a6092a7ad72e4ccff2121f4dd1c083e7c78b15aca6c6bfce5c760",
+    "src/phasemap/simulation/complete_reset_regenerative.py": "190454f5a925747d45da1791c09964ed85c32a69566fc014bfa6548257ea92c8",
+    "src/phasemap/simulation/integrator.py": "8eb13077b4a90264e0b723e341062e8827083e18996b03a36a0a6b56ee47ac23",
+    "src/phasemap/simulation/protocols.py": "fb4f7b287f10ef145ffb3fc5d14c8cdb0e54f55bf534dd4fdd966e4ef97572d0",
+    "src/phasemap/theory/complete_reset_baseline.py": "29e4892cb08969e8217d38913a96f6620d67b11e4fb62bf8320bf117aca432de",
+    "tests/simulation/test_complete_reset_regenerative.py": "22fe9250eb1cd54a1e16554b4947f7cd568b021b55553c6eb435263d7d6e7812"
+  },
+  "stage": "pilot"
+}

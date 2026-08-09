@@ -1,0 +1,1108 @@
+{
+  "N_target_global": null,
+  "analytic_references": {
+    "active": {
+      "centered_spatial_variance": 2.1355311355311355,
+      "mean_squared_speed": 2.181318681318681,
+      "r_x": 0.3333333333333333,
+      "raw_mean_squared_displacement": 2.2466422466422467,
+      "rr_xx": 1.1892551892551892,
+      "u_x": 0.5,
+      "uu_xx": 0.6,
+      "uu_yy": 0.4,
+      "v_x": 0.3333333333333333,
+      "vv_xx": 1.1302197802197802
+    },
+    "passive": {
+      "centered_spatial_variance": 1.5873015873015872,
+      "mean_squared_speed": 1.7857142857142858,
+      "r_x": 0.0,
+      "raw_mean_squared_displacement": 1.5873015873015872,
+      "raw_radial_excess_kurtosis_K": 3.210526315789474,
+      "rr_xx": 0.7936507936507936,
+      "u_x": 0.5,
+      "uu_xx": 0.6,
+      "uu_yy": 0.4,
+      "v_x": 0.0,
+      "vv_xx": 0.8928571428571429
+    }
+  },
+  "artifact_type": "S-012-regenerative-validation",
+  "attempt_receipt_sha256": "5515f298e7a09a8a65fb53fcd41342f61bc53b0c7fb57d0776c5381a6619c48f",
+  "case_provenance": {
+    "active": {
+      "age_summary": {
+        "maximum": 10.718094009782297,
+        "mean": 1.019901246339069,
+        "minimum": 4.847334849886282e-05
+      },
+      "array_sha256": {
+        "ages": "96436adb6688f7cbe6566f4463e93c9a89e4106a7d966af3b6e02560399e3e8b",
+        "coarse_orientation": "c7cf04e3822d07303b66dcc9908837f2f8b51df80a239feb77754d8cd8b6b1c1",
+        "coarse_position": "9b2f790398093c85e51830ebd84ea7b8fe63a606523a2d8fa33a0a05d4204c5b",
+        "coarse_velocity": "d8a66d46e4d6fd367dfaf4f52a195cec634ebd68abad1823379d1389b549adee",
+        "fine_orientation": "fa8648ccba1555ff8aaf8fd6b31d93204f75491fed70d2c2008fb1734b44cf72",
+        "fine_position": "18af4c56d68d60363465f01c6de1e6de3fd6889e96037eafdc208c6303e40bdd",
+        "fine_velocity": "d59757b6c1b90ea75822e3f0674d41917f7c55782a33e4a0c9b72f23267b9754"
+      },
+      "base_seed": 20260722301,
+      "case_code": 1,
+      "count": 8192
+    },
+    "passive": {
+      "age_summary": {
+        "maximum": 11.865670684897053,
+        "mean": 1.0134583915278157,
+        "minimum": 0.00024392820502724613
+      },
+      "array_sha256": {
+        "ages": "8faffca84102bc54c191daa24983757f64ce3456966d13c88295d7d2ade1792d",
+        "coarse_orientation": "6d5b40da8fa6b43f8a08c81c1ccebaf92a84f9d0f5f63f271c8616dfce4cfdbb",
+        "coarse_position": "42bb1b7876660833e34eda89c885d30925872b5bc8f855b738432565bd359332",
+        "coarse_velocity": "7a44a234cb387485e33001d1a50f60829aa36227cee97a61b5a0daa97665579e",
+        "fine_orientation": "c0ad518252ca51d9b63ba2295cd783a9ac1777dcdfffe1d4071db253e338632d",
+        "fine_position": "4245a18713c88d776ca338ca80a6b41f3457fbb0477d6d96daf4889940d22afb",
+        "fine_velocity": "fd2a07654d67bcceb1e80b2394d04101853b3db443962f233754d91dd56defd9"
+      },
+      "base_seed": 20260722301,
+      "case_code": 2,
+      "count": 8192
+    }
+  },
+  "configuration_ids": [
+    "active-u_x-direct_reference",
+    "active-u_x-paired_fine_coarse",
+    "active-v_x-direct_reference",
+    "active-v_x-paired_fine_coarse",
+    "active-r_x-direct_reference",
+    "active-r_x-paired_fine_coarse",
+    "active-uu_xx-direct_reference",
+    "active-uu_xx-paired_fine_coarse",
+    "active-uu_yy-direct_reference",
+    "active-uu_yy-paired_fine_coarse",
+    "active-mean_squared_speed-direct_reference",
+    "active-mean_squared_speed-paired_fine_coarse",
+    "active-raw_mean_squared_displacement-direct_reference",
+    "active-raw_mean_squared_displacement-paired_fine_coarse",
+    "active-centered_spatial_variance-direct_reference",
+    "active-centered_spatial_variance-paired_fine_coarse",
+    "passive-raw_mean_squared_displacement-direct_reference",
+    "passive-raw_mean_squared_displacement-paired_fine_coarse",
+    "passive-raw_radial_excess_kurtosis_K-direct_reference",
+    "passive-raw_radial_excess_kurtosis_K-paired_fine_coarse"
+  ],
+  "confirmation_eligible": false,
+  "contract_version": "0.3",
+  "count_per_case": 8192,
+  "data_role": "design-only-pilot",
+  "environment": {
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "python_implementation": "CPython",
+    "sympy": "1.14.0"
+  },
+  "execution_locks": {
+    "estimators": {
+      "K": "q_i=|r_i|^2; m2=mean(q); m4=mean(q^2); K=m4/(2*m2^2)-1; delete-one trajectory jackknife SE",
+      "centered_spatial_variance": "sum_i ||r_i-rbar||^2/(N-1); delete-one trajectory jackknife SE",
+      "paired_centered_or_K": "matched fine-minus-coarse statistic with delete-one matched-pair jackknife SE",
+      "paired_mean": "mean of matched fine-minus-coarse trajectory differences; SE=sample_sd(ddof=1)/sqrt(N)",
+      "trajectory_mean": "mean of trajectory values; SE=sample_sd(ddof=1)/sqrt(N)"
+    },
+    "evidence": {
+      "B_window": 0.0,
+      "classification": {
+        "contradicted": "expanded interval disjoint from [-epsilon,+epsilon]",
+        "unresolved": "otherwise",
+        "validated": "expanded interval contained in [-epsilon,+epsilon]"
+      },
+      "direct_B_disc": "abs(fine_minus_coarse_delta)+q*paired_SE_delta",
+      "interval": "Delta_hat +/- q*SE_Delta",
+      "margin": "epsilon=0.005*C+0.01*abs(reference)",
+      "normalized_floor_fraction": 0.005,
+      "paired_B_disc": 0.0,
+      "quantile": 2.5758293035,
+      "relative_margin": 0.01,
+      "tier": "primary"
+    },
+    "integrator": {
+      "coarse_max_step": "1/256",
+      "coupling": "For a sampled age A, partition [0,A] into consecutive fine intervals of length 1/512 except a final shorter interval. Coarse intervals merge consecutive fine intervals in pairs; a final singleton is allowed. Each coarse translational and rotational Brownian increment is the exact sum of its matching fine increments.",
+      "event_check": {
+        "assertions": [
+          "pre- and post-reset records share a timestamp",
+          "post-reset state is exactly zero"
+        ],
+        "execution_prerequisite": true,
+        "failure": "BL2; do not reserve or execute pilot",
+        "method": "existing exact-clock PVTheta simulator",
+        "scientifically_gating": false
+      },
+      "fine_max_step": "1/512",
+      "method": "Euler-Maruyama"
+    },
+    "parameters": [
+      {
+        "activity": "6/5",
+        "case_code": 1,
+        "case_id": "active",
+        "inertia": "4/5",
+        "reset_rate": "1"
+      },
+      {
+        "activity": "0",
+        "case_code": 2,
+        "case_id": "passive",
+        "inertia": "4/5",
+        "reset_rate": "1"
+      }
+    ],
+    "resolved_steps": {
+      "chunk_size": 32768,
+      "coarse": 0.00390625,
+      "fine": 0.001953125
+    },
+    "rng": {
+      "base_seeds": {
+        "confirmatory": 20260722401,
+        "pilot": 20260722301
+      },
+      "bit_generator": "numpy.random.PCG64",
+      "case_codes": {
+        "active": 1,
+        "passive": 2
+      },
+      "chunk_size": 32768,
+      "derivation": "SeedSequence([base_seed, case_code, stream_code]); construct one PCG64 Generator per named stream and case.",
+      "draw_order": "The vectorized ordering specified in trajectory_order is normative. Coarse increments are derived only by summing fine increments and consume no RNG draws.",
+      "seed_sequence": "numpy.random.SeedSequence",
+      "stage_base_seed": 20260722301,
+      "stream_codes": {
+        "age": 1,
+        "rotational": 3,
+        "translational": 2
+      },
+      "trajectory_order": "Case order is active then passive. Per case, draw all N uniforms once from the age PCG64 in trajectory-index order and set A=-log1p(-U)/rho. Process fixed chunks [0:32768), [32768:65536), and so on. Within each chunk and fine-step index k ascending, active indices are those with A_i>k/512 in ascending order; set dt_i=min(1/512,A_i-k/512). The translational stream draws shape(n_active,2) and the rotational stream draws shape(n_active,), then each is scaled by sqrt(dt_i). Draw nothing for inactive indices or coarse paths. Coarse paths use only paired fine-increment sums. Independent named streams make their interleaving irrelevant."
+    },
+    "sampling": {
+      "N0": 8192,
+      "cap_per_case": 262144,
+      "confirmatory_data": "new N_target_global per case; never N_target-N0",
+      "maximum_final_evaluations": 1,
+      "maximum_interim_evaluations": 1,
+      "no_polling": true,
+      "no_repeated_topups": true,
+      "no_stop_at_first_pass": true,
+      "per_case": true,
+      "pilot_design_only": true,
+      "projection_formula": "ceil(N0*(q*SE0/(epsilon-abs(Delta0)-B_window0-B_disc0))^2)",
+      "target": "Project all 20 rows. If every denominator is positive and every projection valid, N_target_global=max(8192,max(all 20 projections)); run that same number of new confirmatory trajectories for each case."
+    }
+  },
+  "overall": "design-only",
+  "plan_id": "S-012-complete-reset-regenerative-primary-v1",
+  "plan_semantic_sha256": "32822df90a3b4c1c0fb25aa515e1494550dcefa8491b7f3b9136509408bfd566",
+  "plan_sha256": "d37bfc7d930adbad66453e4a14bab087300b4b156e35d725e2dc9ce0654c8fba",
+  "plan_version": "1",
+  "projection": {
+    "N_target_global": null,
+    "cap_per_case": 262144,
+    "confirmation_eligible": false,
+    "formula": "ceil(N0*(q*SE0/(epsilon-abs(Delta0)-B_window0-B_disc0))^2)",
+    "rows": [
+      {
+        "denominator": 0.006251739229054216,
+        "eligible": true,
+        "id": "active-u_x-direct_reference",
+        "projected_count": 61228,
+        "reason": null
+      },
+      {
+        "denominator": 0.0038729833462073948,
+        "eligible": true,
+        "id": "active-u_x-paired_fine_coarse",
+        "projected_count": 1,
+        "reason": null
+      },
+      {
+        "denominator": 0.006736847448611814,
+        "eligible": true,
+        "id": "active-v_x-direct_reference",
+        "projected_count": 151143,
+        "reason": null
+      },
+      {
+        "denominator": 0.0048218993691796054,
+        "eligible": true,
+        "id": "active-v_x-paired_fine_coarse",
+        "projected_count": 1,
+        "reason": null
+      },
+      {
+        "denominator": -0.004523910499529899,
+        "eligible": false,
+        "id": "active-r_x-direct_reference",
+        "projected_count": null,
+        "reason": "nonpositive_or_nonfinite_denominator"
+      },
+      {
+        "denominator": 0.005259262218906959,
+        "eligible": true,
+        "id": "active-r_x-paired_fine_coarse",
+        "projected_count": 1,
+        "reason": null
+      },
+      {
+        "denominator": 0.0009860056781495026,
+        "eligible": false,
+        "id": "active-uu_xx-direct_reference",
+        "projected_count": 825285,
+        "reason": "above_cap"
+      },
+      {
+        "denominator": 0.0029999999999999983,
+        "eligible": true,
+        "id": "active-uu_xx-paired_fine_coarse",
+        "projected_count": 1,
+        "reason": null
+      },
+      {
+        "denominator": -0.002013994321850443,
+        "eligible": false,
+        "id": "active-uu_yy-direct_reference",
+        "projected_count": null,
+        "reason": "nonpositive_or_nonfinite_denominator"
+      },
+      {
+        "denominator": 0.0019999999999999983,
+        "eligible": true,
+        "id": "active-uu_yy-paired_fine_coarse",
+        "projected_count": 1,
+        "reason": null
+      },
+      {
+        "denominator": 0.0021532022952915125,
+        "eligible": false,
+        "id": "active-mean_squared_speed-direct_reference",
+        "projected_count": 9338553,
+        "reason": "above_cap"
+      },
+      {
+        "denominator": 0.007642001936434275,
+        "eligible": true,
+        "id": "active-mean_squared_speed-paired_fine_coarse",
+        "projected_count": 5,
+        "reason": null
+      },
+      {
+        "denominator": -0.13684433754593334,
+        "eligible": false,
+        "id": "active-raw_mean_squared_displacement-direct_reference",
+        "projected_count": null,
+        "reason": "nonpositive_or_nonfinite_denominator"
+      },
+      {
+        "denominator": 0.010990793163551841,
+        "eligible": true,
+        "id": "active-raw_mean_squared_displacement-paired_fine_coarse",
+        "projected_count": 3,
+        "reason": null
+      },
+      {
+        "denominator": -0.13000947974797278,
+        "eligible": false,
+        "id": "active-centered_spatial_variance-direct_reference",
+        "projected_count": null,
+        "reason": "nonpositive_or_nonfinite_denominator"
+      },
+      {
+        "denominator": 0.010301523683134433,
+        "eligible": true,
+        "id": "active-centered_spatial_variance-paired_fine_coarse",
+        "projected_count": 3,
+        "reason": null
+      },
+      {
+        "denominator": 0.011700931802751932,
+        "eligible": false,
+        "id": "passive-raw_mean_squared_displacement-direct_reference",
+        "projected_count": 862189,
+        "reason": "above_cap"
+      },
+      {
+        "denominator": 0.007815092277081732,
+        "eligible": true,
+        "id": "passive-raw_mean_squared_displacement-paired_fine_coarse",
+        "projected_count": 2,
+        "reason": null
+      },
+      {
+        "denominator": -0.1863847351238192,
+        "eligible": false,
+        "id": "passive-raw_radial_excess_kurtosis_K-direct_reference",
+        "projected_count": null,
+        "reason": "nonpositive_or_nonfinite_denominator"
+      },
+      {
+        "denominator": 0.014654254825285758,
+        "eligible": true,
+        "id": "passive-raw_radial_excess_kurtosis_K-paired_fine_coarse",
+        "projected_count": 13,
+        "reason": null
+      }
+    ]
+  },
+  "rows": [
+    {
+      "B_disc": 5.909389396987249e-17,
+      "B_window": 0.0,
+      "SE": 0.006635314005894236,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 0.5,
+      "case": "active",
+      "characteristic_scale": 0.7745966692414834,
+      "classification": "unresolved",
+      "coarse_SE": 0.006635314005894236,
+      "coarse_estimate": 0.49737875588284686,
+      "comparison_kind": "direct_reference",
+      "delta": -0.002621244117153143,
+      "epsilon": 0.008872983346207418,
+      "estimate": 0.49737875588284686,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.019712680371459547,
+        0.01447019213715326
+      ],
+      "fine_SE": 0.006635314005894236,
+      "fine_estimate": 0.49737875588284686,
+      "id": "active-u_x-direct_reference",
+      "interval": [
+        -0.019712680371459488,
+        0.014470192137153202
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "u_x",
+      "paired_SE": 1.4202431983678142e-17,
+      "paired_estimate": -2.2510853485348693e-17,
+      "quantile": 2.5758293035,
+      "reference": 0.5,
+      "relative_margin": 0.01,
+      "scale_rule": "u_mean:sqrt(abs(uu_xx_reference))"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 1.4202431983678142e-17,
+      "SE_method": "paired_mean",
+      "analytic_reference": 0.5,
+      "case": "active",
+      "characteristic_scale": 0.7745966692414834,
+      "classification": "validated",
+      "coarse_SE": 0.006635314005894236,
+      "coarse_estimate": 0.49737875588284686,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": -2.2510853485348693e-17,
+      "epsilon": 0.0038729833462074173,
+      "estimate": -2.2510853485348693e-17,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        -5.909389396987249e-17,
+        1.40721869991751e-17
+      ],
+      "fine_SE": 0.006635314005894236,
+      "fine_estimate": 0.49737875588284686,
+      "id": "active-u_x-paired_fine_coarse",
+      "interval": [
+        -5.909389396987249e-17,
+        1.40721869991751e-17
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "u_x",
+      "paired_SE": 1.4202431983678142e-17,
+      "paired_estimate": -2.2510853485348693e-17,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "u_mean:sqrt(abs(uu_xx_reference))"
+    },
+    {
+      "B_disc": 0.0005408449611982283,
+      "B_window": 0.0,
+      "SE": 0.01123410152091504,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 0.3333333333333333,
+      "case": "active",
+      "characteristic_scale": 1.0631179521670115,
+      "classification": "unresolved",
+      "coarse_SE": 0.011241755368261296,
+      "coarse_estimate": 0.33245579304063044,
+      "comparison_kind": "direct_reference",
+      "delta": -0.0013712306843583488,
+      "epsilon": 0.008648923094168391,
+      "estimate": 0.33196210264897497,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.030849203541623453,
+        0.028106742172906755
+      ],
+      "fine_SE": 0.01123410152091504,
+      "fine_estimate": 0.33196210264897497,
+      "id": "active-v_x-direct_reference",
+      "interval": [
+        -0.030308358580425226,
+        0.027565897211708528
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "v_x",
+      "paired_SE": 1.830655838828398e-05,
+      "paired_estimate": -0.0004936903916554527,
+      "quantile": 2.5758293035,
+      "reference": 0.3333333333333333,
+      "relative_margin": 0.01,
+      "scale_rule": "v_mean:sqrt(abs(vv_xx_reference))"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 1.830655838828398e-05,
+      "SE_method": "paired_mean",
+      "analytic_reference": 0.3333333333333333,
+      "case": "active",
+      "characteristic_scale": 1.0631179521670115,
+      "classification": "validated",
+      "coarse_SE": 0.011241755368261296,
+      "coarse_estimate": 0.33245579304063044,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": -0.0004936903916554527,
+      "epsilon": 0.005315589760835058,
+      "estimate": -0.0004936903916554527,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        -0.0005408449611982283,
+        -0.0004465358221126771
+      ],
+      "fine_SE": 0.01123410152091504,
+      "fine_estimate": 0.33196210264897497,
+      "id": "active-v_x-paired_fine_coarse",
+      "interval": [
+        -0.0005408449611982283,
+        -0.0004465358221126771
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "v_x",
+      "paired_SE": 1.830655838828398e-05,
+      "paired_estimate": -0.0004936903916554527,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "v_mean:sqrt(abs(vv_xx_reference))"
+    },
+    {
+      "B_disc": 0.00023538928475820236,
+      "B_window": 0.0,
+      "SE": 0.011946129467405676,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 0.3333333333333333,
+      "case": "active",
+      "characteristic_scale": 1.0905297745844398,
+      "classification": "unresolved",
+      "coarse_SE": 0.011946495424805987,
+      "coarse_estimate": 0.34660122340837574,
+      "comparison_kind": "direct_reference",
+      "delta": 0.013074503421027228,
+      "epsilon": 0.008785982206255531,
+      "estimate": 0.34640783675436054,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.017932076209279363,
+        0.04408108305133382
+      ],
+      "fine_SE": 0.011946129467405676,
+      "fine_estimate": 0.34640783675436054,
+      "id": "active-r_x-direct_reference",
+      "interval": [
+        -0.01769668692452116,
+        0.043845693766575614
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "r_x",
+      "paired_SE": 1.6306449610573964e-05,
+      "paired_estimate": -0.0001933866540152398,
+      "quantile": 2.5758293035,
+      "reference": 0.3333333333333333,
+      "relative_margin": 0.01,
+      "scale_rule": "r_mean:sqrt(abs(rr_xx_reference))"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 1.6306449610573964e-05,
+      "SE_method": "paired_mean",
+      "analytic_reference": 0.3333333333333333,
+      "case": "active",
+      "characteristic_scale": 1.0905297745844398,
+      "classification": "validated",
+      "coarse_SE": 0.011946495424805987,
+      "coarse_estimate": 0.34660122340837574,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": -0.0001933866540152398,
+      "epsilon": 0.005452648872922199,
+      "estimate": -0.0001933866540152398,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        -0.00023538928475820236,
+        -0.0001513840232722772
+      ],
+      "fine_SE": 0.011946129467405676,
+      "fine_estimate": 0.34640783675436054,
+      "id": "active-r_x-paired_fine_coarse",
+      "interval": [
+        -0.00023538928475820236,
+        -0.0001513840232722772
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "r_x",
+      "paired_SE": 1.6306449610573964e-05,
+      "paired_estimate": -0.0001933866540152398,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "r_mean:sqrt(abs(rr_xx_reference))"
+    },
+    {
+      "B_disc": 3.9110679791572974e-17,
+      "B_window": 0.0,
+      "SE": 0.0038421058103944154,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 0.6,
+      "case": "active",
+      "characteristic_scale": 0.6,
+      "classification": "unresolved",
+      "coarse_SE": 0.0038421058103944154,
+      "coarse_estimate": 0.6080139943218503,
+      "comparison_kind": "direct_reference",
+      "delta": 0.00801399432185046,
+      "epsilon": 0.009000000000000001,
+      "estimate": 0.6080139943218504,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.001882614411711129,
+        0.017910603055412047
+      ],
+      "fine_SE": 0.0038421058103944154,
+      "fine_estimate": 0.6080139943218504,
+      "id": "active-uu_xx-direct_reference",
+      "interval": [
+        -0.00188261441171109,
+        0.01791060305541201
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "uu_xx",
+      "paired_SE": 1.448737667945446e-17,
+      "paired_estimate": 1.7936704097916505e-18,
+      "quantile": 2.5758293035,
+      "reference": 0.6,
+      "relative_margin": 0.01,
+      "scale_rule": "uu:sqrt(abs(uu_xx_reference*uu_xx_reference))"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 1.448737667945446e-17,
+      "SE_method": "paired_mean",
+      "analytic_reference": 0.6,
+      "case": "active",
+      "characteristic_scale": 0.6,
+      "classification": "validated",
+      "coarse_SE": 0.0038421058103944154,
+      "coarse_estimate": 0.6080139943218503,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": 1.7936704097916505e-18,
+      "epsilon": 0.003,
+      "estimate": 1.7936704097916505e-18,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        -3.552333897198967e-17,
+        3.9110679791572974e-17
+      ],
+      "fine_SE": 0.0038421058103944154,
+      "fine_estimate": 0.6080139943218504,
+      "id": "active-uu_xx-paired_fine_coarse",
+      "interval": [
+        -3.552333897198967e-17,
+        3.9110679791572974e-17
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "uu_xx",
+      "paired_SE": 1.448737667945446e-17,
+      "paired_estimate": 1.7936704097916505e-18,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "uu:sqrt(abs(uu_xx_reference*uu_xx_reference))"
+    },
+    {
+      "B_disc": 3.9045144763403346e-17,
+      "B_window": 0.0,
+      "SE": 0.0038421058103944154,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 0.4,
+      "case": "active",
+      "characteristic_scale": 0.4,
+      "classification": "unresolved",
+      "coarse_SE": 0.0038421058103944154,
+      "coarse_estimate": 0.3919860056781496,
+      "comparison_kind": "direct_reference",
+      "delta": -0.008013994321850404,
+      "epsilon": 0.006,
+      "estimate": 0.3919860056781496,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.01791060305541199,
+        0.0018826144117111846
+      ],
+      "fine_SE": 0.0038421058103944154,
+      "fine_estimate": 0.3919860056781496,
+      "id": "active-uu_yy-direct_reference",
+      "interval": [
+        -0.017910603055411953,
+        0.0018826144117111455
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "uu_yy",
+      "paired_SE": 1.4463068989033705e-17,
+      "paired_estimate": -1.7907478429082104e-18,
+      "quantile": 2.5758293035,
+      "reference": 0.4,
+      "relative_margin": 0.01,
+      "scale_rule": "uu:sqrt(abs(uu_yy_reference*uu_yy_reference))"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 1.4463068989033705e-17,
+      "SE_method": "paired_mean",
+      "analytic_reference": 0.4,
+      "case": "active",
+      "characteristic_scale": 0.4,
+      "classification": "validated",
+      "coarse_SE": 0.0038421058103944154,
+      "coarse_estimate": 0.3919860056781496,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": -1.7907478429082104e-18,
+      "epsilon": 0.002,
+      "estimate": -1.7907478429082104e-18,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        -3.9045144763403346e-17,
+        3.5463649077586925e-17
+      ],
+      "fine_SE": 0.0038421058103944154,
+      "fine_estimate": 0.3919860056781496,
+      "id": "active-uu_yy-paired_fine_coarse",
+      "interval": [
+        -3.9045144763403346e-17,
+        3.5463649077586925e-17
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "uu_yy",
+      "paired_SE": 1.4463068989033705e-17,
+      "paired_estimate": -1.7907478429082104e-18,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "uu:sqrt(abs(uu_yy_reference*uu_yy_reference))"
+    },
+    {
+      "B_disc": 0.003440668917629745,
+      "B_window": 0.0,
+      "SE": 0.028223610070775257,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 2.181318681318681,
+      "case": "active",
+      "characteristic_scale": 2.181318681318681,
+      "classification": "unresolved",
+      "coarse_SE": 0.028262799621026864,
+      "coarse_estimate": 2.2117091817956993,
+      "comparison_kind": "direct_reference",
+      "delta": 0.02712590900685896,
+      "epsilon": 0.03271978021978022,
+      "estimate": 2.20844459032554,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.04901396178163139,
+        0.10326577979534932
+      ],
+      "fine_SE": 0.028223610070775257,
+      "fine_estimate": 2.20844459032554,
+      "id": "active-mean_squared_speed-direct_reference",
+      "interval": [
+        -0.04557329286400165,
+        0.09982511087771957
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "mean_squared_speed",
+      "paired_SE": 6.835757603633222e-05,
+      "paired_estimate": -0.003264591470159131,
+      "quantile": 2.5758293035,
+      "reference": 2.181318681318681,
+      "relative_margin": 0.01,
+      "scale_rule": "aggregated_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 6.835757603633222e-05,
+      "SE_method": "paired_mean",
+      "analytic_reference": 2.181318681318681,
+      "case": "active",
+      "characteristic_scale": 2.181318681318681,
+      "classification": "validated",
+      "coarse_SE": 0.028262799621026864,
+      "coarse_estimate": 2.2117091817956993,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": -0.003264591470159131,
+      "epsilon": 0.010906593406593406,
+      "estimate": -0.003264591470159131,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        -0.003440668917629745,
+        -0.0030885140226885174
+      ],
+      "fine_SE": 0.028223610070775257,
+      "fine_estimate": 2.20844459032554,
+      "id": "active-mean_squared_speed-paired_fine_coarse",
+      "interval": [
+        -0.003440668917629745,
+        -0.0030885140226885174
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "mean_squared_speed",
+      "paired_SE": 6.835757603633222e-05,
+      "paired_estimate": -0.003264591470159131,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "aggregated_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.000436185336147467,
+      "B_window": 0.0,
+      "SE": 0.07887499821979854,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 2.2466422466422467,
+      "case": "active",
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "unresolved",
+      "coarse_SE": 0.07888137894355181,
+      "coarse_estimate": 2.416507614482007,
+      "comparison_kind": "direct_reference",
+      "delta": 0.17010778590941955,
+      "epsilon": 0.0336996336996337,
+      "estimate": 2.416750032551666,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.033496931154795344,
+        0.37371250297363445
+      ],
+      "fine_SE": 0.07887499821979854,
+      "fine_estimate": 2.416750032551666,
+      "id": "active-raw_mean_squared_displacement-direct_reference",
+      "interval": [
+        -0.033060745818647874,
+        0.373276317637487
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "raw_mean_squared_displacement",
+      "paired_SE": 7.522519688116996e-05,
+      "paired_estimate": 0.00024241806965939267,
+      "quantile": 2.5758293035,
+      "reference": 2.2466422466422467,
+      "relative_margin": 0.01,
+      "scale_rule": "aggregated_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 7.522519688116996e-05,
+      "SE_method": "paired_mean",
+      "analytic_reference": 2.2466422466422467,
+      "case": "active",
+      "characteristic_scale": 2.2466422466422467,
+      "classification": "validated",
+      "coarse_SE": 0.07888137894355181,
+      "coarse_estimate": 2.416507614482007,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": 0.00024241806965939267,
+      "epsilon": 0.011233211233211233,
+      "estimate": 0.00024241806965939267,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        4.865080317131829e-05,
+        0.000436185336147467
+      ],
+      "fine_SE": 0.07887499821979854,
+      "fine_estimate": 2.416750032551666,
+      "id": "active-raw_mean_squared_displacement-paired_fine_coarse",
+      "interval": [
+        4.865080317131829e-05,
+        0.000436185336147467
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "raw_mean_squared_displacement",
+      "paired_SE": 7.522519688116996e-05,
+      "paired_estimate": 0.00024241806965939267,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "aggregated_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.0005635445027309998,
+      "B_window": 0.0,
+      "SE": 0.07577319507051221,
+      "SE_method": "delete_one_jackknife",
+      "analytic_reference": 2.1355311355311355,
+      "case": "active",
+      "characteristic_scale": 2.1355311355311355,
+      "classification": "unresolved",
+      "coarse_SE": 0.07577409367002792,
+      "coarse_estimate": 2.296633905814823,
+      "comparison_kind": "direct_reference",
+      "delta": 0.16147890227820882,
+      "epsilon": 0.032032967032967034,
+      "estimate": 2.2970100378093443,
+      "estimator": "centered_spatial_variance",
+      "expanded_interval": [
+        -0.034263458506969276,
+        0.3572212630633869
+      ],
+      "fine_SE": 0.07577319507051221,
+      "fine_estimate": 2.2970100378093443,
+      "id": "active-centered_spatial_variance-direct_reference",
+      "interval": [
+        -0.033699914004238274,
+        0.3566577185606559
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "centered_spatial_variance",
+      "paired_SE": 7.275812413310985e-05,
+      "paired_estimate": 0.0003761319945212449,
+      "quantile": 2.5758293035,
+      "reference": 2.1355311355311355,
+      "relative_margin": 0.01,
+      "scale_rule": "cov_r_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 7.275812413310985e-05,
+      "SE_method": "delete_one_matched_pair_jackknife",
+      "analytic_reference": 2.1355311355311355,
+      "case": "active",
+      "characteristic_scale": 2.1355311355311355,
+      "classification": "validated",
+      "coarse_SE": 0.07577409367002792,
+      "coarse_estimate": 2.296633905814823,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": 0.0003761319945212449,
+      "epsilon": 0.010677655677655678,
+      "estimate": 0.0003761319945212449,
+      "estimator": "paired_centered_or_K",
+      "expanded_interval": [
+        0.00018871948631149003,
+        0.0005635445027309998
+      ],
+      "fine_SE": 0.07577319507051221,
+      "fine_estimate": 2.2970100378093443,
+      "id": "active-centered_spatial_variance-paired_fine_coarse",
+      "interval": [
+        0.00018871948631149003,
+        0.0005635445027309998
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "centered_spatial_variance",
+      "paired_SE": 7.275812413310985e-05,
+      "paired_estimate": 0.0003761319945212449,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "cov_r_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.00021823906237621076,
+      "B_window": 0.0,
+      "SE": 0.046602522452222336,
+      "SE_method": "trajectory_mean",
+      "analytic_reference": 1.5873015873015872,
+      "case": "passive",
+      "characteristic_scale": 1.5873015873015872,
+      "classification": "unresolved",
+      "coarse_SE": 0.046608351283522906,
+      "coarse_estimate": 1.5990705245865564,
+      "comparison_kind": "direct_reference",
+      "delta": 0.011890352944395666,
+      "epsilon": 0.023809523809523808,
+      "estimate": 1.5991919402459829,
+      "estimator": "trajectory_mean",
+      "expanded_interval": [
+        -0.10836802906743151,
+        0.13214873495622287
+      ],
+      "fine_SE": 0.046602522452222336,
+      "fine_estimate": 1.5991919402459829,
+      "id": "passive-raw_mean_squared_displacement-direct_reference",
+      "interval": [
+        -0.1081497900050553,
+        0.13193049589384664
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "raw_mean_squared_displacement",
+      "paired_SE": 3.758921556581557e-05,
+      "paired_estimate": 0.00012141565942620466,
+      "quantile": 2.5758293035,
+      "reference": 1.5873015873015872,
+      "relative_margin": 0.01,
+      "scale_rule": "aggregated_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 3.758921556581557e-05,
+      "SE_method": "paired_mean",
+      "analytic_reference": 1.5873015873015872,
+      "case": "passive",
+      "characteristic_scale": 1.5873015873015872,
+      "classification": "validated",
+      "coarse_SE": 0.046608351283522906,
+      "coarse_estimate": 1.5990705245865564,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": 0.00012141565942620466,
+      "epsilon": 0.007936507936507936,
+      "estimate": 0.00012141565942620466,
+      "estimator": "paired_mean",
+      "expanded_interval": [
+        2.4592256476198567e-05,
+        0.00021823906237621076
+      ],
+      "fine_SE": 0.046602522452222336,
+      "fine_estimate": 1.5991919402459829,
+      "id": "passive-raw_mean_squared_displacement-paired_fine_coarse",
+      "interval": [
+        2.4592256476198567e-05,
+        0.00021823906237621076
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "raw_mean_squared_displacement",
+      "paired_SE": 3.758921556581557e-05,
+      "paired_estimate": 0.00012141565942620466,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "aggregated_trace:abs(reference)"
+    },
+    {
+      "B_disc": 0.001976405969212118,
+      "B_window": 0.0,
+      "SE": 0.1930802468647965,
+      "SE_method": "delete_one_jackknife",
+      "analytic_reference": 3.210526315789474,
+      "case": "passive",
+      "characteristic_scale": 3.210526315789474,
+      "classification": "unresolved",
+      "coarse_SE": 0.19311476551296902,
+      "coarse_estimate": 2.9793584686516863,
+      "comparison_kind": "direct_reference",
+      "delta": -0.2325662238914492,
+      "epsilon": 0.04815789473684211,
+      "estimate": 2.9779600918980247,
+      "estimator": "K",
+      "expanded_interval": [
+        -0.7318843876620181,
+        0.2667519398791197
+      ],
+      "fine_SE": 0.1930802468647965,
+      "fine_estimate": 2.9779600918980247,
+      "id": "passive-raw_radial_excess_kurtosis_K-direct_reference",
+      "interval": [
+        -0.729907981692806,
+        0.2647755339099076
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "raw_radial_excess_kurtosis_K",
+      "paired_SE": 0.00022440509344508522,
+      "paired_estimate": -0.001398376753661612,
+      "quantile": 2.5758293035,
+      "reference": 3.210526315789474,
+      "relative_margin": 0.01,
+      "scale_rule": "section_7_4_departure:max(1,abs(K_reference))"
+    },
+    {
+      "B_disc": 0.0,
+      "B_window": 0.0,
+      "SE": 0.00022440509344508522,
+      "SE_method": "delete_one_matched_pair_jackknife",
+      "analytic_reference": 3.210526315789474,
+      "case": "passive",
+      "characteristic_scale": 3.210526315789474,
+      "classification": "validated",
+      "coarse_SE": 0.19311476551296902,
+      "coarse_estimate": 2.9793584686516863,
+      "comparison_kind": "paired_fine_coarse",
+      "delta": -0.001398376753661612,
+      "epsilon": 0.01605263157894737,
+      "estimate": -0.001398376753661612,
+      "estimator": "paired_centered_or_K",
+      "expanded_interval": [
+        -0.001976405969212118,
+        -0.0008203475381111058
+      ],
+      "fine_SE": 0.1930802468647965,
+      "fine_estimate": 2.9779600918980247,
+      "id": "passive-raw_radial_excess_kurtosis_K-paired_fine_coarse",
+      "interval": [
+        -0.001976405969212118,
+        -0.0008203475381111058
+      ],
+      "normalized_floor_fraction": 0.005,
+      "observable": "raw_radial_excess_kurtosis_K",
+      "paired_SE": 0.00022440509344508522,
+      "paired_estimate": -0.001398376753661612,
+      "quantile": 2.5758293035,
+      "reference": 0.0,
+      "relative_margin": 0.01,
+      "scale_rule": "section_7_4_departure:max(1,abs(K_reference))"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_commit": "5ab40d124f712d91ad2bbeb351fb765e99cb1759",
+  "source_manifest": {
+    "artifacts/derived/T-012-complete-reset-baseline.md": "bf40d5aa8549fb15712ba5e296f3cac26fcdcf5c8cb51e37a745ae80d6bfd8a9",
+    "docs/scientific-contract/CONTRACT.md": "0af9136f1188acdd3d26d03dd80b1c13065df9e6e8cd18acc11700028ae2d532",
+    "docs/scientific-contract/validation_registry.json": "b46f860fdefe1ffc91a65d34d7af03fc38b05a3a8cac9a4079df92fddbe1a0b0",
+    "docs/scientific-contract/validation_registry.schema.json": "2b4d5c6dbc5cf96852bbdf1300970377c1c0e96856436bde2ad70bcbb903a6b0",
+    "experiments/S-012-complete-reset-regenerative-primary-v1.json": "d37bfc7d930adbad66453e4a14bab087300b4b156e35d725e2dc9ce0654c8fba",
+    "experiments/run_s012_complete_reset_regenerative.py": "f8610f4825a82a1e3c8872bb009285f05069c446eba2c83dd6be8f091bd12d4b",
+    "src/phasemap/common/model.py": "a2b8717f7d7a6092a7ad72e4ccff2121f4dd1c083e7c78b15aca6c6bfce5c760",
+    "src/phasemap/simulation/complete_reset_regenerative.py": "190454f5a925747d45da1791c09964ed85c32a69566fc014bfa6548257ea92c8",
+    "src/phasemap/simulation/integrator.py": "8eb13077b4a90264e0b723e341062e8827083e18996b03a36a0a6b56ee47ac23",
+    "src/phasemap/simulation/protocols.py": "fb4f7b287f10ef145ffb3fc5d14c8cdb0e54f55bf534dd4fdd966e4ef97572d0",
+    "src/phasemap/theory/complete_reset_baseline.py": "29e4892cb08969e8217d38913a96f6620d67b11e4fb62bf8320bf117aca432de",
+    "tests/simulation/test_complete_reset_regenerative.py": "22fe9250eb1cd54a1e16554b4947f7cd568b021b55553c6eb435263d7d6e7812"
+  },
+  "stage": "pilot",
+  "supporting_only": {
+    "case": "passive",
+    "coarse_SE": 1.7188805652658714,
+    "coarse_estimate": 20.35065045373704,
+    "fine_SE": 1.7186314480030405,
+    "fine_estimate": 20.3465885169186,
+    "gating": false,
+    "id": "passive-raw-r4-supporting-only",
+    "observable": "raw_E_abs_r_fourth",
+    "paired_SE": 0.0015164078026969749,
+    "paired_estimate": -0.0040619368184395006
+  },
+  "validation_registry_schema_version": "1.0.0"
+}

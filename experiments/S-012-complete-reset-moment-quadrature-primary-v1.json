@@ -1,0 +1,498 @@
+{
+  "plan_id": "S-012-complete-reset-moment-quadrature-primary-v1",
+  "plan_version": "1.0.0",
+  "task_id": "S-012",
+  "status": "preregistered",
+  "contract_version": "0.3",
+  "registry_schema_version": "1.0.0",
+  "approval_record": {
+    "date": "2026-07-23",
+    "directive": "Approve the preferred deterministic S-012 replacement route."
+  },
+  "scope": {
+    "route": "deterministic_primary_g2_pivot",
+    "route_owner": "S-012 lean_worker under root Program Director acceptance",
+    "process": "PVTheta_complete_reset",
+    "evidence_tier": "deterministic_primary_under_CONTRACT_7.1",
+    "stochastic_registry_evidence_tier": "not_applicable",
+    "comparison_rule": "absolute deterministic agreement plus fixed arithmetic-precision and exponential-age-tail refinement under CONTRACT 7.1",
+    "ensemble_size": "not_applicable",
+    "seed_policy": "not_applicable",
+    "prior_pilot_reused": false,
+    "prior_pilot_reclassified": false,
+    "prior_pilot_role": "excluded_design_only_history",
+    "prior_pilot_sha256": "a0e5f4ff609dc585c49408c962cadf56b625295a9a252fe1b2ab5ccb6b5bf05b",
+    "prior_pilot_attempt_sha256": "5515f298e7a09a8a65fb53fcd41342f61bc53b0c7fb57d0776c5381a6619c48f",
+    "prior_confirmatory_run_exists": false
+  },
+  "isolation": {
+    "applies_to": "the entire deterministic numerical module, including second-order and passive-fourth routes",
+    "production_imports_forbidden": [
+      "phasemap.theory.generator",
+      "phasemap.theory.complete_reset_baseline",
+      "phasemap.simulation.free_moment_baseline",
+      "phasemap.simulation.complete_reset_regenerative",
+      "experiments.run_s012_complete_reset_regenerative"
+    ],
+    "old_artifact_reads_forbidden": [
+      "experiments/S-012-complete-reset-regenerative-primary-v1.json",
+      "artifacts/raw/S-012-complete-reset-regenerative-primary-v1-pilot-attempt.json",
+      "artifacts/raw/S-012-complete-reset-regenerative-primary-v1-pilot.json",
+      "artifacts/raw/S-012-complete-reset-regenerative-primary-v1-confirm-attempt.json",
+      "artifacts/raw/S-012-complete-reset-regenerative-primary-v1-confirm.json",
+      "artifacts/raw/S-012-complete-reset-regenerative-primary-v1-failure.json"
+    ],
+    "deterministic_runner_imports_forbidden": [
+      "phasemap.simulation.complete_reset_regenerative",
+      "experiments.run_s012_complete_reset_regenerative"
+    ],
+    "excluded_hash_recording_rule": "copy the prior pilot and attempt SHA-256 literals from this plan into provenance; neither numerical module nor runner may open or hash an old stochastic artifact",
+    "numerical_module_file_reads": "forbidden"
+  },
+  "second_order_route": {
+    "implementation": "hand_coded_direct_Ito_moment_ODE",
+    "basis_names": [
+      "one",
+      "r_x",
+      "r_y",
+      "v_x",
+      "v_y",
+      "u_x",
+      "u_y",
+      "rr_xx",
+      "rr_xy",
+      "rr_yy",
+      "vv_xx",
+      "vv_xy",
+      "vv_yy",
+      "rv_xx",
+      "rv_xy",
+      "rv_yx",
+      "rv_yy",
+      "ru_xx",
+      "ru_xy",
+      "ru_yx",
+      "ru_yy",
+      "vu_xx",
+      "vu_xy",
+      "vu_yx",
+      "vu_yy",
+      "uu_xx",
+      "uu_xy",
+      "uu_yy"
+    ],
+    "tensor_equations": {
+      "r": "d<r>/dt=<v>",
+      "v": "d<v>/dt=(-<v>+Pe<u>)/M",
+      "u": "d<u>/dt=-<u>",
+      "rr": "d<rr^T>/dt=<rv^T>+<vr^T>",
+      "vv": "d<vv^T>/dt=-2<vv^T>/M+(Pe/M)(<vu^T>+<uv^T>)+2I/M^2",
+      "rv": "d<rv^T>/dt=<vv^T>-<rv^T>/M+(Pe/M)<ru^T>",
+      "ru": "d<ru^T>/dt=<vu^T>-<ru^T>",
+      "vu": "d<vu^T>/dt=-(1+1/M)<vu^T>+(Pe/M)<uu^T>",
+      "uu": "d<uu^T>/dt=2I-4<uu^T>"
+    },
+    "reset_state": {
+      "one": "1",
+      "u_x": "1",
+      "uu_xx": "1",
+      "all_other_basis_entries": "0"
+    },
+    "complete_reset_stationary_equation": "F(m)+rho*(m_reset-m)=0",
+    "derived_observable_map": {
+      "orientation_mean_x": "u_x",
+      "mean_velocity_x": "v_x",
+      "mean_position_x": "r_x",
+      "velocity_dot_orientation": "vu_xx+vu_yy",
+      "position_dot_orientation": "ru_xx+ru_yy",
+      "mean_squared_speed": "vv_xx+vv_yy",
+      "mean_position_dot_velocity": "rv_xx+rv_yy",
+      "mean_squared_displacement": "rr_xx+rr_yy",
+      "centered_spatial_variance": "rr_xx+rr_yy-r_x^2-r_y^2"
+    }
+  },
+  "passive_fourth_route": {
+    "domain": "activity=0 only",
+    "implementation": "independent_direct_Ito_scalar_moment_closure",
+    "basis_names": [
+      "one",
+      "S",
+      "P",
+      "Q",
+      "S2",
+      "SP",
+      "P2",
+      "SQ",
+      "PQ",
+      "Q2"
+    ],
+    "definitions": {
+      "S": "|r|^2",
+      "P": "r dot v",
+      "Q": "|v|^2",
+      "S2": "|r|^4",
+      "SP": "|r|^2*(r dot v)",
+      "P2": "(r dot v)^2",
+      "SQ": "|r|^2*|v|^2",
+      "PQ": "(r dot v)*|v|^2",
+      "Q2": "|v|^4"
+    },
+    "free_equations": {
+      "one": "0",
+      "S": "2P",
+      "P": "Q-P/M",
+      "Q": "-2Q/M+4*one/M^2",
+      "S2": "4SP",
+      "SP": "SQ+2P2-SP/M",
+      "P2": "2PQ-2P2/M+2S/M^2",
+      "SQ": "2PQ-2SQ/M+4S/M^2",
+      "PQ": "Q2-3PQ/M+8P/M^2",
+      "Q2": "-4Q2/M+16Q/M^2"
+    },
+    "reset_state": {
+      "one": "1",
+      "all_other_basis_entries": "0"
+    },
+    "complete_reset_rule": "subtract rho times each nonconstant moment because S=P=Q=0 immediately after PVTheta reset",
+    "gating_outputs": [
+      "raw_E_abs_r_fourth",
+      "raw_radial_excess_kurtosis_K"
+    ],
+    "cross_closure_outputs": [
+      "mean_squared_displacement",
+      "mean_position_dot_velocity",
+      "mean_squared_speed"
+    ],
+    "kurtosis_definition": "raw_radial_excess_kurtosis_K=S2/(2*S^2)-1",
+    "supporting_outputs": [
+      "SP",
+      "P2",
+      "SQ",
+      "PQ",
+      "Q2"
+    ]
+  },
+  "regenerative_quadrature": {
+    "identity": "m_stationary=rho*integral_0^infinity exp(-rho*t)*m_free(t) dt",
+    "weighted_state": "y(t)=exp(-rho*t)*m_free(t)",
+    "accumulator": "J'(t)=rho*y(t), J(0)=0",
+    "augmented_ode": "y'=(A_free-rho*I)y; J'=rho*y",
+    "reported_state": "J(T)",
+    "backend": "mpmath.expm_on_fixed_augmented_linear_system",
+    "parameter_conversion": "exact rational strings converted directly to mpmath values inside the active precision context",
+    "arithmetic_precisions_decimal_digits": [
+      50,
+      80
+    ],
+    "scaled_tail_horizons_rho_times_T": [
+      "64",
+      "80"
+    ],
+    "resolution_cells": [
+      "dps50_rhoT64",
+      "dps80_rhoT64",
+      "dps50_rhoT80",
+      "dps80_rhoT80"
+    ],
+    "matrix_exponential_action": "compute exp(B*T) applied to the fixed augmented initial state through mpmath.expm; no time-step discretization is used",
+    "adaptive_plan_changes": false,
+    "retries": false,
+    "precision_changes": false,
+    "horizon_changes": false,
+    "tolerance_tuning": false,
+    "tail_extrapolation": false
+  },
+  "infinite_horizon_check": {
+    "role": "mandatory internal tail-remainder and numerical-conditioning check; not claimed as an independent scientific route",
+    "precision_decimal_digits": 80,
+    "stationary_system": "(rho*I-A_free)*m_infinity=rho*m_reset",
+    "solver": "mpmath.lu_solve",
+    "matrix_norm": "infinity norm",
+    "condition_number": "kappa_inf=norm_inf(C)*norm_inf(inverse(C)) for C=rho*I-A_free",
+    "normalized_residual": "norm_inf(C*m_infinity-rho*m_reset)/max(1,norm_inf(C)*norm_inf(m_infinity)+norm_inf(rho*m_reset))",
+    "forward_error_bound": "kappa_inf*normalized_residual",
+    "forward_error_bound_maximum": "1e-40",
+    "tail_remainder_raw_components": "abs(J_dps80_rhoT80-m_infinity) for every raw second-order and passive-closure component",
+    "tail_remainder_output_space": "abs(g(J_dps80_rhoT80)-g(m_infinity)) evaluated separately for every derived or gating output g, explicitly including centered_spatial_variance and raw_radial_excess_kurtosis_K=S2/(2*S^2)-1",
+    "tail_remainder_maximum": "1e-12",
+    "requirements": [
+      "condition number is finite and positive",
+      "forward error bound is <=1e-40",
+      "every raw-component and output-space finest-cell tail remainder is <=1e-12"
+    ]
+  },
+  "parameter_cases": [
+    {
+      "id": "active-rho-1-4",
+      "inertia": "4/5",
+      "activity": "6/5",
+      "reset_rate": "1/4"
+    },
+    {
+      "id": "active-rho-1-2",
+      "inertia": "4/5",
+      "activity": "6/5",
+      "reset_rate": "1/2"
+    },
+    {
+      "id": "active-central",
+      "inertia": "4/5",
+      "activity": "6/5",
+      "reset_rate": "1"
+    },
+    {
+      "id": "active-rho-2",
+      "inertia": "4/5",
+      "activity": "6/5",
+      "reset_rate": "2"
+    },
+    {
+      "id": "active-rho-4",
+      "inertia": "4/5",
+      "activity": "6/5",
+      "reset_rate": "4"
+    },
+    {
+      "id": "passive-rho-1-4",
+      "inertia": "4/5",
+      "activity": "0",
+      "reset_rate": "1/4"
+    },
+    {
+      "id": "passive-rho-1-2",
+      "inertia": "4/5",
+      "activity": "0",
+      "reset_rate": "1/2"
+    },
+    {
+      "id": "passive-central",
+      "inertia": "4/5",
+      "activity": "0",
+      "reset_rate": "1"
+    },
+    {
+      "id": "passive-rho-2",
+      "inertia": "4/5",
+      "activity": "0",
+      "reset_rate": "2"
+    },
+    {
+      "id": "passive-rho-4",
+      "inertia": "4/5",
+      "activity": "0",
+      "reset_rate": "4"
+    },
+    {
+      "id": "active-resonant",
+      "inertia": "1",
+      "activity": "6/5",
+      "reset_rate": "1"
+    },
+    {
+      "id": "active-above-resonance",
+      "inertia": "2",
+      "activity": "6/5",
+      "reset_rate": "1"
+    },
+    {
+      "id": "passive-above-resonance",
+      "inertia": "2",
+      "activity": "0",
+      "reset_rate": "1"
+    },
+    {
+      "id": "overdamped-support-1",
+      "inertia": "1/2",
+      "activity": "6/5",
+      "reset_rate": "1"
+    },
+    {
+      "id": "overdamped-support-2",
+      "inertia": "1/4",
+      "activity": "6/5",
+      "reset_rate": "1"
+    },
+    {
+      "id": "overdamped-support-3",
+      "inertia": "1/8",
+      "activity": "6/5",
+      "reset_rate": "1"
+    }
+  ],
+  "reference_route": {
+    "implementation": "phasemap.theory.complete_reset_baseline",
+    "derivation": "T-012 exact stationary component hierarchy, closest-source radial checks, and passive fourth-moment law",
+    "evaluation": "substitute exact rational M, Pe, and rho; evaluate with sympy.N at 90 decimal digits; convert through a decimal string inside the comparison precision context",
+    "full_component_output": "CompleteResetSecondMoments.as_generator_vector",
+    "derived_observables": [
+      "orientation_mean_x",
+      "mean_velocity_x",
+      "mean_position_x",
+      "velocity_dot_orientation",
+      "position_dot_orientation",
+      "mean_squared_speed",
+      "mean_position_dot_velocity",
+      "mean_squared_displacement",
+      "centered_spatial_variance"
+    ],
+    "passive_fourth_output": "passive_complete_reset_position_fourth_moment",
+    "passive_kurtosis_output": "source_passive_position_excess_kurtosis"
+  },
+  "invariants": {
+    "constant": "one=1",
+    "orientation_norm": "uu_xx+uu_yy=1",
+    "symmetry_forced_zero_basis_names": [
+      "r_y",
+      "v_y",
+      "u_y",
+      "rr_xy",
+      "vv_xy",
+      "rv_xy",
+      "rv_yx",
+      "ru_xy",
+      "ru_yx",
+      "vu_xy",
+      "vu_yx",
+      "uu_xy"
+    ],
+    "second_order_stationary_residual": "max_abs(F(m)+rho*(m_reset-m))",
+    "passive_fourth_stationary_residual": "max_abs(F4(m)+rho*(m4_reset-m))",
+    "passive_cross_closure": "S=rr_xx+rr_yy; P=rv_xx+rv_yy; Q=vv_xx+vv_yy"
+  },
+  "classification": {
+    "absolute_tolerance": 1e-12,
+    "comparison_arithmetic_decimal_digits": 90,
+    "scientific_numeric_serialization": "finite decimal strings with 50 significant digits; no binary JSON floats for scientific values, discrepancies, residuals, or conditioning quantities",
+    "cell_error": "abs(S_cell-R_T012)",
+    "precision_difference": "abs(S_dps80-S_dps50) at each fixed scaled horizon",
+    "tail_horizon_difference": "abs(S_rhoT80-S_rhoT64) at each fixed arithmetic precision",
+    "validated": "all four cell errors, both precision differences, both tail-horizon differences, and every applicable raw-component and output-space finest-cell infinite-horizon tail remainder are <=1e-12 and the forward-error bound is <=1e-40",
+    "contradicted": "all four cell errors are >1e-12 while every precision and tail-horizon difference and every applicable raw-component and output-space finest-cell infinite-horizon tail remainder are <=1e-12 and the forward-error bound is <=1e-40",
+    "unresolved": "otherwise",
+    "invariant_rule": "constant and orientation-norm values use references 1 and every declared symmetry-zero uses reference 0; each is classified by the same four-cell rule",
+    "cross_closure_rule": "for S, P, and Q, all four absolute differences between the passive closure and matching 28-state cell must be <=1e-12; any failure is BL2 and stops before scientific classification",
+    "residual_validated": "every fixed-cell stationary residual is <=1e-12 and every dps80 resolvent forward-error bound is <=1e-40",
+    "overall": "after all cross-closure checks pass the BL2 precondition, contradicted if any reference comparison is contradicted; otherwise unresolved if any comparison, invariant, residual, or limit-support trend is unresolved; validated only if every required item validates or passes"
+  },
+  "limit_regressions": {
+    "rare_reset": {
+      "parameter_sequence": [
+        "1",
+        "1/2",
+        "1/4"
+      ],
+      "fixed_inertia": "4/5",
+      "active_activity": "6/5",
+      "observables_and_expected_laws": {
+        "mean_squared_speed": "2/M+Pe^2/(1+M)",
+        "rho_times_mean_squared_displacement": "4*(1+Pe^2/2)",
+        "passive_raw_radial_excess_kurtosis_K": "1"
+      },
+      "estimator_and_uncertainty": "dps80/rhoT80 deterministic output; uncertainty not applicable",
+      "acceptance": "after every underlying reference comparison validates, absolute discrepancy from each approached law decreases strictly along the sequence"
+    },
+    "frequent_reset": {
+      "parameter_sequence": [
+        "1",
+        "2",
+        "4"
+      ],
+      "fixed_inertia": "4/5",
+      "active_activity": "6/5",
+      "observables_and_expected_laws": {
+        "rho_times_mean_squared_speed": "4/M^2",
+        "rho_cubed_times_mean_squared_displacement": "8/M^2",
+        "passive_raw_radial_excess_kurtosis_K": "19"
+      },
+      "estimator_and_uncertainty": "dps80/rhoT80 deterministic output; uncertainty not applicable",
+      "acceptance": "after every underlying reference comparison validates, absolute discrepancy from each approached law decreases strictly along the sequence"
+    },
+    "overdamped_position_support": {
+      "inertia_sequence": [
+        "1/2",
+        "1/4",
+        "1/8"
+      ],
+      "activity": "6/5",
+      "reset_rate": "1",
+      "observables_and_expected_laws": {
+        "mean_position_x": "Pe/(rho+1)",
+        "mean_squared_displacement": "(4+2*Pe^2/(rho+1))/rho",
+        "centered_spatial_variance": "mean_squared_displacement-(Pe/(rho+1))^2"
+      },
+      "estimator_and_uncertainty": "dps80/rhoT80 deterministic output; uncertainty not applicable",
+      "acceptance": "after every underlying reference comparison validates, absolute discrepancy from each approached law decreases strictly along the sequence",
+      "claim": "finite numerical support only; the exact singular-limit interpretation remains in the contract and T-012"
+    }
+  },
+  "independence": {
+    "shared": [
+      "contract_v0.3_SDE",
+      "PVTheta_reset_state",
+      "second_order_observable_definitions",
+      "parameter_values",
+      "exponential_renewal_age_identity"
+    ],
+    "not_reused": [
+      "T-010_generator_builder_or_matrix",
+      "T-012_closed_formulas_in_numerical_module",
+      "S-011_moment_propagator",
+      "S-012_stochastic_simulator",
+      "S-012_stochastic_runner",
+      "S-012_stochastic_pilot_trajectories",
+      "S-012_stochastic_pilot_estimates"
+    ],
+    "basis_for_material_independence": "hand-coded direct time-domain Ito moment ODE and exponential-age accumulator versus T-012 symbolic stationary hierarchy and closed source formulas",
+    "supporting_internal_check_not_claimed_independent": "a stationary linear-system residual or resolvent check of the hand-coded ODE is an invariant only, not a second independent route"
+  },
+  "provenance_required": [
+    "clean_source_commit",
+    "contract_hash",
+    "validation_registry_hash",
+    "validation_registry_schema_hash",
+    "T-010_artifact_hash",
+    "T-012_artifact_hash",
+    "plan_hash",
+    "plan_semantic_hash",
+    "numerical_module_hash",
+    "reference_module_hash",
+    "runner_hash",
+    "test_hash",
+    "python_version",
+    "mpmath_version",
+    "sympy_version",
+    "operating_system",
+    "machine_architecture",
+    "basis_names",
+    "parameter_cases",
+    "arithmetic_precisions",
+    "scaled_tail_horizons",
+    "augmented_matrix_hashes",
+    "resolvent_matrix_hashes",
+    "initial_state_hashes",
+    "all_discrepancies",
+    "all_classifications",
+    "all_residuals",
+    "limit_regression_records",
+    "excluded_prior_artifact_hashes",
+    "canonical_artifact_hash"
+  ],
+  "execution_controls": {
+    "strict_json_loader": "reject duplicate keys, nonfinite constants, non-object roots, and nonfinite values nested at any depth",
+    "plan_semantic_lock": "the runner must hardcode the expected SHA-256 of the canonical semantics of this exact preregistered plan; every plan field is semantic and any mutation fails validation",
+    "canonical_semantics": "UTF-8 JSON with sorted keys, separators comma/colon, ensure_ascii=false, and allow_nan=false",
+    "validate_mode": "may validate plan, imports, source manifest, paths, and synthetic numerical fixtures but must not evaluate the canonical parameter grid or create canonical artifacts",
+    "canonical_output_precondition": "the canonical output path must be absent before execution"
+  },
+  "canonical_output": "artifacts/raw/S-012-complete-reset-moment-quadrature-primary-v1.json",
+  "source_commit_policy": "execute only from a clean committed implementation and record that full commit SHA",
+  "publication_policy": "atomically create the canonical output once and never overwrite it",
+  "stop_rules": {
+    "bl2": "stop before classification on provenance, basis, nonfinite, exact-rational parsing, matrix construction, old-artifact access, import isolation, cross-closure, strict-plan-lock, or reference-evaluation failure",
+    "bl3": "a converged T-012 disagreement is contradicted; do not change formulas, grid, precision, horizon, or tolerance",
+    "unresolved": "failed precision refinement, tail refinement, residual, or limit-support trend is unresolved",
+    "prior_evidence": "do not read, pool, reclassify, or use any stochastic pilot value in the deterministic calculation",
+    "rerun": "do not rerun, retry, top up, or write an alternate canonical result",
+    "revision": "any change requires a new versioned preregistration before another execution"
+  }
+}

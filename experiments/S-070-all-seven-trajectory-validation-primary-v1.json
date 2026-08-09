@@ -1,0 +1,892 @@
+{
+  "plan_id": "S-070-all-seven-trajectory-validation-primary-v1",
+  "plan_version": "2.0.0",
+  "task_id": "S-070",
+  "status": "preregistered_not_executed",
+  "contract_version": "0.4",
+  "validation_registry_schema_version": "1.0.0",
+  "contract_registry_lock": {
+    "schema_version": "1.0.0",
+    "contract_version": "0.4",
+    "status": "approved",
+    "contract_section_7_sha256": "65f1af81e0187de5daf45bf0857d6d757d01a3b9897442493fe22b9e6c69dd60",
+    "registry_semantic_sha256": "05bdad1ecd95ae59c09c473afb322af6f3dc1c3f25c54f7930f625dda669b2c3",
+    "schema_semantic_sha256": "a6e2c3d26634e5ddb7b75288314e0d8418eb97570592fe1f3c30a1a6d75d169d",
+    "registry_validator_canonical_sha256": "899b6eb2af253568772a2901428b4fedc2ea0d3313225723883bc1ab67ba2bf9",
+    "evidence_tiers": {
+      "routine_screen": {
+        "gating": false,
+        "pointwise_coverage": 0.9545,
+        "normal_equivalent_quantile": 2.0,
+        "relative_margin": 0.02,
+        "pilot_policy": "single_top_up_pilot_may_be_reused"
+      },
+      "primary": {
+        "gating": true,
+        "pointwise_coverage": 0.99,
+        "normal_equivalent_quantile": 2.5758293035,
+        "relative_margin": 0.01,
+        "pilot_policy": "design_only_excluded_from_confirmatory_analysis"
+      },
+      "central_disputed": {
+        "gating": true,
+        "pointwise_coverage": 0.9973,
+        "normal_equivalent_quantile": 3.0,
+        "relative_margin": 0.01,
+        "pilot_policy": "design_only_excluded_from_confirmatory_analysis"
+      }
+    },
+    "pairing": {
+      "fine_coarse": "paired_when_valid_coupling_exists",
+      "paired_difference_standard_error": true,
+      "cross_method_common_random_numbers": "allowed_with_disclosure",
+      "central_paired_comparison_requires_unpaired_confirmation": true,
+      "clean_room_requires_independent_random_stream": true
+    },
+    "observable_classes": {
+      "r_mean": {
+        "scale_rule": "sqrt(abs(rr_ii_reference))"
+      },
+      "v_mean": {
+        "scale_rule": "sqrt(abs(vv_ii_reference))"
+      },
+      "u_mean": {
+        "scale_rule": "sqrt(abs(uu_ii_reference))"
+      },
+      "rr": {
+        "scale_rule": "sqrt(abs(rr_ii_reference * rr_jj_reference))"
+      },
+      "vv": {
+        "scale_rule": "sqrt(abs(vv_ii_reference * vv_jj_reference))"
+      },
+      "uu": {
+        "scale_rule": "sqrt(abs(uu_ii_reference * uu_jj_reference))"
+      },
+      "rv": {
+        "scale_rule": "sqrt(abs(rr_ii_reference * vv_jj_reference))"
+      },
+      "ru": {
+        "scale_rule": "sqrt(abs(rr_ii_reference * uu_jj_reference))"
+      },
+      "vu": {
+        "scale_rule": "sqrt(abs(vv_ii_reference * uu_jj_reference))"
+      },
+      "r_dot_v": {
+        "scale_rule": "sqrt(abs(r_squared_reference * v_squared_reference))"
+      },
+      "cov_r_trace": {
+        "scale_rule": "abs(reference)"
+      },
+      "stationary_variance": {
+        "scale_rule": "abs(reference)"
+      },
+      "d_eff": {
+        "scale_rule": "max(abs(reference), declared_class_scale)",
+        "requires_declared_class_scale": true
+      },
+      "symmetry_forced_zero": {
+        "scale_rule": "inherit_parent_scale",
+        "relative_term_enabled": false
+      },
+      "zero_crossing": {
+        "scale_rule": "inherit_parent_scale",
+        "root_location_rule_required_when_claimed": true
+      }
+    }
+  },
+  "result_free_lock": {
+    "observed_trajectory_values_present": false,
+    "pilot_values_present": false,
+    "confirmation_values_present": false,
+    "prior_stochastic_result_artifacts_used": false,
+    "permitted_contents": "design choices and accepted analytic expectations only",
+    "mutation_rule": "Any semantic plan change requires a new version and a new independent V-071 review before production execution."
+  },
+  "scope": {
+    "route": "publication_facing_all_seven_exact_clock_stochastic_trajectory_validation",
+    "route_owner": "O / S-070",
+    "evidence_role": "finite_parameter_independent_trajectory_support for accepted exact theory",
+    "claim_boundary": "Trajectory evidence may support the preregistered finite active case and named headline contrasts; it does not prove continuum-wide formulas, exact protocol equivalence, novelty, a higher-order result, or any unlisted limit.",
+    "excluded_work": [
+      "production pilot execution during S-070",
+      "production confirmation execution during S-070",
+      "small-step Bernoulli resetting as a truth implementation",
+      "reuse of S-011 or S-012 stochastic pilot data",
+      "post hoc sample-size changes, top-ups, retries, tier changes, window changes, or tolerance changes"
+    ]
+  },
+  "locked_model": {
+    "between_reset_sde": {
+      "position": "d r = v dt",
+      "velocity": "M d v = -(v-Pe*u(theta))dt + sqrt(2)dW",
+      "orientation": "d theta = sqrt(2)dW_r",
+      "orientation_vector": "u(theta)=(cos(theta),sin(theta))"
+    },
+    "initial_state": "r(0)=0, v(0)=0, theta(0)=0",
+    "protocol_order": [
+      "P",
+      "V",
+      "Theta",
+      "PV",
+      "PTheta",
+      "VTheta",
+      "PVTheta"
+    ],
+    "reset_maps": {
+      "P": "r->0",
+      "V": "v->0",
+      "Theta": "theta->0",
+      "PV": "r->0, v->0",
+      "PTheta": "r->0, theta->0",
+      "VTheta": "v->0, theta->0",
+      "PVTheta": "r->0, v->0, theta->0"
+    },
+    "event_semantics": "Sample exponential reset times exactly, integrate to each event by splitting the current step, record the pre-reset state, apply the fixed map without advancing time, then continue from the post-reset state."
+  },
+  "independence": {
+    "trajectory_kernel": "src/phasemap/simulation/trajectory_validation.py",
+    "method_family": "direct stochastic paths with exact Poisson clocks and transparent Euler-Maruyama between events",
+    "forbidden_trajectory_kernel_imports": [
+      "phasemap.theory",
+      "phasemap.theory.generator",
+      "phasemap.theory.formula_registry",
+      "any moment operator or moment ODE",
+      "any prior numerical result artifact"
+    ],
+    "analytic_reference_layer": "experiments/s070_reference_adapter.py",
+    "reference_isolation_rule": "The reference adapter may be loaded only after trajectory summaries, path hashes, paired differences, windows, and uncertainty inputs are frozen. It is never imported by the trajectory kernel.",
+    "shared_with_analytic_route": [
+      "approved contract",
+      "parameter values",
+      "protocol names",
+      "observable definitions"
+    ],
+    "not_shared_with_analytic_route": [
+      "moment operator",
+      "moment propagation",
+      "formula evaluation during path generation",
+      "stochastic streams",
+      "time-discretization implementation"
+    ]
+  },
+  "parameter_cases": [
+    {
+      "id": "active_core",
+      "case_code": 7001,
+      "M": 0.8,
+      "Pe": 1.2,
+      "rho": 1.0,
+      "protocols": [
+        "P",
+        "V",
+        "Theta",
+        "PV",
+        "PTheta",
+        "VTheta",
+        "PVTheta"
+      ],
+      "purpose": "All-seven finite active case for the minimal spatial classifier, internal-sector identities, drift, contracted-observation degeneracy, and separating spatial witness."
+    }
+  ],
+  "numerical_schedule": {
+    "end_time": 32.0,
+    "fine_step": 0.0078125,
+    "coarse_step": 0.015625,
+    "coarse_to_fine_ratio": 2,
+    "record_step": 2.0,
+    "chunk_size": 4096,
+    "max_reset_events_per_trajectory": 256,
+    "fine_coarse_rule": "Every coarse Wiener increment is the sum of the corresponding fine increments. Both paths use the same sampled reset times and are flushed at every reset before applying the map.",
+    "event_order": "integrate segment ending at event; record pre-reset state; reset at the same time; record post-reset state",
+    "fixed_work": true,
+    "adaptive_time_step": false,
+    "bernoulli_resetting": false
+  },
+  "sampling": {
+    "design": "fixed_nonadaptive_no_pilot",
+    "main_count_per_protocol": 65536,
+    "unpaired_count_per_required_protocol": 16384,
+    "unpaired_protocols": [
+      "V",
+      "Theta",
+      "PV",
+      "PTheta",
+      "VTheta",
+      "PVTheta"
+    ],
+    "main_compute_cap_per_protocol": 65536,
+    "unpaired_compute_cap_per_required_protocol": 16384,
+    "pilot_size": 0,
+    "pilot_reused_in_confirmation": false,
+    "maximum_interim_evaluations_allowed_by_contract": 1,
+    "interim_evaluations_planned": 0,
+    "maximum_final_evaluations": 1,
+    "continuous_polling_allowed": false,
+    "repeated_top_up_allowed": false,
+    "stop_at_first_pass_allowed": false,
+    "fixed_count_rule": "Run exactly the declared count once. If a required comparison is unresolved, do not add trajectories; stop and record unresolved.",
+    "projection_formula_if_a_future_version_becomes_adaptive": "ceil(N0 * (q * SE0 / (epsilon - abs(delta0) - B_window0 - B_disc0))^2)",
+    "nonpositive_projection_denominator_outcome": "unresolved",
+    "sample_cap_exceeded_outcome": "unresolved"
+  },
+  "seed_policy": {
+    "generator": "numpy.random.Generator(PCG64(SeedSequence([base_seed,case_code,stream_code,component_code])))",
+    "component_codes": {
+      "reset_clock": 1,
+      "translational_wiener": 2,
+      "rotational_wiener": 3
+    },
+    "main_base_seed": 70070001,
+    "main_protocol_stream_code": 0,
+    "chunk_stream_rule": "For chunk index k starting at zero, use stream_code=declared_protocol_stream_code+k. Chunk boundaries and order are fixed.",
+    "main_protocol_coupling": "All seven main runs use the same stream code, so reset clocks and Wiener increments are shared across protocols and disclosed as common random numbers.",
+    "unpaired_base_seeds": {
+      "V": 70071201,
+      "Theta": 70071301,
+      "PV": 70071401,
+      "PTheta": 70071501,
+      "VTheta": 70071601,
+      "PVTheta": 70071701
+    },
+    "unpaired_protocol_stream_code": 1,
+    "unpaired_rule": "Each of the six protocols needed by H2-H4 uses a distinct base seed. No reset clock or Wiener stream is shared across the protocols being confirmed.",
+    "bootstrap_base_seed": 70072001,
+    "clean_room_reserved_base_seed": 70079999,
+    "clean_room_rule": "The reserved seed is not used by production and does not authorize clean-room execution."
+  },
+  "observable_and_estimator_plan": {
+    "stationary_internal_observables": {
+      "protocols": [
+        "P",
+        "V",
+        "Theta",
+        "PV",
+        "PTheta",
+        "VTheta",
+        "PVTheta"
+      ],
+      "observables": [
+        "mean_squared_speed"
+      ],
+      "estimator": "For each trajectory, average mean_squared_speed over the primary late window; then use the trajectory mean. H3 separately hashes every recorded v and theta value for its three pathwise internal-sector checks.",
+      "uncertainty": "trajectory-level sample standard error with the declared tier quantile"
+    },
+    "localized_spatial_observables": {
+      "protocols": [
+        "P",
+        "PV",
+        "PTheta",
+        "PVTheta"
+      ],
+      "observables": [
+        "stationary centered spatial covariance trace for P, PV, PTheta, and PVTheta",
+        "raw mean_squared_displacement for the PV/PVTheta H4 contrast only",
+        "mean_position_dot_velocity for the PV/PVTheta H4 contrast only"
+      ],
+      "estimator": "Average the ensemble statistic over the primary late window, treating complete trajectories as independent units.",
+      "uncertainty": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed replicate-block stability diagnostic"
+    },
+    "transport_observables": {
+      "protocols": [
+        "V",
+        "Theta",
+        "VTheta"
+      ],
+      "observables": [
+        "x-component of late mean velocity",
+        "centered effective diffusion D_eff"
+      ],
+      "estimator": "Mean velocity is a late-window trajectory mean. D_eff is one quarter of the least-squares slope of the ensemble centered covariance trace in the primary window.",
+      "uncertainty": "D_eff uses a whole-trajectory bootstrap estimate of the standard error and the fixed tier normal-equivalent quantile; naive repeated-time OLS standard errors are prohibited."
+    }
+  },
+  "late_time_windows": {
+    "available": [
+      "[T/2,T]",
+      "[2T/3,T]",
+      "[3T/4,T]"
+    ],
+    "primary": "[2T/3,T]",
+    "B_window": "max over the two nonprimary admissible windows of abs(estimate_window-estimate_primary)",
+    "single_trajectory_block_bootstrap_used": false
+  },
+  "uncertainty_and_systematic_envelopes": {
+    "primary": {
+      "coverage": 0.99,
+      "quantile": 2.5758293035,
+      "relative_margin": 0.01
+    },
+    "central_disputed": {
+      "coverage": 0.9973,
+      "quantile": 3.0,
+      "relative_margin": 0.01
+    },
+    "normalized_floor_fraction": 0.005,
+    "bootstrap_replicates": 2048,
+    "bootstrap_batch_size": 8,
+    "bootstrap_se_stability": {
+      "block_count": 4,
+      "block_size": 512,
+      "maximum_relative_deviation": 0.1,
+      "failure_outcome": "unresolved unless another required check is contradicted"
+    },
+    "bootstrap_replicate_justification": "The interval uses the tier's fixed analytic normal-equivalent quantile and bootstrap only to estimate the whole-trajectory standard error, so no empirical 99% or 99.73% tail quantile is estimated. With 2048 fixed replicates, the idealized relative Monte Carlo standard error of a standard-deviation estimate is approximately 1/sqrt(2*(2048-1)) = 0.01563. Four fixed 512-replicate blocks must each yield an SE within 10% of the full-replicate SE; failure is unresolved and does not authorize more replicates.",
+    "bootstrap_unit": "complete matched trajectory for paired calculations; complete independent trajectory for direct calculations",
+    "bootstrap_algorithm": "For each exact multinomial trajectory resample, use count weights on per-trajectory (r_x,r_y,|r|^2) values at every recorded time. Recompute the ensemble means and centered covariance curve exactly from those weighted sufficient features, then recompute the declared window statistic. Fine/coarse pairs use the same weights. Process at most eight resamples at once; never copy a full (time,N,2) array per replicate.",
+    "D_eff_interval": "two-sided whole-trajectory bootstrap-SE interval using the fixed tier normal-equivalent quantile",
+    "stationary_variance_interval": "two-sided whole-trajectory bootstrap-SE interval using the fixed tier normal-equivalent quantile",
+    "D_eff_declared_class_scale": 1.0,
+    "ordinary_interval": "Delta_hat +/- q*trajectory_level_SE",
+    "B_disc": "For each target, compute the paired fine-minus-coarse estimate and its matched interval. Use max(abs(lower),abs(upper)) as the nonnegative discretization envelope.",
+    "separation": "Monte Carlo uncertainty, B_window, and B_disc are recorded separately and are never pooled into one standard error."
+  },
+  "headline_comparisons": [
+    {
+      "id": "H1_all_seven_spatial_classifier",
+      "tier": "primary",
+      "protocols": [
+        "P",
+        "PV",
+        "PTheta",
+        "PVTheta",
+        "V",
+        "Theta",
+        "VTheta"
+      ],
+      "target": "Position-reset protocols validate finite stationary centered variance; non-position protocols validate finite positive centered D_eff.",
+      "unpaired_confirmation": "not_applicable_to_direct_analytic_reference_comparisons"
+    },
+    {
+      "id": "H2_orientation_reset_drift",
+      "tier": "primary",
+      "protocols": [
+        "V",
+        "Theta",
+        "VTheta"
+      ],
+      "target": "Validate each late mean velocity against its accepted analytic reference and validate the nonzero Theta-minus-V and VTheta-minus-V x-drift contrasts.",
+      "unpaired_confirmation": "Recompute the two named drift differences from smaller protocol-independent streams using independent-sample uncertainty."
+    },
+    {
+      "id": "H3_position_toggle_internal_sector",
+      "tier": "primary",
+      "pairs": [
+        [
+          "PV",
+          "V"
+        ],
+        [
+          "PTheta",
+          "Theta"
+        ],
+        [
+          "PVTheta",
+          "VTheta"
+        ]
+      ],
+      "target": "With shared clocks and Wiener paths, every recorded v and theta value must agree pathwise within 1e-12; selected nonzero internal moments are also compared to the common analytic reference.",
+      "unpaired_confirmation": "On distinct protocol streams, compute each same-estimand speed difference with independent-sample uncertainty against the exact common nonzero reference difference."
+    },
+    {
+      "id": "H4_PV_PVTheta_restricted_degeneracy",
+      "equal_contractions_tier": "central_disputed",
+      "separating_witness_tier": "primary",
+      "pairs": [
+        [
+          "PV",
+          "PVTheta"
+        ]
+      ],
+      "equal_contractions": [
+        "mean_squared_speed",
+        "mean_position_dot_velocity",
+        "raw_mean_squared_displacement"
+      ],
+      "separating_witness": "centered spatial covariance trace",
+      "target": "The three named contractions validate against their common analytic references while the centered spatial covariance traces validate against distinct references.",
+      "unpaired_confirmation": "Recompute the three equal-contraction differences and the centered-variance separating difference on distinct smaller streams with independent-sample uncertainty."
+    }
+  ],
+  "estimand_table": [
+    {
+      "family_id": "main_speed_direct",
+      "comparison_ids": [
+        "MAIN_P_speed_direct",
+        "MAIN_V_speed_direct",
+        "MAIN_Theta_speed_direct",
+        "MAIN_PV_speed_direct",
+        "MAIN_PTheta_speed_direct",
+        "MAIN_VTheta_speed_direct",
+        "MAIN_PVTheta_speed_direct"
+      ],
+      "headline": "H1/H3/H4",
+      "observable": "mean_squared_speed",
+      "observable_class": "vv",
+      "parent_scale_inputs": [
+        "S_xx_reference",
+        "S_yy_reference"
+      ],
+      "tier": "by_id: central_disputed only for MAIN_PV_speed_direct and MAIN_PVTheta_speed_direct; primary otherwise",
+      "tier_by_id": {
+        "MAIN_P_speed_direct": "primary",
+        "MAIN_V_speed_direct": "primary",
+        "MAIN_Theta_speed_direct": "primary",
+        "MAIN_PV_speed_direct": "central_disputed",
+        "MAIN_PTheta_speed_direct": "primary",
+        "MAIN_VTheta_speed_direct": "primary",
+        "MAIN_PVTheta_speed_direct": "central_disputed"
+      },
+      "estimator": "trajectory mean of late-window time-averaged squared speed",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h1_centered_variance_direct",
+      "comparison_ids": [
+        "H1_P_centered_variance_direct",
+        "H1_PV_centered_variance_direct",
+        "H1_PTheta_centered_variance_direct",
+        "H1_PVTheta_centered_variance_direct"
+      ],
+      "headline": "H1",
+      "observable": "stationary_centered_spatial_covariance_trace",
+      "observable_class": "stationary_variance",
+      "parent_scale_inputs": [
+        "centered_variance_reference"
+      ],
+      "tier": "primary",
+      "estimator": "late-window mean centered covariance trace recomputed from complete trajectories",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h1_transport_direct",
+      "comparison_ids": [
+        "H1_V_D_eff_direct",
+        "H1_Theta_D_eff_direct",
+        "H1_VTheta_D_eff_direct"
+      ],
+      "headline": "H1",
+      "observable": "centered_effective_diffusion",
+      "observable_class": "d_eff",
+      "parent_scale_inputs": [
+        "D_eff_reference",
+        "D_eff_declared_class_scale"
+      ],
+      "tier": "primary",
+      "estimator": "one quarter of late-window least-squares centered-covariance slope",
+      "interval_construction": "whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "pairing_role": "direct analytic-reference comparison; matched fine/coarse bootstrap",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h2_v_symmetry_zero_direct",
+      "comparison_ids": [
+        "H2_V_v_x_direct"
+      ],
+      "headline": "H2",
+      "observable": "late_mean_velocity_x",
+      "observable_class": "symmetry_forced_zero",
+      "parent_scale_inputs": [
+        "S_xx_reference"
+      ],
+      "tier": "primary",
+      "estimator": "trajectory mean of late-window time-averaged velocity x component",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval; relative margin disabled",
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "required_sign_or_equality": "equality_zero",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h2_positive_drift_direct",
+      "comparison_ids": [
+        "H2_Theta_v_x_direct",
+        "H2_VTheta_v_x_direct"
+      ],
+      "headline": "H2",
+      "observable": "late_mean_velocity_x",
+      "observable_class": "v_mean",
+      "parent_scale_inputs": [
+        "S_xx_reference"
+      ],
+      "tier": "primary",
+      "estimator": "trajectory mean of late-window time-averaged velocity x component",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h4_raw_direct",
+      "comparison_ids": [
+        "H4_PV_raw_msd_direct",
+        "H4_PVTheta_raw_msd_direct"
+      ],
+      "headline": "H4",
+      "observable": "raw_mean_squared_displacement",
+      "observable_class": "rr",
+      "parent_scale_inputs": [
+        "raw_MSD_reference_diagonal_trace_departure"
+      ],
+      "tier": "central_disputed",
+      "estimator": "trajectory mean of late-window time-averaged squared position",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h4_r_dot_v_direct",
+      "comparison_ids": [
+        "H4_PV_r_dot_v_direct",
+        "H4_PVTheta_r_dot_v_direct"
+      ],
+      "headline": "H4",
+      "observable": "mean_position_dot_velocity",
+      "observable_class": "r_dot_v",
+      "parent_scale_inputs": [
+        "raw_MSD_reference",
+        "speed_reference"
+      ],
+      "tier": "central_disputed",
+      "estimator": "trajectory mean of late-window time-averaged position dot velocity",
+      "interval_construction": "normal-equivalent trajectory-level standard-error interval",
+      "pairing_role": "direct analytic-reference comparison; fine/coarse paired",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h2_main_crn",
+      "comparison_ids": [
+        "H2_Theta_minus_V_v_x",
+        "H2_VTheta_minus_V_v_x"
+      ],
+      "headline": "H2",
+      "observable": "late_mean_velocity_x_difference",
+      "observable_class": "v_mean",
+      "parent_scale_inputs": [
+        "left_S_xx_reference",
+        "right_S_xx_reference"
+      ],
+      "tier": "primary",
+      "estimator": "mean matched trajectory-level protocol difference",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h4_main_crn_equal_contractions",
+      "comparison_ids": [
+        "H4_PV_minus_PVTheta_speed",
+        "H4_PV_minus_PVTheta_raw_msd",
+        "H4_PV_minus_PVTheta_r_dot_v"
+      ],
+      "headline": "H4",
+      "observable": "named_restricted_contraction_difference",
+      "observable_class": "by_id: vv, rr, or r_dot_v",
+      "observable_class_by_id": {
+        "H4_PV_minus_PVTheta_speed": "vv",
+        "H4_PV_minus_PVTheta_raw_msd": "rr",
+        "H4_PV_minus_PVTheta_r_dot_v": "r_dot_v"
+      },
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "tier": "central_disputed",
+      "estimator": "mean matched trajectory-level protocol difference",
+      "interval_construction": "normal-equivalent paired-difference standard-error interval",
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "required_sign_or_equality": "equality_zero",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h4_main_centered_separation",
+      "comparison_ids": [
+        "H4_PV_minus_PVTheta_centered_variance"
+      ],
+      "headline": "H4",
+      "observable": "stationary_centered_spatial_covariance_trace_difference",
+      "observable_class": "stationary_variance",
+      "parent_scale_inputs": [
+        "PV_minus_PVTheta_centered_variance_reference_difference"
+      ],
+      "tier": "primary",
+      "estimator": "difference of late-window centered covariance traces",
+      "interval_construction": "matched whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "pairing_role": "main common-random-number protocol contrast after reset-clock hash equality",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "main"
+    },
+    {
+      "family_id": "h2_unpaired",
+      "comparison_ids": [
+        "H2_Theta_minus_V_v_x_unpaired",
+        "H2_VTheta_minus_V_v_x_unpaired"
+      ],
+      "headline": "H2",
+      "observable": "late_mean_velocity_x_difference",
+      "observable_class": "v_mean",
+      "parent_scale_inputs": [
+        "left_S_xx_reference",
+        "right_S_xx_reference"
+      ],
+      "tier": "primary",
+      "estimator": "difference of independent protocol trajectory means",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "unpaired"
+    },
+    {
+      "family_id": "h3_unpaired_common_speed",
+      "comparison_ids": [
+        "H3_PV_minus_V_speed_unpaired",
+        "H3_PTheta_minus_Theta_speed_unpaired",
+        "H3_PVTheta_minus_VTheta_speed_unpaired"
+      ],
+      "headline": "H3",
+      "observable": "mean_squared_speed_difference",
+      "observable_class": "vv",
+      "parent_scale_inputs": [
+        "common_S_diagonal_references"
+      ],
+      "tier": "primary",
+      "estimator": "difference of independent protocol trajectory means",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "required_sign_or_equality": "equality_zero",
+      "compute_cap_role": "unpaired"
+    },
+    {
+      "family_id": "h4_unpaired_equal_contractions",
+      "comparison_ids": [
+        "H4_PV_minus_PVTheta_speed_unpaired",
+        "H4_PV_minus_PVTheta_raw_msd_unpaired",
+        "H4_PV_minus_PVTheta_r_dot_v_unpaired"
+      ],
+      "headline": "H4",
+      "observable": "named_restricted_contraction_difference",
+      "observable_class": "by_id: vv, rr, or r_dot_v",
+      "observable_class_by_id": {
+        "H4_PV_minus_PVTheta_speed_unpaired": "vv",
+        "H4_PV_minus_PVTheta_raw_msd_unpaired": "rr",
+        "H4_PV_minus_PVTheta_r_dot_v_unpaired": "r_dot_v"
+      },
+      "parent_scale_inputs": [
+        "common_analytic_parent_scale"
+      ],
+      "tier": "central_disputed",
+      "estimator": "difference of independent protocol trajectory means",
+      "interval_construction": "normal-equivalent independent-sample difference standard-error interval",
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "required_sign_or_equality": "equality_zero",
+      "compute_cap_role": "unpaired"
+    },
+    {
+      "family_id": "h4_unpaired_centered_separation",
+      "comparison_ids": [
+        "H4_PV_minus_PVTheta_centered_variance_unpaired"
+      ],
+      "headline": "H4",
+      "observable": "stationary_centered_spatial_covariance_trace_difference",
+      "observable_class": "stationary_variance",
+      "parent_scale_inputs": [
+        "PV_minus_PVTheta_centered_variance_reference_difference"
+      ],
+      "tier": "primary",
+      "estimator": "difference of independent protocol centered covariance traces",
+      "interval_construction": "independent whole-trajectory bootstrap-SE normal-equivalent interval with fixed stability diagnostic",
+      "pairing_role": "smaller protocol-independent confirmation; fine/coarse paired only within protocol",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "unpaired"
+    },
+    {
+      "family_id": "h3_pathwise_exact",
+      "comparison_ids": [
+        "H3_PV_V_pathwise_internal",
+        "H3_PTheta_Theta_pathwise_internal",
+        "H3_PVTheta_VTheta_pathwise_internal"
+      ],
+      "headline": "H3",
+      "observable": "complete_recorded_velocity_and_orientation_arrays",
+      "observable_class": "vv",
+      "parent_scale_inputs": [
+        "not_applicable_exact_hash_identity"
+      ],
+      "tier": "deterministic",
+      "estimator": "canonical array SHA-256 equality after reset-clock hash equality",
+      "interval_construction": "exact deterministic identity at registered 1e-12 event/reset tolerance",
+      "pairing_role": "main common-random-number pathwise identity",
+      "required_sign_or_equality": "pathwise_equality",
+      "compute_cap_role": "deterministic"
+    },
+    {
+      "family_id": "h3_reference_common_nonzero",
+      "comparison_ids": [
+        "H3_PV_V_speed_reference_common_nonzero",
+        "H3_PTheta_Theta_speed_reference_common_nonzero",
+        "H3_PVTheta_VTheta_speed_reference_common_nonzero"
+      ],
+      "headline": "H3",
+      "observable": "accepted_mean_squared_speed_reference",
+      "observable_class": "vv",
+      "parent_scale_inputs": [
+        "left_speed_reference",
+        "right_speed_reference"
+      ],
+      "tier": "deterministic",
+      "estimator": "exact analytic-reference equality and nonzero check",
+      "interval_construction": "exact deterministic identity",
+      "pairing_role": "analytic-reference scope lock",
+      "required_sign_or_equality": "exact_common_and_nonzero",
+      "compute_cap_role": "deterministic"
+    },
+    {
+      "family_id": "h4_reference_common",
+      "comparison_ids": [
+        "H4_reference_common_speed",
+        "H4_reference_common_r_dot_v",
+        "H4_reference_common_raw_MSD"
+      ],
+      "headline": "H4",
+      "observable": "accepted_restricted_contraction_reference",
+      "observable_class": "by_id: vv, r_dot_v, or rr",
+      "observable_class_by_id": {
+        "H4_reference_common_speed": "vv",
+        "H4_reference_common_r_dot_v": "r_dot_v",
+        "H4_reference_common_raw_MSD": "rr"
+      },
+      "parent_scale_inputs": [
+        "PV_reference",
+        "PVTheta_reference"
+      ],
+      "tier": "deterministic",
+      "estimator": "exact analytic-reference equality check",
+      "interval_construction": "exact deterministic identity",
+      "pairing_role": "analytic-reference scope lock",
+      "required_sign_or_equality": "exact_common",
+      "compute_cap_role": "deterministic"
+    },
+    {
+      "family_id": "h4_reference_centered_distinct",
+      "comparison_ids": [
+        "H4_reference_distinct_centered_variance"
+      ],
+      "headline": "H4",
+      "observable": "accepted_centered_variance_reference_difference",
+      "observable_class": "stationary_variance",
+      "parent_scale_inputs": [
+        "PV_centered_variance_reference",
+        "PVTheta_centered_variance_reference"
+      ],
+      "tier": "deterministic",
+      "estimator": "exact analytic-reference signed-difference check",
+      "interval_construction": "exact deterministic identity",
+      "pairing_role": "analytic-reference scope lock",
+      "required_sign_or_equality": "positive",
+      "compute_cap_role": "deterministic"
+    }
+  ],
+  "resource_estimate": {
+    "main_protocol_streams": 7,
+    "unpaired_protocol_streams": 6,
+    "total_trajectories": 557056,
+    "fine_steps_per_trajectory": 4096,
+    "coarse_steps_per_trajectory": 2048,
+    "max_reset_events_per_trajectory": 256,
+    "recorded_times": 17,
+    "fine_base_state_segment_updates": 2281701376,
+    "coarse_base_state_segment_updates": 1140850688,
+    "maximum_total_reset_events": 142606336,
+    "maximum_fine_plus_coarse_state_segment_updates": 3707764736,
+    "position_bootstrap_analyses": "7 main direct whole-trajectory analyses, 1 main H4 paired centered-variance contrast, and 1 unpaired H4 centered-variance contrast",
+    "exact_bootstrap_trajectory_weight_draws": 1140850688,
+    "maximum_bootstrap_feature_multiply_add_terms": 130056978432,
+    "main_position_feature_bytes_per_protocol": 26738688,
+    "main_position_path_bytes_per_protocol": 35651584,
+    "bootstrap_weight_batch_bytes_at_main_N": 4194304,
+    "estimated_temporary_storage_bytes": 500000000,
+    "minimum_free_disk_bytes": 1500000000,
+    "minimum_available_memory_bytes": 1000000000,
+    "peak_memory_rule": "Analyze bounded protocol files and keep bootstrap batch size at eight; fail before the attempt sentinel and all stochastic work if locked arithmetic, free storage, or available memory differs from the preregistered floor.",
+    "resource_scope": "Planning estimate from locked counts and shapes only; it contains no trajectory or pilot result."
+  },
+  "comparison_rules": {
+    "margin": "epsilon = 0.005*characteristic_scale + tier_relative_margin*abs(reference)",
+    "symmetry_zero": "Use the registered parent-moment scale and disable the relative term.",
+    "derived_trace_scale_departure": "For a preregistered trace of a raw matrix, use the sum of the registered diagonal component scales; this departure is fixed before results.",
+    "expanded_interval": "[L-B_window-B_disc, U+B_window+B_disc]",
+    "validated": "expanded interval wholly contained in [-epsilon,+epsilon]",
+    "contradicted": "expanded interval disjoint from [-epsilon,+epsilon]",
+    "unresolved": "otherwise",
+    "paired_difference_se": "sample_sd(trajectory_level_fine_minus_coarse_difference)/sqrt(N), or a matched whole-trajectory bootstrap for nonlinear centered statistics",
+    "pathwise_absolute_tolerance": 1e-12,
+    "simultaneous_coverage_claimed": false,
+    "aggregate": "Contradicted if any required central comparison is contradicted; otherwise unresolved if any required comparison, unpaired confirmation, provenance check, or discretization check is unresolved; validated only if every required item validates."
+  },
+  "fail_closed_execution": {
+    "audit_required_before_run": "artifacts/derived/V-071-trajectory-preregistration-audit.md",
+    "audit_acceptance_header": "## S-070 production acceptance",
+    "audit_acceptance_disposition": "**Disposition:** PASS",
+    "audit_acceptance_marker_template": "S-070_AUDIT_ACCEPTANCE {\"disposition\":\"PASS\",\"plan_id\":\"S-070-all-seven-trajectory-validation-primary-v1\",\"plan_raw_sha256\":\"<runner-validated canonical raw hash>\",\"plan_semantic_sha256\":\"<runner-validated semantic hash>\",\"plan_version\":\"2.0.0\",\"reviewed_manifest_sha256\":\"<runner-validated canonical source-manifest hash>\"}",
+    "audit_record_rule": "Exactly one header, one exact PASS disposition, and one canonical standalone structured marker immediately below the header are required. Quoted, fenced, duplicated, malformed, REVISE, or stale records are rejected.",
+    "source_state": "Production requires a clean committed source tree and records the full commit plus canonical-LF source manifest and digest.",
+    "reviewed_source_canonicalization": "strict UTF-8 without BOM; normalize CRLF and lone CR to LF before SHA-256",
+    "canonical_raw_output": "artifacts/raw/S-071-all-seven-trajectory-validation-primary-v1.json",
+    "write_once_attempt_sentinel": "artifacts/raw/S-071-all-seven-trajectory-validation-primary-v1.attempt.json",
+    "attempt_rule": "After every deterministic gate and resource preflight passes, create the sentinel exclusively and fsync it immediately before the first stochastic draw. Never remove or replace it; any crash therefore prohibits silent retry.",
+    "write_once": true,
+    "stop_before_any_run_when": [
+      "V-071 strict PASS record is absent, duplicated, malformed, quoted, fenced, REVISE, or any bound hash differs",
+      "plan or source lock differs",
+      "canonical raw output already exists",
+      "write-once attempt sentinel already exists",
+      "source tree is dirty",
+      "contract, registry, schema, reviewed validator, or .gitattributes lock differs",
+      "resource preflight fails"
+    ],
+    "stop_during_or_after_run_when": [
+      "a central comparison is contradicted",
+      "a gating comparison is unresolved",
+      "a reset/event invariant fails",
+      "a nonfinite value occurs",
+      "a count, seed, window, step, cap, tier, or tolerance differs",
+      "a top-up, retry, alternate output, or second final evaluation is attempted"
+    ]
+  },
+  "commands": {
+    "result_free_validation_only": ".venv\\Scripts\\python.exe experiments\\run_s070_all_seven_trajectory_validation.py validate",
+    "production_after_V_071_only": ".venv\\Scripts\\python.exe experiments\\run_s070_all_seven_trajectory_validation.py run experiments\\S-070-all-seven-trajectory-validation-primary-v1.json",
+    "current_stage_prohibition": "Do not run the production command during S-070."
+  },
+  "provenance_required_in_result": [
+    "contract version",
+    "registry schema version and hash",
+    "plan raw and semantic hashes",
+    "clean source commit",
+    "source manifest hashes",
+    "parameters",
+    "protocol",
+    "seed namespace",
+    "trajectory count",
+    "fine and coarse steps",
+    "record schedule",
+    "reset-clock and path-array hashes",
+    "estimator",
+    "interval construction",
+    "Monte Carlo uncertainty",
+    "B_window",
+    "B_disc",
+    "evidence tier",
+    "classification",
+    "compute cap",
+    "software and platform versions"
+  ],
+  "production_execution_authorized_now": false
+}
