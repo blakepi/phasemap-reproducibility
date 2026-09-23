@@ -1,0 +1,25 @@
+# PHASEMAP G6/G7 dependency constraints shared by both tested environments
+# Canonical scientific-validation environment: CPython 3.12.13
+# R-060 clean-room closure environment: CPython 3.12.10
+# Release CI environment: CPython 3.11.15
+# Declared package support: Python >=3.11,<3.13
+# NumPy 2.5 requires Python >=3.12; the last compatible 2.4 patch is pinned on 3.11.
+# Build frontend/tools:
+pip==25.0.1
+setuptools==83.0.0
+wheel==0.47.0
+
+# Runtime and test stack:
+colorama==0.4.6
+iniconfig==2.3.0
+mpmath==1.3.0
+numpy==2.4.6; python_version < "3.12"
+numpy==2.5.1; python_version >= "3.12"
+packaging==26.2
+pluggy==1.6.0
+Pygments==2.20.0
+pytest==9.1.1
+sympy==1.14.0
+# Added for S-074 deterministic matrix-exponential horizon checks.
+scipy==1.16.3; python_version < "3.12"
+scipy==1.17.1; python_version >= "3.12"

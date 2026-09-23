@@ -1,6 +1,23 @@
 # PHASEMAP
 
-## Current release: FNL-R6B (23 September 2026)
+## Current archive: FNL-R6B.1 (packaging correction, 23 September 2026)
+
+[Corrected archive DOI 10.5281/zenodo.22925278](https://doi.org/10.5281/zenodo.22925278)
+and [current source tree](releases/FNL-R6B.1).
+Start with [the packaging README](releases/FNL-R6B.1/docs/release/FNL_R6B1_PACKAGING_README.md).
+This adds two already-public dependencies omitted from R6B's standalone ZIP,
+preserves original figure-provenance hashes and tests the actual extracted
+figure-reproduction command. No scientific code, numerical records, figures
+or manuscript/PDFs changed; software remains 3.2.0rc2. The unchanged paper
+retains the R6B DOI. Earlier directories and archives below remain historical.
+
+Corrected code ZIP SHA-256:
+`4940d0e17a005a02136746a04be711aacd91923e667ba144a22e02fa88344919`.
+Research content commit `9c0608678b370db18ea7c7214895865898d955e1`;
+presentation commit `2255f94ae2fbcf4ddd0098db21a9656e447004be`.
+No journal submission is implied.
+
+## Historical manuscript release: FNL-R6B (23 September 2026)
 
 Current manuscript, supplement and reproducibility archive:
 [Zenodo DOI 10.5281/zenodo.22924890](https://doi.org/10.5281/zenodo.22924890).

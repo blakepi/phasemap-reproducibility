@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1044" height="820" viewBox="0 0 1044 820">
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.title{font-size:30px;font-weight:700}.sub{font-size:24px}.head{font-size:24px;font-weight:700}.label{font-size:24px}.small{font-size:24px}.mono{font-family:monospace;font-size:24px}.note{font-size:24px;fill:#455a64}</style>
+<title>F-080 strict subsignature equivalence classes</title>
+<desc>Irredundancy of the three-observable decoder: each proper projection of the signature collapses the seven reset masks into fewer classes, while the full signature separates all seven.</desc>
+<text x="34" y="44" class="title">Proper subsignatures lose reset bits</text>
+<text x="34" y="72" class="sub">Matched parameters; generic class counts with exceptions below.</text>
+<text x="34" y="118" class="head">observed</text>
+<text x="258" y="118" class="head">bits read</text>
+<text x="410" y="118" class="head">distinguishable classes (of 7)</text>
+<text x="252" y="140" class="note">P</text><text x="292" y="140" class="note">Θ</text><text x="332" y="140" class="note">V</text>
+<line x1="34" y1="152" x2="1010" y2="152" stroke="#9aa7b0" stroke-width="2"/>
+<rect x="26" y="150" width="992" height="56" fill="#f6f8f9"/>
+<text x="34" y="182" class="label">G only</text>
+<circle cx="252" cy="176" r="10" fill="#0072B2"/>
+<circle cx="292" cy="176" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<circle cx="332" cy="176" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<rect x="410" y="165" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="165" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="165" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="476" y="165" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="498" y="165" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="520" y="165" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="542" y="165" width="16" height="22" fill="#d6dde2" rx="2"/>
+<text x="577" y="182" class="label">2</text>
+<text x="616" y="181" class="note">P status</text>
+<text x="34" y="244" class="label">Uₓₓ only</text>
+<circle cx="252" cy="238" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<circle cx="292" cy="238" r="10" fill="#0072B2"/>
+<circle cx="332" cy="238" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<rect x="410" y="227" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="227" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="227" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="476" y="227" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="498" y="227" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="520" y="227" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="542" y="227" width="16" height="22" fill="#d6dde2" rx="2"/>
+<text x="577" y="244" class="label">2</text>
+<text x="616" y="243" class="note">Θ status</text>
+<rect x="26" y="274" width="992" height="56" fill="#f6f8f9"/>
+<text x="34" y="306" class="label">Tr S only</text>
+<circle cx="252" cy="300" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<circle cx="292" cy="300" r="10" fill="none" stroke="#0072B2" stroke-width="2"/>
+<path d="M 292 290 A 10 10 0 0 1 292 310 Z" fill="#0072B2"/>
+<circle cx="332" cy="300" r="10" fill="#0072B2"/>
+<rect x="410" y="289" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="289" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="289" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="476" y="289" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="498" y="289" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="520" y="289" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="542" y="289" width="16" height="22" fill="#d6dde2" rx="2"/>
+<text x="577" y="306" class="label">3</text>
+<text x="616" y="305" class="note">P | Θ | V status</text>
+<text x="34" y="368" class="label">(G, Uₓₓ)</text>
+<circle cx="252" cy="362" r="10" fill="#0072B2"/>
+<circle cx="292" cy="362" r="10" fill="#0072B2"/>
+<circle cx="332" cy="362" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<rect x="410" y="351" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="351" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="351" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="476" y="351" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="498" y="351" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="520" y="351" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="542" y="351" width="16" height="22" fill="#d6dde2" rx="2"/>
+<text x="577" y="368" class="label">4</text>
+<text x="616" y="367" class="note">P/Θ combinations</text>
+<rect x="26" y="398" width="992" height="56" fill="#f6f8f9"/>
+<text x="34" y="430" class="label">(Uₓₓ, Tr S)</text>
+<circle cx="252" cy="424" r="10" fill="none" stroke="#9aa7b0" stroke-width="2"/>
+<circle cx="292" cy="424" r="10" fill="#0072B2"/>
+<circle cx="332" cy="424" r="10" fill="#0072B2"/>
+<rect x="410" y="413" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="413" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="413" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="476" y="413" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="498" y="413" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="520" y="413" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="542" y="413" width="16" height="22" fill="#d6dde2" rx="2"/>
+<text x="577" y="430" class="label">4</text>
+<text x="616" y="429" class="note">Θ/V combinations</text>
+<text x="34" y="492" class="label">(G, Tr S)</text>
+<circle cx="252" cy="486" r="10" fill="#0072B2"/>
+<circle cx="292" cy="486" r="10" fill="none" stroke="#0072B2" stroke-width="2"/>
+<path d="M 292 476 A 10 10 0 0 1 292 496 Z" fill="#0072B2"/>
+<circle cx="332" cy="486" r="10" fill="#0072B2"/>
+<rect x="410" y="475" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="475" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="475" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="476" y="475" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="498" y="475" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="520" y="475" width="16" height="22" fill="#d6dde2" rx="2"/>
+<rect x="542" y="475" width="16" height="22" fill="#d6dde2" rx="2"/>
+<text x="577" y="492" class="label">5</text>
+<text x="616" y="491" class="note">P/V combinations</text>
+<rect x="26" y="522" width="992" height="56" fill="#e8f1f8" stroke="#0072B2" stroke-width="2" rx="4"/>
+<text x="34" y="554" class="label" font-weight="700">Σ = (G, Uₓₓ, Tr S)</text>
+<circle cx="252" cy="548" r="10" fill="#0072B2"/>
+<circle cx="292" cy="548" r="10" fill="#0072B2"/>
+<circle cx="332" cy="548" r="10" fill="#0072B2"/>
+<rect x="410" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="432" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="454" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="476" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="498" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="520" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<rect x="542" y="537" width="16" height="22" fill="#0072B2" rx="2"/>
+<text x="577" y="554" class="label" font-weight="700">7</text>
+<text x="616" y="553" class="note">all seven distinct</text>
+<line x1="34" y1="612" x2="1010" y2="612" stroke="#9aa7b0" stroke-width="2"/>
+<text x="34" y="644" class="note">Filled = bit recovered; half = velocity-retained condition; open = lost.</text>
+<text x="34" y="680" class="head">Passive and resonant exception</text>
+<text x="34" y="710" class="label">At Pe=0 or Mρ=1, Tr S merges {P,Θ,PΘ} and (G, Tr S) merges {P,PΘ}.</text>
+<text x="34" y="738" class="note">The G, Uₓₓ, (G, Uₓₓ) and (Uₓₓ, Tr S) rows are unaffected.</text>
+<text x="34" y="766" class="note">The full three-coordinate decoder remains injective. Domain: M&gt;0, ρ&gt;0, Pe&gt;=0.</text>
+</svg>

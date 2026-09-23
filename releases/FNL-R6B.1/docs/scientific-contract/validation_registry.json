@@ -1,0 +1,124 @@
+{
+  "$schema": "./validation_registry.schema.json",
+  "schema_version": "1.0.0",
+  "contract_version": "0.4",
+  "status": "approved",
+  "normative_section": "docs/scientific-contract/CONTRACT.md#7-numerical-validation",
+  "deterministic": {
+    "symbolic_identity": "exact_zero",
+    "default_absolute_tolerance": 1e-12
+  },
+  "margin": {
+    "formula": "normalized_floor_fraction * characteristic_scale + relative_margin * abs(reference)",
+    "default_normalized_floor_fraction": 0.005
+  },
+  "evidence_tiers": {
+    "routine_screen": {
+      "gating": false,
+      "pointwise_coverage": 0.9545,
+      "normal_equivalent_quantile": 2.0,
+      "relative_margin": 0.02,
+      "pilot_policy": "single_top_up_pilot_may_be_reused"
+    },
+    "primary": {
+      "gating": true,
+      "pointwise_coverage": 0.99,
+      "normal_equivalent_quantile": 2.5758293035,
+      "relative_margin": 0.01,
+      "pilot_policy": "design_only_excluded_from_confirmatory_analysis"
+    },
+    "central_disputed": {
+      "gating": true,
+      "pointwise_coverage": 0.9973,
+      "normal_equivalent_quantile": 3.0,
+      "relative_margin": 0.01,
+      "pilot_policy": "design_only_excluded_from_confirmatory_analysis"
+    }
+  },
+  "observable_classes": {
+    "r_mean": {
+      "scale_rule": "sqrt(abs(rr_ii_reference))"
+    },
+    "v_mean": {
+      "scale_rule": "sqrt(abs(vv_ii_reference))"
+    },
+    "u_mean": {
+      "scale_rule": "sqrt(abs(uu_ii_reference))"
+    },
+    "rr": {
+      "scale_rule": "sqrt(abs(rr_ii_reference * rr_jj_reference))"
+    },
+    "vv": {
+      "scale_rule": "sqrt(abs(vv_ii_reference * vv_jj_reference))"
+    },
+    "uu": {
+      "scale_rule": "sqrt(abs(uu_ii_reference * uu_jj_reference))"
+    },
+    "rv": {
+      "scale_rule": "sqrt(abs(rr_ii_reference * vv_jj_reference))"
+    },
+    "ru": {
+      "scale_rule": "sqrt(abs(rr_ii_reference * uu_jj_reference))"
+    },
+    "vu": {
+      "scale_rule": "sqrt(abs(vv_ii_reference * uu_jj_reference))"
+    },
+    "r_dot_v": {
+      "scale_rule": "sqrt(abs(r_squared_reference * v_squared_reference))"
+    },
+    "cov_r_trace": {
+      "scale_rule": "abs(reference)"
+    },
+    "stationary_variance": {
+      "scale_rule": "abs(reference)"
+    },
+    "d_eff": {
+      "scale_rule": "max(abs(reference), declared_class_scale)",
+      "requires_declared_class_scale": true
+    },
+    "symmetry_forced_zero": {
+      "scale_rule": "inherit_parent_scale",
+      "relative_term_enabled": false
+    },
+    "zero_crossing": {
+      "scale_rule": "inherit_parent_scale",
+      "root_location_rule_required_when_claimed": true
+    }
+  },
+  "comparison_outcomes": [
+    "validated",
+    "contradicted",
+    "unresolved"
+  ],
+  "d_eff": {
+    "default_uncertainty_method": "whole_trajectory_bootstrap",
+    "naive_ols_standard_error_allowed": false,
+    "default_windows": [
+      "[T/2,T]",
+      "[2T/3,T]",
+      "[3T/4,T]"
+    ],
+    "window_envelope_rule": "max_abs_difference_from_primary_window",
+    "discretization_envelope_reported_separately": true
+  },
+  "sequential_sampling": {
+    "maximum_interim_evaluations": 1,
+    "maximum_final_evaluations": 1,
+    "continuous_polling_allowed": false,
+    "repeated_top_up_allowed": false,
+    "stop_at_first_pass_allowed": false,
+    "projection_formula": "ceil(N0 * (q * SE0 / (epsilon - abs(delta0) - B_window0 - B_disc0))^2)",
+    "nonpositive_denominator_outcome": "unresolved",
+    "sample_cap_exceeded_outcome": "unresolved",
+    "primary_confirmatory_batch_is_new_data": true,
+    "primary_confirmatory_batch_size_rule": "N_target_not_N_target_minus_N0",
+    "primary_confirmatory_seeds_disjoint_from_pilot": true
+  },
+  "pairing": {
+    "fine_coarse": "paired_when_valid_coupling_exists",
+    "paired_difference_standard_error": true,
+    "cross_method_common_random_numbers": "allowed_with_disclosure",
+    "central_paired_comparison_requires_unpaired_confirmation": true,
+    "clean_room_requires_independent_random_stream": true
+  }
+}

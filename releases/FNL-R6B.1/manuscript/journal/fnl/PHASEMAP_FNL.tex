@@ -1,0 +1,57 @@
+% World Scientific ws-fnl.cls and ws-fnl.bst are vendor files copied unchanged
+% from the official FNL template; their copyright notice is retained in each.
+\documentclass{ws-fnl}
+% The vendor class leaves paperheight unset; declare its default A4 media for
+% hyperref without changing the publisher's text block or font sizes.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+\usepackage{amsmath,amssymb,graphicx,booktabs,hyperref,placeins}
+\renewcommand{\wsdraftnote}{}
+\renewcommand{\url}[1]{\href{#1}{doi}}
+\hypersetup{hidelinks,pdftitle={Coordinate-selective resetting of inertial active Brownian motion},pdfauthor={G. Blake Pierpoint; Olivier Bernard; Yichen Liu},pdfsubject={Exact long-time observability under coordinate-selective stochastic resetting},pdfkeywords={stochastic resetting, active Brownian particle, inertial active matter, observability, moment closure}}
+\begin{document}
+\markboth{Pierpoint, Bernard and Liu}{Coordinate-selective resetting}
+\title{Coordinate-selective resetting of inertial active Brownian motion: localization, sector invariance, and observable fingerprints}
+\author{G. Blake Pierpoint\footnote{Corresponding author: gpierpo1@jh.edu.}}
+\address{Department of Biomedical Engineering, Whiting School of Engineering, Johns Hopkins University, 3400 North Charles Street, Baltimore, Maryland 21218, USA\\gpierpo1@jh.edu}
+\author{Olivier Bernard}
+\address{UFR PhITEM, Universit\'e Grenoble Alpes, 230 rue de la Physique, 38400 Saint-Martin-d'H\`eres, France; Weyl Center for Mathematical Physics, 1235 Pennsylvania Avenue SE, Suite \#1294, Washington, DC 20003, USA\\oli.bernard@weylcenter.org}
+\author{Yichen Liu}
+\address{Department of Computer Science and Engineering, Shanghai Jiao Tong University, 800 Dongchuan Road, Shanghai 200240, China; Weyl Center for Mathematical Physics, 1235 Pennsylvania Avenue SE, Suite \#1294, Washington, DC 20003, USA\\yichen.liu@weylcenter.org}
+\maketitle
+\begin{abstract}
+Coordinate-selective resetting produces distinct localization, kinetic, and transport responses in a two-dimensional inertial active Brownian particle. Position reset localizes centered spatial covariance without changing the internal velocity--orientation process. For velocity-retaining protocols, orientation reset polarizes propulsion and changes kinetic content across $M\rho=1$; all four velocity-reset protocols share the complete-reset kinetic trace. A tuned velocity-only/orientation-only pair can share a diffusion tensor, but drift separates it. At known, matched model parameters, a categorical growth class, $U_{xx}=E[\cos^2\theta]$, and $\operatorname{Tr}S=E[|v|^2]$ exactly decode the seven protocols studied here. The moment results follow from a closed second-moment hierarchy, while internal-process invariance follows from the generator.
+\end{abstract}
+\keywords{stochastic resetting; active Brownian particle; inertial active matter; observability; moment closure}
+\input{PHASEMAP_FNL_body.tex}
+\section*{Acknowledgments and declarations}
+This work received no external funding. The authors declare no competing interests. OpenAI Codex assisted research, code development, mathematical analysis, and manuscript preparation; no AI system is an author, and the authors retain responsibility for the submitted content.
+\begin{thebibliography}{25}
+\bibitem{EvansMajumdar2011} M. R. Evans and S. N. Majumdar, Phys. Rev. Lett. {\bf 106} (2011) 160601, \url{https://doi.org/10.1103/PhysRevLett.106.160601}.
+\bibitem{EvansMajumdarSchehr2020} M. R. Evans, S. N. Majumdar and G. Schehr, J. Phys. A: Math. Theor. {\bf 53} (2020) 193001, \url{https://doi.org/10.1088/1751-8121/ab7cfe}.
+\bibitem{TalFriedman2020} O. Tal-Friedman, A. Pal, A. Sekhon, S. Reuveni and Y. Roichman, J. Phys. Chem. Lett. {\bf 11} (2020) 7350, \url{https://doi.org/10.1021/acs.jpclett.0c02122}.
+\bibitem{Besga2020} B. Besga, A. Bovon, A. Petrosyan, S. N. Majumdar and S. Ciliberto, Phys. Rev. Res. {\bf 2} (2020) 032029, \url{https://doi.org/10.1103/PhysRevResearch.2.032029}.
+\bibitem{Romanczuk2012} P. Romanczuk, M. B\"ar, W. Ebeling, B. Lindner and L. Schimansky-Geier, Eur. Phys. J. Spec. Top. {\bf 202} (2012) 1, \url{https://doi.org/10.1140/epjst/e2012-01529-y}.
+\bibitem{Marchetti2013} M. C. Marchetti \textit{et al.}, Rev. Mod. Phys. {\bf 85} (2013) 1143, \url{https://doi.org/10.1103/RevModPhys.85.1143}.
+\bibitem{Bechinger2016} C. Bechinger \textit{et al.}, Rev. Mod. Phys. {\bf 88} (2016) 045006, \url{https://doi.org/10.1103/RevModPhys.88.045006}.
+\bibitem{Lowen2020} H. L\"owen, J. Chem. Phys. {\bf 152} (2020) 040901, \url{https://doi.org/10.1063/1.5134455}.
+\bibitem{KumarSadekarBasu} V. Kumar, O. Sadekar and U. Basu, Phys. Rev. E {\bf 102} (2020) 052129, \url{https://doi.org/10.1103/PhysRevE.102.052129}.
+\bibitem{GhoshMandalChaki} A. Ghosh, S. Mandal and S. Chaki, Phys. Rev. E {\bf 113} (2026) 014142, \url{https://doi.org/10.1103/11f6-srsx}.
+\bibitem{Baouche} Y. Baouche, T. Franosch, M. Meiners and C. Kurzthaler, New J. Phys. {\bf 26} (2024) 073041, \url{https://doi.org/10.1088/1367-2630/ad602a}.
+\bibitem{Shee} A. Shee, Phys. Rev. E {\bf 113} (2026) 025424, \url{https://doi.org/10.1103/xvkg-qcjq}.
+\bibitem{BaoucheKurzthaler2025} Y. Baouche and C. Kurzthaler, Soft Matter {\bf 21} (2025) 5998, \url{https://doi.org/10.1039/D5SM00340G}.
+\bibitem{Gupta} D. Gupta, J. Stat. Mech. (2019) 033212, \url{https://doi.org/10.1088/1742-5468/ab054a}.
+\bibitem{Singh2020} P. Singh, J. Phys. A: Math. Theor. {\bf 53} (2020) 405005, \url{https://doi.org/10.1088/1751-8121/abaf2d}.
+\bibitem{CapalaDybiec2021} K. Capa{\l}a and B. Dybiec, J. Stat. Mech. (2021) 083216, \url{https://doi.org/10.1088/1742-5468/ac1664}.
+\bibitem{FrankeSokolov2026} H. Franke and I. M. Sokolov, Phys. Rev. E {\bf 113} (2026) 064125, \url{https://doi.org/10.1103/qyl8-6q9h}.
+\bibitem{OlsenLowen} K. S. Olsen and H. L\"owen, J. Stat. Mech. (2024) 033210, \url{https://doi.org/10.1088/1742-5468/ad319a}.
+\bibitem{Howlader2026} S. Howlader, S. Mondal and P. Das, Phys. Fluids {\bf 38} (2026) 067118, \url{https://doi.org/10.1063/5.0333412}.
+\bibitem{PatelShee} M. Patel and A. Shee, arXiv:2602.21134 (2026).
+\bibitem{ChakiOlsenLowen} S. Chaki, K. St{\o}levik Olsen and H. L\"owen, J. Phys.: Condens. Matter {\bf 37} (2025) 115101, \url{https://doi.org/10.1088/1361-648X/ada336}.
+\bibitem{CleurenEichhorn2026} B. Cleuren and R. Eichhorn, arXiv:2603.19430 (2026).
+\bibitem{OlsenLowenCaprini2026} K. S. Olsen, H. L\"owen and L. Caprini, Phys. Rev. Lett. {\bf 137} (2026) 057102, \url{https://doi.org/10.1103/sytg-m4ms}.
+\bibitem{FrishmanRonceray2020} A. Frishman and P. Ronceray, Phys. Rev. X {\bf 10} (2020) 021009, \url{https://doi.org/10.1103/PhysRevX.10.021009}.
+\bibitem{TalFriedmanPartial2022} O. Tal-Friedman, Y. Roichman and S. Reuveni, Phys. Rev. E {\bf 106} (2022) 054116, \url{https://doi.org/10.1103/PhysRevE.106.054116}.
+\bibitem{PatelChaudhuri2023} M. Patel and D. Chaudhuri, New J. Phys. {\bf 25} (2023) 123048, \url{https://doi.org/10.1088/1367-2630/ad1538}; arXiv:2310.00802.
+\end{thebibliography}
+\end{document}

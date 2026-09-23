@@ -1,0 +1,12 @@
+{
+  "schema": "phasemap.s074.richardson-checksums.v1",
+  "sha256": {
+    "S-074-Richardson-figure-points.json": "21db0b09d27bfa0be726abbb1313d72b780f0039baf98269efae3168dd8b7fd3",
+    "S-074-Richardson-precision-table.md": "597166bdc71fb9f7dae53450d8a2d6e80f41a6aee16393adc950e1c6f5897236",
+    "S-074-Richardson-precision-table.tex": "93d10e93e446e2b0de9ccedb68a743428252168b86e0b5e181613c05d779d5b4",
+    "diagnostics.csv": "d546fd74f2e2359ad49866b9da1ef272e4bce9920e42ab25301bf13dc18b2d36",
+    "raw-step-values.csv": "f4857cbb8d91457cc0e0a66943b244d1286ef2dfa164f3a5b93f4f2aa0662d10",
+    "results.json": "4f2d5dfcbb6e457e10717a68eae19c3e42d461d90ae0c08114294a275fae60f5",
+    "summary.json": "58b3128291850e7393904cc549dc513a5997a2eee398fe72b31b8eb359669c8f"
+  }
+}

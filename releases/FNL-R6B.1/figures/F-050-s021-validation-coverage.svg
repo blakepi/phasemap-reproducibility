@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.title{font-size:30px;font-weight:700}.sub{font-size:17px}.head{font-size:19px;font-weight:700}.label{font-size:16px}.small{font-size:14px}.mono{font-family:monospace;font-size:15px}.note{font-size:13px;fill:#455a64}</style>
+<title>S-021 validation coverage</title>
+<text x="60" y="55" class="title">S-021 all-seven validation coverage</text>
+<text x="60" y="84" class="sub">Independent finite-grid numerical support for accepted exact second-order formulas</text>
+<rect x="60" y="112" width="1080" height="98" fill="#eaf2f8" stroke="#2471a3"/>
+<text x="85" y="145" class="head">91 / 91 numeric gates validated; 15,652 / 15,652 T-022 rows validated</text>
+<text x="85" y="175" class="label">13 exact-rational cases per protocol; four precision/horizon cells per record; no unresolved or contradicted result.</text>
+<text x="85" y="196" class="note">Locked formula/reference tolerance: 1e-12. This figure does not claim exact inequality from the finite grid.</text>
+<text x="87" y="250" class="head">protocol</text>
+<text x="230" y="250" class="small">1</text>
+<text x="295" y="250" class="small">2</text>
+<text x="360" y="250" class="small">3</text>
+<text x="425" y="250" class="small">4</text>
+<text x="490" y="250" class="small">5</text>
+<text x="555" y="250" class="small">6</text>
+<text x="620" y="250" class="small">7</text>
+<text x="685" y="250" class="small">8</text>
+<text x="750" y="250" class="small">9</text>
+<text x="815" y="250" class="small">10</text>
+<text x="880" y="250" class="small">11</text>
+<text x="945" y="250" class="small">12</text>
+<text x="1010" y="250" class="small">13</text>
+<text x="87" y="298" class="mono">P</text>
+<rect x="215" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="296" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="275" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="296" class="small" fill="#ffffff">PASS</text>
+<text x="87" y="343" class="mono">V</text>
+<rect x="215" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="341" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="320" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="341" class="small" fill="#ffffff">PASS</text>
+<text x="87" y="388" class="mono">Theta</text>
+<rect x="215" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="386" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="365" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="386" class="small" fill="#ffffff">PASS</text>
+<text x="87" y="433" class="mono">PV</text>
+<rect x="215" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="431" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="410" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="431" class="small" fill="#ffffff">PASS</text>
+<text x="87" y="478" class="mono">PTheta</text>
+<rect x="215" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="476" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="455" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="476" class="small" fill="#ffffff">PASS</text>
+<text x="87" y="523" class="mono">VTheta</text>
+<rect x="215" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="521" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="500" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="521" class="small" fill="#ffffff">PASS</text>
+<text x="87" y="568" class="mono">PVTheta</text>
+<rect x="215" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="228" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="280" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="293" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="345" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="358" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="410" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="423" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="475" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="488" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="540" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="553" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="605" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="618" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="670" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="683" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="735" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="748" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="800" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="813" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="865" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="878" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="930" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="943" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="995" y="545" width="48" height="30" rx="3" fill="#27ae60"/><text x="1008" y="566" class="small" fill="#ffffff">PASS</text>
+<rect x="60" y="620" width="1080" height="70" fill="#f4f6f7" stroke="#90a4ae"/>
+<text x="85" y="650" class="label">Complete-reset independent T-012 gate: 754 / 754 rows validated. Passive, rare-reset, frequent-reset, resonance, and overdamped support groups: validated.</text>
+<text x="85" y="676" class="note">Canonical raw S-021 artifact hash is recorded in the companion F-050 provenance manifest.</text>
+<text x="60" y="725" class="note">Source: S-021 validation matrix. The isolated operator is an independent implementation path; its role is support, not a replacement for the exact witness proof.</text>
+</svg>
