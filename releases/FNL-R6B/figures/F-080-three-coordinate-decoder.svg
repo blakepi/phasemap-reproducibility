@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="755" viewBox="0 0 1200 755">
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.title{font-size:30px;font-weight:700}.sub{font-size:27px}.head{font-size:27px;font-weight:700}.label{font-size:27px}.small{font-size:27px}.mono{font-family:monospace;font-size:27px}.note{font-size:27px;fill:#455a64}</style>
+<title>F-080 exact three-coordinate reset-mask decoder</title>
+<desc>Exact seven-row signatures showing how centered spatial growth, orientation alignment, and velocity-energy trace jointly decode each reset mask. Sigma = (G, Uxx, Tr S); the decoder remains injective at the passive point Pe=0 and on the resonance Mrho=1.</desc>
+<text x="60" y="55" class="title">Three-observable decoder for reset masks</text>
+<text x="60" y="84" class="sub">Exact matched-parameter result for M&gt;0, Pe&gt;=0, <tspan font-style="italic">ρ</tspan>&gt;0; G is the centered spatial growth class.</text>
+<rect x="60" y="112" width="1080" height="84" fill="#eaf2f8" stroke="#2471a3"/>
+<text x="84" y="147" class="head">Decoder: <tspan font-style="italic">Σ</tspan> = (G, U<tspan baseline-shift="sub" font-size="75%">xx</tspan>, Tr S) recovers P, <tspan font-style="italic">Θ</tspan>, then V.</text>
+<text x="84" y="174" class="label">Localized/diffusive → orientation-reset status → velocity-reset status.</text>
+<text x="78" y="238" class="head">map</text><text x="230" y="238" class="head">G</text><text x="490" y="238" class="head">U<tspan baseline-shift="sub" font-size="75%">xx</tspan></text><text x="770" y="238" class="head">Tr S</text>
+<rect x="60" y="244" width="1080" height="38" fill="#d5f5e3" opacity="0.65"/>
+<text x="78" y="270" class="mono">P</text><text x="230" y="270" class="label">localized</text><text x="490" y="270" class="label">1/2</text><text x="770" y="270" class="label">A</text>
+<rect x="60" y="291" width="1080" height="38" fill="#d5f5e3" opacity="0.65"/>
+<text x="78" y="317" class="mono">PV</text><text x="230" y="317" class="label">localized</text><text x="490" y="317" class="label">1/2</text><text x="770" y="317" class="label">B</text>
+<rect x="60" y="338" width="1080" height="38" fill="#d5f5e3" opacity="0.65"/>
+<text x="78" y="364" class="mono">P<tspan font-style="italic">Θ</tspan></text><text x="230" y="364" class="label">localized</text><text x="490" y="364" class="label">(<tspan font-style="italic">ρ</tspan>+2)/(<tspan font-style="italic">ρ</tspan>+4)</text><text x="770" y="364" class="label">C</text>
+<rect x="60" y="385" width="1080" height="38" fill="#d5f5e3" opacity="0.65"/>
+<text x="78" y="411" class="mono">PV<tspan font-style="italic">Θ</tspan></text><text x="230" y="411" class="label">localized</text><text x="490" y="411" class="label">(<tspan font-style="italic">ρ</tspan>+2)/(<tspan font-style="italic">ρ</tspan>+4)</text><text x="770" y="411" class="label">B</text>
+<rect x="60" y="432" width="1080" height="38" fill="#fdebd0" opacity="0.65"/>
+<text x="78" y="458" class="mono">V</text><text x="230" y="458" class="label">diffusive</text><text x="490" y="458" class="label">1/2</text><text x="770" y="458" class="label">B</text>
+<rect x="60" y="479" width="1080" height="38" fill="#fdebd0" opacity="0.65"/>
+<text x="78" y="505" class="mono"><tspan font-style="italic">Θ</tspan></text><text x="230" y="505" class="label">diffusive</text><text x="490" y="505" class="label">(<tspan font-style="italic">ρ</tspan>+2)/(<tspan font-style="italic">ρ</tspan>+4)</text><text x="770" y="505" class="label">C</text>
+<rect x="60" y="526" width="1080" height="38" fill="#fdebd0" opacity="0.65"/>
+<text x="78" y="552" class="mono">V<tspan font-style="italic">Θ</tspan></text><text x="230" y="552" class="label">diffusive</text><text x="490" y="552" class="label">(<tspan font-style="italic">ρ</tspan>+2)/(<tspan font-style="italic">ρ</tspan>+4)</text><text x="770" y="552" class="label">B</text>
+<rect x="60" y="620" width="1080" height="110" fill="#fdf2e9" stroke="#ca6f1e"/>
+<text x="84" y="653" class="head">Exact strict gaps</text>
+<text x="84" y="683" class="label">(<tspan font-style="italic">ρ</tspan>+2)/(<tspan font-style="italic">ρ</tspan>+4) - 1/2 = <tspan font-style="italic">ρ</tspan>/[2(<tspan font-style="italic">ρ</tspan>+4)] &gt; 0; A-B &gt; 0; C-B &gt; 0.</text>
+<text x="84" y="712" class="note">The decoder remains injective at the passive point Pe=0 and on the resonance M<tspan font-style="italic">ρ</tspan>=1.</text>
+</svg>

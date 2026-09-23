@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Please cite the R6B archive revision of PHASEMAP 3.2.0rc2 software and numerical records using this DOI."
+title: "PHASEMAP coordinate-selective resetting: precision trajectories and exact moments"
+type: software
+version: 3.2.0rc2
+doi: "10.5281/zenodo.22924890"
+url: "https://zenodo.org/records/22924890"
+date-released: "2026-09-23"
+authors:
+  - family-names: Pierpoint
+    given-names: G. Blake
+    orcid: "https://orcid.org/0000-0001-8288-8549"
+    affiliation: "Department of Biomedical Engineering, Whiting School of Engineering, Johns Hopkins University"
+    email: "gpierpo1@jh.edu"
+  - family-names: Bernard
+    given-names: Olivier
+    orcid: "https://orcid.org/0009-0007-0177-1607"
+    affiliation: "UFR PhITEM, Universite Grenoble Alpes; Weyl Center for Mathematical Physics"
+    email: "oli.bernard@weylcenter.org"
+  - family-names: Liu
+    given-names: Yichen
+    orcid: "https://orcid.org/0009-0005-2367-1493"
+    affiliation: "Department of Computer Science and Engineering, Shanghai Jiao Tong University; Weyl Center for Mathematical Physics"
+    email: "yichen.liu@weylcenter.org"
+repository-code: "https://github.com/blakepi/phasemap-reproducibility"
+license: MIT
+keywords:
+  - active Brownian particle
+  - stochastic resetting
+  - inertial active matter
+  - moment closure
+  - statistical physics

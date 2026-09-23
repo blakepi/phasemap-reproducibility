@@ -1,0 +1,5 @@
+# Development and test dependencies, pinned to the tested G7 environment.
+-r runtime.txt
+pytest==9.1.1
+scipy==1.16.3; python_version < "3.12"
+scipy==1.17.1; python_version >= "3.12"

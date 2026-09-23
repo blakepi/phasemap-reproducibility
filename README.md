@@ -1,5 +1,29 @@
 # PHASEMAP
 
+## Current release: FNL-R6B (23 September 2026)
+
+Current manuscript, supplement and reproducibility archive:
+[Zenodo DOI 10.5281/zenodo.22924890](https://doi.org/10.5281/zenodo.22924890).
+The corresponding current source tree is [releases/FNL-R6B](releases/FNL-R6B).
+Software version remains 3.2.0rc2. Run the portable test command in that
+directory's ARCHIVE_MANIFEST.json, and follow its docs/release/S074_REPRODUCTION.md.
+The new directory is an exact extraction of the current public code ZIP;
+earlier repository files below remain historical and are not the current paper.
+
+R6B preserves every numerical record and figure. The raw-finest S-074 analysis
+already contained 80/80 intervals, with 0 contradicted and 78/80 stricter design
+targets met. Paired Richardson estimates use the same retained trajectories,
+with their adoption chronology disclosed. S-071/S-073 remain unresolved,
+unpooled historical evidence. No new sampling or journal submission.
+
+Public code ZIP SHA-256:
+`ecd62b7fa3b787e4514763bfc4271b855a02d66adeca30327d059ade5109341b`.
+Source commit in the research repository:
+`5dbfeec5a9af16d319f74bbfff0e6941f90304ef`; presentation commit:
+`d38c159bc340d70370efb5427a7553190889721b`.
+
+## Historical v3.1.1 repository description
+
 PHASEMAP provides the exact second-order classification, software, numerical
 records, figures, and manuscript sources for all seven nonempty deterministic
 reset maps of a two-dimensional inertial active Brownian particle.

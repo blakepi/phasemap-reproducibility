@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710">
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.title{font-size:30px;font-weight:700}.sub{font-size:17px}.head{font-size:19px;font-weight:700}.label{font-size:16px}.small{font-size:14px}.mono{font-family:monospace;font-size:15px}.note{font-size:13px;fill:#455a64}</style>
+<title>F-070 all-seven reset lattice and classifier</title>
+<desc>Seven reset maps arranged as a lattice, followed by the exact 12 plus 6 plus 3 pair classifier.</desc>
+<text x="60" y="55" class="title">All-seven reset lattice and exact classifier</text>
+<text x="60" y="84" class="sub">Each node is a nonempty reset map over position P, velocity V, and orientation Theta.</text>
+<text x="60" y="120" class="head">Reset lattice</text>
+<line x1="210" y1="205" x2="355" y2="310" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="500" y1="205" x2="355" y2="310" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="210" y1="205" x2="645" y2="310" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="790" y1="205" x2="645" y2="310" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="500" y1="205" x2="935" y2="310" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="790" y1="205" x2="935" y2="310" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="355" y1="335" x2="645" y2="440" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="645" y1="335" x2="645" y2="440" stroke="#7f8c8d" stroke-width="3"/>
+<line x1="935" y1="335" x2="645" y2="440" stroke="#7f8c8d" stroke-width="3"/>
+<rect x="140" y="155" width="140" height="50" rx="8" fill="#d5f5e3" stroke="#2471a3" stroke-width="2"/><text x="190" y="187" class="head">P</text>
+<rect x="430" y="155" width="140" height="50" rx="8" fill="#fdebd0" stroke="#2471a3" stroke-width="2"/><text x="480" y="187" class="head">V</text>
+<rect x="720" y="155" width="140" height="50" rx="8" fill="#fdebd0" stroke="#2471a3" stroke-width="2"/><text x="770" y="187" class="head">Theta</text>
+<rect x="285" y="285" width="140" height="50" rx="8" fill="#d5f5e3" stroke="#2471a3" stroke-width="2"/><text x="335" y="317" class="head">PV</text>
+<rect x="575" y="285" width="140" height="50" rx="8" fill="#d5f5e3" stroke="#2471a3" stroke-width="2"/><text x="625" y="317" class="head">PTheta</text>
+<rect x="865" y="285" width="140" height="50" rx="8" fill="#fdebd0" stroke="#2471a3" stroke-width="2"/><text x="915" y="317" class="head">VTheta</text>
+<rect x="575" y="415" width="140" height="50" rx="8" fill="#d5f5e3" stroke="#2471a3" stroke-width="2"/><text x="625" y="447" class="head">PVTheta</text>
+<rect x="60" y="510" width="1080" height="166" fill="#eaf2f8" stroke="#2471a3"/>
+<text x="84" y="542" class="head">Exact full-record classifier: 12 + 6 + 3 = 21 distinct pairs</text>
+<text x="84" y="575" class="label">12: different P status — localized versus centered-diffusive transport.</text>
+<text x="84" y="605" class="label">6: same P, different Theta — orientation mean or matrix.</text>
+<text x="84" y="635" class="label">3: same P and Theta, different V — velocity matrix; mean when Pe&gt;0.</text>
+<text x="84" y="662" class="note">Exact scope: M&gt;0, rho&gt;0, Pe&gt;=0. A restricted identity is not protocol equivalence.</text>
+</svg>
